@@ -10,6 +10,15 @@ def test_parse_unknown_guide_collapses_to_none():
     assert parse_route("nonsense|pt") == (None, "pt")
 
 
+def test_parse_faq_and_facts_are_valid_guides():
+    assert parse_route("faq.md|pt") == ("faq.md", "pt")
+    assert parse_route("facts.md|en") == ("facts.md", "en")
+
+
+def test_parse_admins_tool_label_is_routable():
+    assert parse_route("tool:admins|pt") == ("tool:admins", "pt")
+
+
 def test_parse_unknown_language_defaults_to_pt():
     assert parse_route("market.md|fr") == ("market.md", "pt")
 

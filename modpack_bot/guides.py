@@ -6,14 +6,14 @@ on them by their public methods, so tests substitute in-memory fakes.
 
 import os
 
-VALID_GUIDES = frozenset({"market.md", "rules.md", "wiki.md"})
+VALID_GUIDES = frozenset({"market.md", "rules.md", "wiki.md", "faq.md", "facts.md"})
 
 
 class GuideRepository:
     """Reads the routed guide files (core.md plus the routable guides)."""
 
-    def __init__(self, guide_dir: str) -> None:
-        self._guide_dir = guide_dir
+    def __init__(self, content_dir: str) -> None:
+        self._content_dir = content_dir
 
     def load_core(self) -> str:
         """The router system prompt; read fresh so edits don't need a restart."""
@@ -26,7 +26,7 @@ class GuideRepository:
         return self._read(name)
 
     def _read(self, name: str) -> str:
-        with open(os.path.join(self._guide_dir, name), "r", encoding="utf-8") as file:
+        with open(os.path.join(self._content_dir, name), "r", encoding="utf-8") as file:
             return file.read()
 
 
@@ -37,8 +37,8 @@ class CardRepository:
     is (and isn't) a Pokémon — an in-memory lookup that costs 0 tokens.
     """
 
-    def __init__(self, guide_dir: str) -> None:
-        base = os.path.join(guide_dir, "pokemons-db")
+    def __init__(self, content_dir: str) -> None:
+        base = os.path.join(content_dir, "pokemons-db")
         self._slim_dir = os.path.join(base, "species_cards")
         self._full_dir = os.path.join(base, "species_cards_full")
 

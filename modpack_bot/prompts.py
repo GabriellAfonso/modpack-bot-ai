@@ -17,6 +17,21 @@ def fallback_message(language: str) -> str:
     return _FALLBACK.get(language, _FALLBACK["pt"])
 
 
+def facts_listing_message(lines: list[str], language: str) -> str:
+    """Deterministic big-list reply: a short lead-in plus the Python-built data.
+
+    Used for "liste todos os Pokémon do tipo X" — the list comes straight from
+    facts.md so it is never truncated (answer model caps at 500 tokens) nor
+    reworded/hallucinated, and costs 0 answer-model tokens.
+
+    Example:
+        >>> facts_listing_message(["- Fogo (1): Charizard"], "pt")
+        'Aqui está:\\n- Fogo (1): Charizard'
+    """
+    lead = "Here it is:" if language == "en" else "Aqui está:"
+    return lead + "\n" + "\n".join(lines)
+
+
 def pokemon_instruction(pokemon: str, language: str) -> str:
     """Directive used when a Pokémon card replaces wiki.md as the guide."""
     if language == "en":

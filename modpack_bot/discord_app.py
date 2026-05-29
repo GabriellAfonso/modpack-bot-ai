@@ -9,10 +9,46 @@ _NO_PERMISSION = "Você não tem permissão!"
 _GENERIC_ERROR = "Ocorreu um erro, tenta de novo!"
 
 
+class DiscordAdminResolver:
+    """Resolve the admin role to member mentions in the bot's guild.
+
+    Bound to the live client after it is built (the client is created after the
+    Responder, so the reference is filled in via bind()). Implements the
+    AdminResolver Protocol the Responder depends on. Reading `role.members`
+    needs the Server Members privileged intent (enabled in build_client).
+    """
+
+    def __init__(self, channel_id: str, role_name: str) -> None:
+        self._channel_id = channel_id
+        self._role_name = role_name
+        self._client: discord.Client | None = None
+
+    def bind(self, client: discord.Client) -> None:
+        """Attach the live client once it exists."""
+        self._client = client
+
+    def mentions(self) -> list[str]:
+        role = self._admin_role()
+        if role is None:
+            return []
+        # Skip bots (the bot itself carries the Admin role) — only humans.
+        return [member.mention for member in role.members if not member.bot]
+
+    def _admin_role(self) -> "discord.Role | None":
+        if self._client is None:
+            return None
+        channel = self._client.get_channel(int(self._channel_id))
+        guild = getattr(channel, "guild", None)
+        if guild is None:
+            return None
+        return discord.utils.get(guild.roles, name=self._role_name)
+
+
 def build_client(channel_id: str, responder: Responder) -> discord.Client:
     """Build the Discord client wired to answer in a single channel."""
     intents = discord.Intents.default()
     intents.message_content = True
+    intents.members = True  # required to read role.members for the admins tool.
     client = discord.Client(intents=intents)
 
     @client.event

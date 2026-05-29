@@ -1,10 +1,15 @@
 """Classify an incoming message into (guide_file, language)."""
 
+from modpack_bot.admins import TOOL_ADMINS
 from modpack_bot.guides import VALID_GUIDES, GuideRepository
 from modpack_bot.llm import ROUTER_MODELS, ModelCompleter
 
-# A routed result: the guide to answer from (None when nothing fits) + language.
+# A routed result: the guide file OR a tool label to answer from (None when
+# nothing fits) + language.
 Route = tuple[str | None, str]
+
+# Tool labels the router may emit instead of a guide file (live data, not files).
+VALID_TOOLS = frozenset({TOOL_ADMINS})
 
 _LANGUAGES = ("pt", "en")
 _DEFAULT_LANGUAGE = "pt"
@@ -24,7 +29,8 @@ def parse_route(raw: str) -> Route:
     guide_part, _, language_part = raw.strip().lower().partition("|")
     guide_file = guide_part.strip()
     language = language_part.strip()
-    guide_file = guide_file if guide_file in VALID_GUIDES else None
+    routable = guide_file in VALID_GUIDES or guide_file in VALID_TOOLS
+    guide_file = guide_file if routable else None
     language = language if language in _LANGUAGES else _DEFAULT_LANGUAGE
     return guide_file, language
 

@@ -10,14 +10,15 @@ class Settings:
 
     Example:
         >>> settings = load_settings()
-        >>> settings.guide_dir
-        'guide'
+        >>> settings.content_dir
+        'content'
     """
 
     discord_token: str
     groq_api_key: str
     channel_id: str
-    guide_dir: str = "guide"
+    content_dir: str = "content"
+    admin_role: str = "Admin"  # Discord role whose members the admins tool lists.
 
 
 def _require(name: str) -> str:
@@ -34,4 +35,5 @@ def load_settings() -> Settings:
         discord_token=_require("DISCORD_TOKEN"),
         groq_api_key=_require("GROQ_API_KEY"),
         channel_id=_require("CANAL_ID"),
+        admin_role=os.getenv("ADMIN_ROLE", "Admin"),
     )

@@ -50,3 +50,13 @@ class FakeCardRepository:
 
     def load_card(self, name: str, full: bool = False) -> str | None:
         return self._cards.get(name)
+
+
+class FakeAdminResolver:
+    """In-memory AdminResolver returning canned Discord mentions."""
+
+    def __init__(self, mentions: list[str] | None = None) -> None:
+        self._mentions = mentions or []
+
+    def mentions(self) -> list[str]:
+        return self._mentions

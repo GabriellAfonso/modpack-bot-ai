@@ -1,5 +1,6 @@
 from modpack_bot.prompts import (
     build_system_prompt,
+    facts_listing_message,
     fallback_message,
     non_pokemon_instruction,
     pokemon_instruction,
@@ -22,6 +23,11 @@ def test_pokemon_instruction_names_the_pokemon_and_pwiki():
 def test_non_pokemon_instruction_forbids_pwiki():
     assert "Não mencione `/pwiki`" in non_pokemon_instruction("pt")
     assert "Do not mention `/pwiki`" in non_pokemon_instruction("en")
+
+
+def test_facts_listing_message_leads_then_lists_per_language():
+    assert facts_listing_message(["- Fogo (1): X"], "pt") == "Aqui está:\n- Fogo (1): X"
+    assert facts_listing_message(["- Fogo (1): X"], "en") == "Here it is:\n- Fogo (1): X"
 
 
 def test_system_prompt_embeds_guide_and_instruction():
