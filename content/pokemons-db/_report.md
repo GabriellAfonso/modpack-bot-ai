@@ -1,0 +1,577 @@
+# Relatório de merge — banco consolidado de Pokémon
+
+## Ordem de carga (maior sobrescreve)
+
+1. Cobblemon (base)
+2. Mega Showdown
+3. Complete Cobblemon Collection
+4. Cobblemon Legendary Monuments
+
+## Totais
+
+- **Total de mons no banco:** 1025
+- Somente do base (sem patch de addon): 829
+- Adicionados por addons (novos mons): 0
+- Modificados por addons (patch em mon existente): 184
+- Total de arquivos de spawn: 920
+- Spawns desabilitados (`enabled:false`): 6
+- Registros incompletos (addition sem base): 0
+
+## Mons adicionados por addon
+
+## Mons modificados por addon (patches)
+
+- `abomasnow` ← Mega Showdown, Complete Cobblemon Collection
+- `appletun` ← Complete Cobblemon Collection
+- `applin` ← Complete Cobblemon Collection
+- `arceus` ← Mega Showdown, Complete Cobblemon Collection
+- `archaludon` ← Mega Showdown, Complete Cobblemon Collection
+- `arctibax` ← Complete Cobblemon Collection
+- `audino` ← Complete Cobblemon Collection
+- `azelf` ← Mega Showdown, Complete Cobblemon Collection
+- `baxcalibur` ← Complete Cobblemon Collection
+- `beautifly` ← Complete Cobblemon Collection
+- `bergmite` ← Complete Cobblemon Collection
+- `bisharp` ← Complete Cobblemon Collection
+- `blacephalon` ← Complete Cobblemon Collection
+- `blipbug` ← Mega Showdown, Complete Cobblemon Collection
+- `bombirdier` ← Complete Cobblemon Collection
+- `brutebonnet` ← Complete Cobblemon Collection
+- `burmy` ← Mega Showdown, Complete Cobblemon Collection
+- `buzzwole` ← Complete Cobblemon Collection
+- `calyrex` ← Complete Cobblemon Collection
+- `carkol` ← Complete Cobblemon Collection
+- `cascoon` ← Complete Cobblemon Collection
+- `castform` ← Mega Showdown, Complete Cobblemon Collection
+- `celebi` ← Complete Cobblemon Collection
+- `celesteela` ← Complete Cobblemon Collection
+- `charjabug` ← Complete Cobblemon Collection
+- `cherrim` ← Mega Showdown, Complete Cobblemon Collection
+- `cherubi` ← Mega Showdown, Complete Cobblemon Collection
+- `chienpao` ← Complete Cobblemon Collection
+- `chiyu` ← Complete Cobblemon Collection
+- `coalossal` ← Complete Cobblemon Collection
+- `cobalion` ← Complete Cobblemon Collection
+- `cosmoem` ← Mega Showdown, Complete Cobblemon Collection
+- `cosmog` ← Mega Showdown, Complete Cobblemon Collection
+- `cramorant` ← Mega Showdown
+- `cresselia` ← Complete Cobblemon Collection
+- `darkrai` ← Mega Showdown, Complete Cobblemon Collection
+- `delcatty` ← Complete Cobblemon Collection
+- `deoxys` ← Mega Showdown, Complete Cobblemon Collection
+- `dialga` ← Mega Showdown, Complete Cobblemon Collection
+- `diancie` ← Complete Cobblemon Collection
+- `dipplin` ← Complete Cobblemon Collection
+- `dottler` ← Mega Showdown, Complete Cobblemon Collection
+- `duraludon` ← Mega Showdown, Complete Cobblemon Collection
+- `dustox` ← Complete Cobblemon Collection
+- `enamorus` ← Complete Cobblemon Collection
+- `entei` ← Mega Showdown, Complete Cobblemon Collection
+- `eternatus` ← Complete Cobblemon Collection
+- `fezandipiti` ← Complete Cobblemon Collection
+- `flapple` ← Complete Cobblemon Collection
+- `fluttermane` ← Complete Cobblemon Collection
+- `frigibax` ← Complete Cobblemon Collection
+- `frosmoth` ← Complete Cobblemon Collection
+- `genesect` ← Mega Showdown, Complete Cobblemon Collection
+- `giratina` ← Mega Showdown, Complete Cobblemon Collection
+- `glalie` ← Mega Showdown
+- `glastrier` ← Mega Showdown, Complete Cobblemon Collection
+- `gougingfire` ← Complete Cobblemon Collection
+- `greattusk` ← Complete Cobblemon Collection
+- `greavard` ← Complete Cobblemon Collection
+- `groudon` ← Mega Showdown, Complete Cobblemon Collection
+- `grubbin` ← Complete Cobblemon Collection
+- `gulpin` ← Complete Cobblemon Collection
+- `guzzlord` ← Complete Cobblemon Collection
+- `heatran` ← Complete Cobblemon Collection
+- `heliolisk` ← Complete Cobblemon Collection
+- `helioptile` ← Complete Cobblemon Collection
+- `hooh` ← Mega Showdown
+- `hoopa` ← Complete Cobblemon Collection
+- `houndstone` ← Complete Cobblemon Collection
+- `hydrapple` ← Complete Cobblemon Collection
+- `indeedee` ← Complete Cobblemon Collection
+- `ironboulder` ← Complete Cobblemon Collection
+- `ironbundle` ← Complete Cobblemon Collection
+- `ironcrown` ← Complete Cobblemon Collection
+- `ironhands` ← Complete Cobblemon Collection
+- `ironjugulis` ← Complete Cobblemon Collection
+- `ironmoth` ← Complete Cobblemon Collection
+- `ironthorns` ← Complete Cobblemon Collection
+- `irontreads` ← Complete Cobblemon Collection
+- `ironvaliant` ← Complete Cobblemon Collection
+- `jirachi` ← Complete Cobblemon Collection
+- `kartana` ← Complete Cobblemon Collection
+- `keldeo` ← Mega Showdown, Complete Cobblemon Collection
+- `kingambit` ← Complete Cobblemon Collection
+- `klefki` ← Mega Showdown
+- `koraidon` ← Mega Showdown, Complete Cobblemon Collection
+- `kubfu` ← Complete Cobblemon Collection
+- `kyogre` ← Mega Showdown, Complete Cobblemon Collection
+- `kyurem` ← Complete Cobblemon Collection
+- `landorus` ← Complete Cobblemon Collection
+- `latias` ← Mega Showdown
+- `latios` ← Mega Showdown
+- `lokix` ← Complete Cobblemon Collection
+- `lugia` ← Mega Showdown
+- `lunala` ← Mega Showdown, Complete Cobblemon Collection
+- `lycanroc` ← Complete Cobblemon Collection
+- `magearna` ← Complete Cobblemon Collection
+- `manaphy` ← Complete Cobblemon Collection
+- `mandibuzz` ← Complete Cobblemon Collection
+- `marshadow` ← Mega Showdown, Complete Cobblemon Collection
+- `melmetal` ← Mega Showdown, Complete Cobblemon Collection
+- `meloetta` ← Mega Showdown, Complete Cobblemon Collection
+- `meltan` ← Mega Showdown, Complete Cobblemon Collection
+- `mesprit` ← Mega Showdown, Complete Cobblemon Collection
+- `mewtwo` ← Mega Showdown
+- `minior` ← Mega Showdown, Complete Cobblemon Collection
+- `miraidon` ← Mega Showdown, Complete Cobblemon Collection
+- `mothim` ← Mega Showdown, Complete Cobblemon Collection
+- `munkidori` ← Complete Cobblemon Collection
+- `necrozma` ← Complete Cobblemon Collection
+- `nihilego` ← Complete Cobblemon Collection
+- `nymble` ← Complete Cobblemon Collection
+- `ogerpon` ← Mega Showdown, Complete Cobblemon Collection
+- `okidogi` ← Complete Cobblemon Collection
+- `oranguru` ← Complete Cobblemon Collection
+- `orbeetle` ← Mega Showdown, Complete Cobblemon Collection
+- `oricorio` ← Mega Showdown, Complete Cobblemon Collection
+- `palkia` ← Mega Showdown, Complete Cobblemon Collection
+- `palpitoad` ← Complete Cobblemon Collection
+- `pancham` ← Complete Cobblemon Collection
+- `pangoro` ← Complete Cobblemon Collection
+- `passimian` ← Complete Cobblemon Collection
+- `pawmi` ← Complete Cobblemon Collection
+- `pawmo` ← Complete Cobblemon Collection
+- `pawmot` ← Complete Cobblemon Collection
+- `pawniard` ← Complete Cobblemon Collection
+- `pecharunt` ← Complete Cobblemon Collection
+- `pheromosa` ← Complete Cobblemon Collection
+- `phione` ← Complete Cobblemon Collection
+- `pikachu` ← Mega Showdown
+- `ragingbolt` ← Complete Cobblemon Collection
+- `raikou` ← Complete Cobblemon Collection
+- `reshiram` ← Mega Showdown, Complete Cobblemon Collection
+- `roaringmoon` ← Complete Cobblemon Collection
+- `rockruff` ← Mega Showdown, Complete Cobblemon Collection
+- `rolycoly` ← Complete Cobblemon Collection
+- `runerigus` ← Complete Cobblemon Collection
+- `sandyshocks` ← Complete Cobblemon Collection
+- `screamtail` ← Complete Cobblemon Collection
+- `seismitoad` ← Complete Cobblemon Collection
+- `seviper` ← Complete Cobblemon Collection
+- `shaymin` ← Mega Showdown, Complete Cobblemon Collection
+- `silcoon` ← Complete Cobblemon Collection
+- `silvally` ← Mega Showdown, Complete Cobblemon Collection
+- `skitty` ← Complete Cobblemon Collection
+- `skuntank` ← Complete Cobblemon Collection
+- `slitherwing` ← Complete Cobblemon Collection
+- `snom` ← Complete Cobblemon Collection
+- `snover` ← Mega Showdown, Complete Cobblemon Collection
+- `solgaleo` ← Mega Showdown, Complete Cobblemon Collection
+- `spectrier` ← Mega Showdown, Complete Cobblemon Collection
+- `stakataka` ← Complete Cobblemon Collection
+- `stunky` ← Complete Cobblemon Collection
+- `suicune` ← Complete Cobblemon Collection
+- `swalot` ← Complete Cobblemon Collection
+- `tapubulu` ← Mega Showdown, Complete Cobblemon Collection
+- `tapufini` ← Mega Showdown, Complete Cobblemon Collection
+- `tapukoko` ← Mega Showdown, Complete Cobblemon Collection
+- `tapulele` ← Mega Showdown, Complete Cobblemon Collection
+- `terapagos` ← Complete Cobblemon Collection
+- `terrakion` ← Complete Cobblemon Collection
+- `thundurus` ← Complete Cobblemon Collection
+- `tinglu` ← Complete Cobblemon Collection
+- `tornadus` ← Complete Cobblemon Collection
+- `tympole` ← Complete Cobblemon Collection
+- `typenull` ← Mega Showdown, Complete Cobblemon Collection
+- `urshifu` ← Mega Showdown, Complete Cobblemon Collection
+- `uxie` ← Mega Showdown, Complete Cobblemon Collection
+- `victini` ← Mega Showdown, Complete Cobblemon Collection
+- `vikavolt` ← Complete Cobblemon Collection
+- `virizion` ← Complete Cobblemon Collection
+- `volcanion` ← Mega Showdown, Complete Cobblemon Collection
+- `vullaby` ← Complete Cobblemon Collection
+- `wochien` ← Complete Cobblemon Collection
+- `wormadam` ← Mega Showdown, Complete Cobblemon Collection
+- `wurmple` ← Complete Cobblemon Collection
+- `xurkitree` ← Complete Cobblemon Collection
+- `yveltal` ← Complete Cobblemon Collection
+- `zacian` ← Complete Cobblemon Collection
+- `zamazenta` ← Complete Cobblemon Collection
+- `zangoose` ← Complete Cobblemon Collection
+- `zekrom` ← Mega Showdown, Complete Cobblemon Collection
+- `zeraora` ← Complete Cobblemon Collection
+- `zygarde` ← Complete Cobblemon Collection
+
+## Conflitos de species resolvidos
+
+- species `blastoise`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `charizard`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `gengar`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `pinsir`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `venusaur`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `banette`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `mawile`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `metagross`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `rayquaza`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `rotom`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `darmanitan`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `kyurem`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `landorus`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `thundurus`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `tornadus`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `hoopa`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `zygarde`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `lycanroc`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `necrozma`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `oricorio`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `calyrex`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `eternatus`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `kubfu`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `zacian`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `zamazenta`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `enamorus`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `ursaluna`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `terapagos`: whole file replaced by Mega Showdown (was from Cobblemon (base))
+- species `arceus`: whole file replaced by Complete Cobblemon Collection (was from Cobblemon (base))
+- species `dialga`: whole file replaced by Complete Cobblemon Collection (was from Cobblemon (base))
+- species `giratina`: whole file replaced by Complete Cobblemon Collection (was from Cobblemon (base))
+- species `palkia`: whole file replaced by Complete Cobblemon Collection (was from Cobblemon (base))
+- species `thundurus`: whole file replaced by Complete Cobblemon Collection (was from Mega Showdown)
+- species `zygarde`: whole file replaced by Complete Cobblemon Collection (was from Mega Showdown)
+- species `lycanroc`: whole file replaced by Complete Cobblemon Collection (was from Mega Showdown)
+- species `silvally`: whole file replaced by Complete Cobblemon Collection (was from Cobblemon (base))
+- species `ogerpon`: whole file replaced by Complete Cobblemon Collection (was from Cobblemon (base))
+- species `abomasnow`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `arceus`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `archaludon`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `azelf`: patched by Mega Showdown (fields: behaviour, implemented)
+- species `blipbug`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `burmy`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `castform`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `cherrim`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `cherubi`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `cosmoem`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `cosmog`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `cramorant`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `darkrai`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `deoxys`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `dialga`: patched by Mega Showdown (fields: behaviour, hitbox, implemented)
+- species `dottler`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `duraludon`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `entei`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `genesect`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `giratina`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `glalie`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `glastrier`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `groudon`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `hooh`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `keldeo`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `klefki`: patched by Mega Showdown (fields: drops, implemented)
+- species `koraidon`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `kyogre`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `latias`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `latios`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `lugia`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `lunala`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `marshadow`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, shoulderMountable)
+- species `melmetal`: patched by Mega Showdown (fields: baseScale, behaviour, drops, hitbox, implemented, riding)
+- species `meloetta`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `meltan`: patched by Mega Showdown (fields: baseScale, behaviour, drops, hitbox, implemented)
+- species `mesprit`: patched by Mega Showdown (fields: behaviour, implemented)
+- species `mewtwo`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `minior`: patched by Mega Showdown (fields: behaviour, implemented, shoulderEffects, shoulderMountable)
+- species `miraidon`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `mothim`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `ogerpon`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `orbeetle`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `oricorio`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `palkia`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `pikachu`: patched by Mega Showdown (fields: forms)
+- species `reshiram`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `rockruff`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `shaymin`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, shoulderMountable)
+- species `silvally`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `snover`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `solgaleo`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `spectrier`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `tapubulu`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `tapufini`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `tapukoko`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `tapulele`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `typenull`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `urshifu`: patched by Mega Showdown (fields: baseScale, hitbox, implemented)
+- species `uxie`: patched by Mega Showdown (fields: behaviour, implemented)
+- species `victini`: patched by Mega Showdown (fields: baseScale, implemented)
+- species `volcanion`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `wormadam`: patched by Mega Showdown (fields: baseScale, behaviour, hitbox, implemented)
+- species `zekrom`: patched by Mega Showdown (fields: baseScale, hitbox, implemented, riding)
+- species `celebi`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `entei`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `raikou`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `suicune`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `beautifly`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `cascoon`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `castform`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `delcatty`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `deoxys`: patched by Complete Cobblemon Collection (fields: baseScale, behaviour, drops, hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `dustox`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `groudon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `gulpin`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `jirachi`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `kyogre`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `seviper`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `silcoon`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `skitty`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `swalot`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `wurmple`: patched by Complete Cobblemon Collection (fields: implemented)
+- species `zangoose`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `abomasnow`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `azelf`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `burmy`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `cherrim`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `cherubi`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `cresselia`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `darkrai`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `dialga`: patched by Complete Cobblemon Collection (fields: baseScale, behaviour, hitbox, implemented, moves, riding)
+- species `giratina`: patched by Complete Cobblemon Collection (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `heatran`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `manaphy`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `mesprit`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `mothim`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `palkia`: patched by Complete Cobblemon Collection (fields: behaviour, hitbox, implemented, riding)
+- species `phione`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `shaymin`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `skuntank`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable, standingEyeHeight, swimmingEyeHeight)
+- species `snover`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `stunky`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `uxie`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `wormadam`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: evolutions)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms, implemented)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms, implemented)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms, implemented)
+- species `arceus`: patched by Complete Cobblemon Collection (fields: forms)
+- species `dialga`: patched by Complete Cobblemon Collection (fields: forms)
+- species `giratina`: patched by Complete Cobblemon Collection (fields: forms)
+- species `palkia`: patched by Complete Cobblemon Collection (fields: forms)
+- species `audino`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `bisharp`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `cobalion`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `genesect`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `keldeo`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `kyurem`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `landorus`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `mandibuzz`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `meloetta`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `palpitoad`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `pawniard`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `reshiram`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `seismitoad`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `terrakion`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `thundurus`: patched by Complete Cobblemon Collection (fields: baseScale, behaviour, evolutions, forms, hitbox, implemented)
+- species `tornadus`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `tympole`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `victini`: patched by Complete Cobblemon Collection (fields: baseScale, implemented)
+- species `virizion`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `vullaby`: patched by Complete Cobblemon Collection (fields: implemented)
+- species `zekrom`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `bergmite`: patched by Complete Cobblemon Collection (fields: evolutions, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `diancie`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `heliolisk`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `helioptile`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `hoopa`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `pancham`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `pangoro`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `volcanion`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `yveltal`: patched by Complete Cobblemon Collection (fields: baseScale, behaviour, hitbox, implemented, riding)
+- species `zygarde`: patched by Complete Cobblemon Collection (fields: forms)
+- species `zygarde`: patched by Complete Cobblemon Collection (fields: forms)
+- species `zygarde`: patched by Complete Cobblemon Collection (fields: forms)
+- species `zygarde`: patched by Complete Cobblemon Collection (fields: forms)
+- species `blacephalon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `buzzwole`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `celesteela`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `charjabug`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `cosmoem`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `cosmog`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `grubbin`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `guzzlord`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `kartana`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `lunala`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `magearna`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `marshadow`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `minior`: patched by Complete Cobblemon Collection (fields: implemented, shoulderEffects, shoulderMountable)
+- species `necrozma`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `nihilego`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `oranguru`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `oricorio`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `passimian`: patched by Complete Cobblemon Collection (fields: implemented)
+- species `pheromosa`: patched by Complete Cobblemon Collection (fields: implemented)
+- species `rockruff`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `solgaleo`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `stakataka`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `tapubulu`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `tapufini`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `tapukoko`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `tapulele`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `typenull`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `vikavolt`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `xurkitree`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `zeraora`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `lycanroc`: patched by Complete Cobblemon Collection (fields: forms)
+- species `lycanroc`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: baseScale, forms, hitbox, implemented)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: baseScale, evolutions, hitbox, implemented)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `silvally`: patched by Complete Cobblemon Collection (fields: forms)
+- species `melmetal`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `meltan`: patched by Complete Cobblemon Collection (fields: evolutions, hitbox, implemented)
+- species `appletun`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `applin`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `blipbug`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `calyrex`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `carkol`: patched by Complete Cobblemon Collection (fields: implemented)
+- species `coalossal`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `dottler`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `duraludon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `eternatus`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `flapple`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `frosmoth`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `glastrier`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `indeedee`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, maleRatio)
+- species `kubfu`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `orbeetle`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `rolycoly`: patched by Complete Cobblemon Collection (fields: hitbox, implemented, standingEyeHeight, swimmingEyeHeight)
+- species `runerigus`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `snom`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `spectrier`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `urshifu`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `zacian`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `zamazenta`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `enamorus`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `archaludon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `arctibax`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `baxcalibur`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `bombirdier`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `brutebonnet`: patched by Complete Cobblemon Collection (fields: implemented)
+- species `chienpao`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, shoulderMountable)
+- species `chiyu`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `dipplin`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `fezandipiti`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `fluttermane`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `frigibax`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `gougingfire`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `greattusk`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `greavard`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `houndstone`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `hydrapple`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `ironboulder`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `ironbundle`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `ironcrown`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `ironhands`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `ironjugulis`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `ironmoth`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `ironthorns`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `irontreads`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `ironvaliant`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `kingambit`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `koraidon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, riding)
+- species `lokix`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `miraidon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented, riding)
+- species `munkidori`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `nymble`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `okidogi`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `pawmi`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `pawmo`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `pawmot`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `pecharunt`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `ragingbolt`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `roaringmoon`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `sandyshocks`: patched by Complete Cobblemon Collection (fields: hitbox, implemented)
+- species `screamtail`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `slitherwing`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `terapagos`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `tinglu`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `wochien`: patched by Complete Cobblemon Collection (fields: baseScale, hitbox, implemented)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: forms)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: forms)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: forms)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: forms)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: evolutions)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: forms)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: forms)
+- species `ogerpon`: patched by Complete Cobblemon Collection (fields: forms)
+
+## Conflitos de spawn resolvidos (arquivo de mesmo nome)
+
+- spawn `0025_pikachu_cosmetic.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0351_castform.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0412_burmy.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0413_wormadam.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0414_mothim.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0420_cherubi.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0421_cherrim.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0459_snover.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0460_abomasnow.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0479_rotom.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0531_audino.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0554_darumaka_galarian.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0555_darmanitan_galarian.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0741_oricorio.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0744_rockruff.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0745_lycanroc.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0774_minior.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0824_blipbug.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0825_dottler.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0826_orbeetle.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+- spawn `0884_duraludon.json`: replaced by Complete Cobblemon Collection (was Mega Showdown)
+
+## Spawns desabilitados
+
+- `0000_pidgey_herd.json` (de Cobblemon (base))
+- `0841_flapple.json` (de Complete Cobblemon Collection)
+- `0842_appletun.json` (de Complete Cobblemon Collection)
+- `1011_dipplin.json` (de Complete Cobblemon Collection)
+- `1018_archaludon.json` (de Complete Cobblemon Collection)
+- `1019_hydrapple.json` (de Complete Cobblemon Collection)
+
+## Registros incompletos (addition sem species base)
+
+_nenhum_
+
+## Mons sem nenhum spawn em spawn_pool_world (135)
+
+appletun, arceus, archaludon, arctovish, arctozolt, articuno, azelf, blacephalon, brutebonnet, buzzwole, calyrex, celebi, celesteela, chienpao, chiyu, cobalion, cosmoem, cosmog, cresselia, darkrai, deoxys, dialga, diancie, dipplin, dracovish, dracozolt, enamorus, entei, eternatus, fezandipiti, flapple, fluttermane, genesect, gholdengo, giratina, glastrier, gougingfire, greattusk, groudon, guzzlord, heatran, hooh, hoopa, hydrapple, ironboulder, ironbundle, ironcrown, ironhands, ironjugulis, ironleaves, ironmoth, ironthorns, irontreads, ironvaliant, jirachi, kartana, keldeo, koraidon, kubfu, kyogre, kyurem, landorus, latias, latios, lugia, lunala, magearna, manaphy, marshadow, melmetal, meloetta, meltan, mesprit, mew, mewtwo, miraidon, moltres, munkidori, naganadel, necrozma, nihilego, ogerpon, okidogi, palkia, pecharunt, pheromosa, phione, poipole, ragingbolt, raikou, rayquaza, regice, regidrago, regieleki, regigigas, regirock, registeel, reshiram, roaringmoon, sandyshocks, screamtail, shaymin, silvally, slitherwing, solgaleo, spectrier, stakataka, suicune, tapubulu, tapufini, tapukoko, tapulele, terapagos, terrakion, thundurus, tinglu, tornadus, typenull, urshifu, uxie, victini, virizion, volcanion, walkingwake, wochien, xerneas, xurkitree, yveltal, zacian, zamazenta, zapdos, zarude, zekrom, zeraora, zygarde

@@ -1,0 +1,309 @@
+{
+  "nationalPokedexNumber": 717,
+  "name": "Yveltal",
+  "primaryType": "dark",
+  "secondaryType": "flying",
+  "maleRatio": -1,
+  "height": 58,
+  "weight": 2030,
+  "pokedex": [
+    "cobblemon.species.yveltal.desc"
+  ],
+  "labels": [
+    "gen6",
+    "legendary",
+    "restricted"
+  ],
+  "aspects": [],
+  "abilities": [
+    "darkaura",
+    "h:darkaura"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "baseStats": {
+    "hp": 126,
+    "attack": 131,
+    "defence": 95,
+    "special_attack": 131,
+    "special_defence": 98,
+    "speed": 99
+  },
+  "evYield": {
+    "hp": 3,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 340,
+  "experienceGroup": "slow",
+  "catchRate": 45,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 3,
+    "height": 4,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true,
+        "flySpeedHorizontal": 0.7
+      },
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    }
+  },
+  "moves": [
+    "1:razorwind",
+    "1:gust",
+    "1:doubleteam",
+    "5:taunt",
+    "10:snarl",
+    "15:disable",
+    "20:suckerpunch",
+    "25:tailwind",
+    "30:roost",
+    "35:airslash",
+    "40:darkpulse",
+    "45:psychic",
+    "50:oblivionwing",
+    "55:phantomforce",
+    "60:foulplay",
+    "65:dragonrush",
+    "70:hurricane",
+    "75:focusblast",
+    "80:skyattack",
+    "85:hyperbeam",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:airslash",
+    "tm:block",
+    "tm:bodyslam",
+    "tm:cut",
+    "tm:darkpulse",
+    "tm:defog",
+    "tm:doubleteam",
+    "tm:dragonclaw",
+    "tm:dreameater",
+    "tm:dualwingbeat",
+    "tm:embargo",
+    "tm:endure",
+    "tm:facade",
+    "tm:fly",
+    "tm:focusblast",
+    "tm:foulplay",
+    "tm:gigaimpact",
+    "tm:heatwave",
+    "tm:honeclaws",
+    "tm:hurricane",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:knockoff",
+    "tm:laserfocus",
+    "tm:lashout",
+    "tm:payback",
+    "tm:phantomforce",
+    "tm:protect",
+    "tm:psychic",
+    "tm:raindance",
+    "tm:rest",
+    "tm:rockslide",
+    "tm:roost",
+    "tm:shadowball",
+    "tm:shadowclaw",
+    "tm:skyattack",
+    "tm:skydrop",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:suckerpunch",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:tailwind",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:torment",
+    "tm:uturn",
+    "tm:zenheadbutt",
+    "tutor:aerialace",
+    "tutor:block",
+    "tutor:darkpulse",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:foulplay",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:knockoff",
+    "tutor:laserfocus",
+    "tutor:lashout",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:roost",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:suckerpunch",
+    "tutor:swift",
+    "tutor:tailwind",
+    "tutor:zenheadbutt",
+    "legacy:confide",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
+  ],
+  "evolutions": [],
+  "implemented": true,
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [
+          {
+            "muffleEnabled": true,
+            "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+            "playForNonPassengers": true,
+            "soundLocation": "cobblemon:ride.loop.wind",
+            "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+          },
+          {
+            "muffleEnabled": true,
+            "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+            "playForNonPassengers": true,
+            "soundLocation": "cobblemon:ride.loop.leather",
+            "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+          }
+        ],
+        "stats": {
+          "ACCELERATION": "67-82",
+          "JUMP": "50-80",
+          "SKILL": "55-85",
+          "SPEED": "55-80",
+          "STAMINA": "30-92"
+        }
+      },
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "55-65",
+          "JUMP": "15-25",
+          "SKILL": "10-25",
+          "SPEED": "25-40",
+          "STAMINA": "20-30"
+        }
+      }
+    },
+    "seats": [
+      {
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "poseOffsets": [
+          {
+            "offset": {
+              "x": 0.0047415113,
+              "y": -1.6152971,
+              "z": 0.35461712
+            },
+            "poseTypes": [
+              "STAND"
+            ]
+          },
+          {
+            "offset": {
+              "x": -0.003806442,
+              "y": -1.7203209,
+              "z": 0.12983066
+            },
+            "poseTypes": [
+              "WALK"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.039005388,
+              "y": -2.4511793,
+              "z": 0.10381147
+            },
+            "poseTypes": [
+              "HOVER"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.056267936,
+              "y": -2.0914204,
+              "z": -0.45272845
+            },
+            "poseTypes": [
+              "FLY"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.0,
+              "y": -0.7674751,
+              "z": -0.27694723
+            },
+            "poseTypes": [
+              "FLOAT"
+            ]
+          },
+          {
+            "offset": {
+              "x": -0.003806442,
+              "y": -1.7203209,
+              "z": 0.12983066
+            },
+            "poseTypes": [
+              "SWIM"
+            ]
+          },
+          {
+            "offset": {
+              "x": 0.0047415113,
+              "y": -1.6152971,
+              "z": 0.35461712
+            },
+            "poseTypes": [
+              "GLIDE"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

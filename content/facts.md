@@ -1,0 +1,269 @@
+# Números do Modpack
+
+Dados gerados automaticamente a partir do banco de Pokémon. Não editar à mão.
+
+- Total de Pokémon no modpack: 1025
+- Tipos existentes (18), com quantos Pokémon de cada:
+- Aço (65), Água (154), Dragão (70), Elétrico (69), Fada (64), Fantasma (65), Fogo (81), Gelo (48), Grama (127), Inseto (92), Lutador (73), Normal (131), Pedra (74), Psíquico (102), Sombrio (69), Terra (75), Veneno (83), Voador (109)
+- Total de biomas mapeados: 56
+- Pokémon com spawn natural no mundo: 890
+
+## Pokémon por tipo
+
+Cada Pokémon aparece em todos os seus tipos (primário e secundário).
+
+- Aço (65): Aegislash, Aggron, Archaludon, Aron, Bastiodon, Beldum, Bisharp, Bronzong, Bronzor, Celesteela, Cobalion, Copperajah, Corviknight, Cufant, Dialga, Doublade, Duraludon, Durant, Empoleon, Escavalier, Excadrill, Ferroseed, Ferrothorn, Forretress, Genesect, Gholdengo, Heatran, Honedge, Iron Crown, Iron Treads, Jirachi, Kartana, Kingambit, Klang, Klefki, Klink, Klinklang, Lairon, Lucario, Magearna, Magnemite, Magneton, Magnezone, Mawile, Melmetal, Meltan, Metagross, Metang, Orthworm, Pawniard, Perrserker, Probopass, Registeel, Revavroom, Scizor, Shieldon, Skarmory, Solgaleo, Stakataka, Steelix, Tinkatink, Tinkaton, Tinkatuff, Togedemaru, Varoom
+- Água (154): Alomomola, Araquanid, Arctovish, Arrokuda, Azumarill, Barbaracle, Barboach, Barraskewda, Basculegion, Basculin, Bibarel, Binacle, Blastoise, Brionne, Bruxish, Buizel, Carracosta, Carvanha, Chewtle, Chinchou, Clamperl, Clauncher, Clawitzer, Cloyster, Corphish, Corsola, Cramorant, Crawdaunt, Croconaw, Dewgong, Dewott, Dewpider, Dondozo, Dracovish, Drednaw, Drizzile, Ducklett, Empoleon, Feebas, Feraligatr, Finizen, Finneon, Floatzel, Frillish, Froakie, Frogadier, Gastrodon, Goldeen, Golduck, Golisopod, Gorebyss, Greninja, Gyarados, Horsea, Huntail, Inteleon, Iron Bundle, Jellicent, Kabuto, Kabutops, Keldeo, Kingdra, Kingler, Krabby, Kyogre, Lanturn, Lapras, Lombre, Lotad, Ludicolo, Lumineon, Luvdisc, Magikarp, Manaphy, Mantine, Mantyke, Mareanie, Marill, Marshtomp, Milotic, Mudkip, Octillery, Omanyte, Omastar, Oshawott, Palafin, Palkia, Palpitoad, Panpour, Pelipper, Phione, Piplup, Politoed, Poliwag, Poliwhirl, Poliwrath, Popplio, Primarina, Prinplup, Psyduck, Pyukumuku, Quagsire, Quaquaval, Quaxly, Quaxwell, Qwilfish, Relicanth, Remoraid, Samurott, Seadra, Seaking, Sealeo, Seel, Seismitoad, Sharpedo, Shellder, Shellos, Simipour, Skrelp, Slowbro, Slowking, Slowpoke, Sobble, Spheal, Squirtle, Starmie, Staryu, Suicune, Surskit, Swampert, Swanna, Tapu Fini, Tatsugiri, Tentacool, Tentacruel, Tirtouga, Totodile, Toxapex, Tympole, Vaporeon, Veluza, Volcanion, Wailmer, Wailord, Walking Wake, Walrein, Wartortle, Whiscash, Wiglett, Wimpod, Wingull, Wishiwashi, Wooper, Wugtrio
+- Dragão (70): Altaria, Appletun, Applin, Archaludon, Arctibax, Axew, Bagon, Baxcalibur, Cyclizar, Deino, Dialga, Dipplin, Dracovish, Dracozolt, Dragalge, Dragapult, Dragonair, Dragonite, Drakloak, Drampa, Dratini, Dreepy, Druddigon, Duraludon, Eternatus, Flapple, Flygon, Fraxure, Frigibax, Gabite, Garchomp, Gible, Giratina, Goodra, Goomy, Gouging Fire, Guzzlord, Hakamo-o, Haxorus, Hydrapple, Hydreigon, Jangmo-o, Kingdra, Kommo-o, Koraidon, Kyurem, Latias, Latios, Miraidon, Naganadel, Noibat, Noivern, Palkia, Raging Bolt, Rayquaza, Regidrago, Reshiram, Roaring Moon, Salamence, Shelgon, Sliggoo, Tatsugiri, Turtonator, Tyrantrum, Tyrunt, Vibrava, Walking Wake, Zekrom, Zweilous, Zygarde
+- Elétrico (69): Ampharos, Arctozolt, Bellibolt, Blitzle, Boltund, Charjabug, Chinchou, Dedenne, Dracozolt, Eelektrik, Eelektross, Electabuzz, Electivire, Electrike, Electrode, Elekid, Emolga, Flaaffy, Galvantula, Heliolisk, Helioptile, Iron Hands, Iron Thorns, Jolteon, Joltik, Kilowattrel, Lanturn, Luxio, Luxray, Magnemite, Magneton, Magnezone, Manectric, Mareep, Minun, Miraidon, Morpeko, Pachirisu, Pawmi, Pawmo, Pawmot, Pichu, Pikachu, Pincurchin, Plusle, Raging Bolt, Raichu, Raikou, Regieleki, Rotom, Sandy Shocks, Shinx, Stunfisk, Tadbulb, Tapu Koko, Thundurus, Togedemaru, Toxel, Toxtricity, Tynamo, Vikavolt, Voltorb, Wattrel, Xurkitree, Yamper, Zapdos, Zebstrika, Zekrom, Zeraora
+- Fada (64): Alcremie, Aromatisse, Azumarill, Azurill, Carbink, Clefable, Clefairy, Cleffa, Comfey, Cottonee, Cutiefly, Dachsbun, Dedenne, Diancie, Enamorus, Fezandipiti, Fidough, Flabebe, Floette, Florges, Flutter Mane, Gardevoir, Granbull, Grimmsnarl, Hatterene, Igglybuff, Impidimp, Iron Valiant, Jigglypuff, Kirlia, Klefki, Magearna, Marill, Mawile, Milcery, Mime Jr., Mimikyu, Morelull, Morgrem, Mr. Mime, Primarina, Ralts, Ribombee, Scream Tail, Shiinotic, Slurpuff, Snubbull, Spritzee, Swirlix, Sylveon, Tapu Bulu, Tapu Fini, Tapu Koko, Tapu Lele, Tinkatink, Tinkaton, Tinkatuff, Togekiss, Togepi, Togetic, Whimsicott, Wigglytuff, Xerneas, Zacian
+- Fantasma (65): Aegislash, Annihilape, Banette, Basculegion, Blacephalon, Brambleghast, Bramblin, Ceruledge, Chandelure, Cofagrigus, Cursola, Decidueye, Dhelmise, Doublade, Dragapult, Drakloak, Dreepy, Drifblim, Drifloon, Dusclops, Dusknoir, Duskull, Flutter Mane, Frillish, Froslass, Gastly, Gengar, Gholdengo, Gimmighoul, Giratina, Golett, Golurk, Gourgeist, Greavard, Haunter, Honedge, Hoopa, Houndstone, Jellicent, Lampent, Litwick, Lunala, Marshadow, Mimikyu, Misdreavus, Mismagius, Palossand, Pecharunt, Phantump, Poltchageist, Polteageist, Pumpkaboo, Rotom, Runerigus, Sableye, Sandygast, Shedinja, Shuppet, Sinistcha, Sinistea, Skeledirge, Spectrier, Spiritomb, Trevenant, Yamask
+- Fogo (81): Arcanine, Armarouge, Blacephalon, Blaziken, Braixen, Camerupt, Carkol, Centiskorch, Ceruledge, Chandelure, Charcadet, Charizard, Charmander, Charmeleon, Chi-Yu, Chimchar, Cinderace, Coalossal, Combusken, Crocalor, Cyndaquil, Darmanitan, Darumaka, Delphox, Emboar, Entei, Fennekin, Flareon, Fletchinder, Fuecoco, Gouging Fire, Growlithe, Heatmor, Heatran, Ho-Oh, Houndoom, Houndour, Incineroar, Infernape, Iron Moth, Lampent, Larvesta, Litleo, Litten, Litwick, Magby, Magcargo, Magmar, Magmortar, Moltres, Monferno, Ninetales, Numel, Oricorio, Pansear, Pignite, Ponyta, Pyroar, Quilava, Raboot, Rapidash, Reshiram, Salandit, Salazzle, Scorbunny, Scovillain, Simisear, Sizzlipede, Skeledirge, Slugma, Talonflame, Tepig, Torchic, Torkoal, Torracat, Turtonator, Typhlosion, Victini, Volcanion, Volcarona, Vulpix
+- Gelo (48): Abomasnow, Amaura, Arctibax, Arctovish, Arctozolt, Articuno, Aurorus, Avalugg, Baxcalibur, Beartic, Bergmite, Cetitan, Cetoddle, Chien-Pao, Cloyster, Crabominable, Cryogonal, Cubchoo, Delibird, Dewgong, Eiscue, Frigibax, Froslass, Frosmoth, Glaceon, Glalie, Glastrier, Iron Bundle, Jynx, Kyurem, Lapras, Mamoswine, Mr. Rime, Piloswine, Regice, Sealeo, Smoochum, Sneasel, Snom, Snorunt, Snover, Spheal, Swinub, Vanillish, Vanillite, Vanilluxe, Walrein, Weavile
+- Grama (127): Abomasnow, Amoonguss, Appletun, Applin, Arboliva, Bayleef, Bellossom, Bellsprout, Bounsweet, Brambleghast, Bramblin, Breloom, Brute Bonnet, Budew, Bulbasaur, Cacnea, Cacturne, Calyrex, Capsakid, Carnivine, Celebi, Cherrim, Cherubi, Chesnaught, Chespin, Chikorita, Cottonee, Cradily, Dartrix, Decidueye, Deerling, Dhelmise, Dipplin, Dolliv, Eldegoss, Exeggcute, Exeggutor, Ferroseed, Ferrothorn, Flapple, Floragato, Fomantis, Foongus, Gloom, Gogoat, Gossifleur, Gourgeist, Grookey, Grotle, Grovyle, Hoppip, Hydrapple, Iron Leaves, Ivysaur, Jumpluff, Kartana, Leafeon, Leavanny, Lileep, Lilligant, Lombre, Lotad, Ludicolo, Lurantis, Maractus, Meganium, Meowscarada, Morelull, Nuzleaf, Oddish, Ogerpon, Pansage, Paras, Parasect, Petilil, Phantump, Poltchageist, Pumpkaboo, Quilladin, Rillaboom, Roselia, Roserade, Rowlet, Sawsbuck, Sceptile, Scovillain, Seedot, Serperior, Servine, Sewaddle, Shaymin, Shiftry, Shiinotic, Shroomish, Simisage, Sinistcha, Skiddo, Skiploom, Smoliv, Snivy, Snover, Sprigatito, Steenee, Sunflora, Sunkern, Swadloon, Tangela, Tangrowth, Tapu Bulu, Thwackey, Toedscool, Toedscruel, Torterra, Treecko, Trevenant, Tropius, Tsareena, Turtwig, Venusaur, Victreebel, Vileplume, Virizion, Weepinbell, Whimsicott, Wo-Chien, Wormadam, Zarude
+- Inseto (92): Accelgor, Anorith, Araquanid, Ariados, Armaldo, Beautifly, Beedrill, Blipbug, Burmy, Butterfree, Buzzwole, Cascoon, Caterpie, Centiskorch, Charjabug, Combee, Crustle, Cutiefly, Dewpider, Dottler, Durant, Dustox, Dwebble, Escavalier, Forretress, Frosmoth, Galvantula, Genesect, Golisopod, Grubbin, Heracross, Illumise, Joltik, Kakuna, Karrablast, Kleavor, Kricketot, Kricketune, Larvesta, Leavanny, Ledian, Ledyba, Lokix, Masquerain, Metapod, Mothim, Nincada, Ninjask, Nymble, Orbeetle, Paras, Parasect, Pheromosa, Pineco, Pinsir, Rabsca, Rellor, Ribombee, Scatterbug, Scizor, Scolipede, Scyther, Sewaddle, Shedinja, Shelmet, Shuckle, Silcoon, Sizzlipede, Skorupi, Slither Wing, Snom, Spewpa, Spidops, Spinarak, Surskit, Swadloon, Tarountula, Venipede, Venomoth, Venonat, Vespiquen, Vikavolt, Vivillon, Volbeat, Volcarona, Weedle, Whirlipede, Wimpod, Wormadam, Wurmple, Yanma, Yanmega
+- Lutador (73): Annihilape, Bewear, Blaziken, Breloom, Buzzwole, Chesnaught, Clobbopus, Cobalion, Combusken, Conkeldurr, Crabominable, Crabrawler, Croagunk, Emboar, Falinks, Flamigo, Gallade, Grapploct, Great Tusk, Gurdurr, Hakamo-o, Hariyama, Hawlucha, Heracross, Hitmonchan, Hitmonlee, Hitmontop, Infernape, Iron Hands, Iron Valiant, Keldeo, Kommo-o, Koraidon, Kubfu, Lucario, Machamp, Machoke, Machop, Makuhita, Mankey, Marshadow, Medicham, Meditite, Mienfoo, Mienshao, Monferno, Okidogi, Pancham, Pangoro, Passimian, Pawmo, Pawmot, Pheromosa, Pignite, Poliwrath, Primeape, Quaquaval, Riolu, Sawk, Scrafty, Scraggy, Sirfetch’d, Slither Wing, Sneasler, Stufful, Terrakion, Throh, Timburr, Toxicroak, Tyrogue, Urshifu, Virizion, Zamazenta
+- Normal (131): Aipom, Ambipom, Arboliva, Arceus, Audino, Azurill, Bewear, Bibarel, Bidoof, Blissey, Bouffalant, Braviary, Buneary, Bunnelby, Castform, Chansey, Chatot, Cinccino, Cyclizar, Deerling, Delcatty, Diggersby, Ditto, Dodrio, Doduo, Dolliv, Drampa, Dubwool, Dudunsparce, Dunsparce, Eevee, Exploud, Farfetch’d, Farigiraf, Fearow, Fletchling, Furfrou, Furret, Girafarig, Glameow, Grafaiai, Greedent, Gumshoos, Happiny, Heliolisk, Helioptile, Herdier, Hoothoot, Igglybuff, Indeedee, Jigglypuff, Kangaskhan, Kecleon, Komala, Lechonk, Lickilicky, Lickitung, Lillipup, Linoone, Litleo, Lopunny, Loudred, Maushold, Meloetta, Meowth, Miltank, Minccino, Munchlax, Noctowl, Obstagoon, Oinkologne, Oranguru, Patrat, Persian, Pidgeot, Pidgeotto, Pidgey, Pidove, Pikipek, Porygon, Porygon-Z, Porygon2, Purugly, Pyroar, Raticate, Rattata, Regigigas, Rufflet, Sawsbuck, Sentret, Shroodle, Silvally, Skitty, Skwovet, Slaking, Slakoth, Smeargle, Smoliv, Snorlax, Spearow, Spinda, Squawkabilly, Stantler, Staraptor, Staravia, Starly, Stoutland, Stufful, Swablu, Swellow, Taillow, Tandemaus, Tauros, Teddiursa, Terapagos, Toucannon, Tranquill, Trumbeak, Type: Null, Unfezant, Ursaluna, Ursaring, Vigoroth, Watchog, Whismur, Wigglytuff, Wooloo, Wyrdeer, Yungoos, Zangoose, Zigzagoon
+- Pedra (74): Aerodactyl, Aggron, Amaura, Anorith, Archen, Archeops, Armaldo, Aron, Aurorus, Barbaracle, Bastiodon, Binacle, Boldore, Bonsly, Carbink, Carkol, Carracosta, Coalossal, Corsola, Cradily, Cranidos, Crustle, Diancie, Drednaw, Dwebble, Garganacl, Geodude, Gigalith, Glimmet, Glimmora, Golem, Graveler, Iron Boulder, Iron Thorns, Kabuto, Kabutops, Klawf, Kleavor, Lairon, Larvitar, Lileep, Lunatone, Lycanroc, Magcargo, Minior, Nacli, Naclstack, Nihilego, Nosepass, Omanyte, Omastar, Onix, Probopass, Pupitar, Rampardos, Regirock, Relicanth, Rhydon, Rhyhorn, Rhyperior, Rockruff, Roggenrola, Rolycoly, Shieldon, Shuckle, Solrock, Stakataka, Stonjourner, Sudowoodo, Terrakion, Tirtouga, Tyranitar, Tyrantrum, Tyrunt
+- Psíquico (102): Abra, Alakazam, Armarouge, Azelf, Baltoy, Beheeyem, Beldum, Bronzong, Bronzor, Bruxish, Calyrex, Celebi, Chimecho, Chingling, Claydol, Cosmoem, Cosmog, Cresselia, Delphox, Deoxys, Dottler, Drowzee, Duosion, Elgyem, Espathra, Espeon, Espurr, Exeggcute, Exeggutor, Farigiraf, Flittle, Gallade, Gardevoir, Girafarig, Gothita, Gothitelle, Gothorita, Grumpig, Hatenna, Hatterene, Hattrem, Hoopa, Hypno, Indeedee, Inkay, Iron Boulder, Iron Crown, Iron Leaves, Jirachi, Jynx, Kadabra, Kirlia, Latias, Latios, Lugia, Lunala, Lunatone, Malamar, Medicham, Meditite, Meloetta, Meowstic, Mesprit, Metagross, Metang, Mew, Mewtwo, Mime Jr., Mr. Mime, Mr. Rime, Munkidori, Munna, Musharna, Natu, Necrozma, Oranguru, Orbeetle, Rabsca, Ralts, Reuniclus, Scream Tail, Sigilyph, Slowbro, Slowking, Slowpoke, Smoochum, Solgaleo, Solosis, Solrock, Spoink, Starmie, Swoobat, Tapu Lele, Unown, Uxie, Veluza, Victini, Wobbuffet, Woobat, Wynaut, Wyrdeer, Xatu
+- Sombrio (69): Absol, Bisharp, Bombirdier, Brute Bonnet, Cacturne, Carvanha, Chi-Yu, Chien-Pao, Crawdaunt, Darkrai, Deino, Drapion, Greninja, Grimmsnarl, Guzzlord, Honchkrow, Houndoom, Houndour, Hydreigon, Impidimp, Incineroar, Inkay, Iron Jugulis, Kingambit, Krokorok, Krookodile, Liepard, Lokix, Mabosstiff, Malamar, Mandibuzz, Maschiff, Meowscarada, Mightyena, Morgrem, Morpeko, Murkrow, Nickit, Nuzleaf, Obstagoon, Overqwil, Pangoro, Pawniard, Poochyena, Purrloin, Roaring Moon, Sableye, Sandile, Scrafty, Scraggy, Sharpedo, Shiftry, Skuntank, Sneasel, Spiritomb, Stunky, Thievul, Ting-Lu, Tyranitar, Umbreon, Urshifu, Vullaby, Weavile, Wo-Chien, Yveltal, Zarude, Zoroark, Zorua, Zweilous
+- Terra (75): Baltoy, Barboach, Camerupt, Claydol, Clodsire, Cubone, Diggersby, Diglett, Donphan, Drilbur, Dugtrio, Excadrill, Flygon, Gabite, Garchomp, Gastrodon, Geodude, Gible, Gligar, Gliscor, Golem, Golett, Golurk, Graveler, Great Tusk, Groudon, Hippopotas, Hippowdon, Iron Treads, Krokorok, Krookodile, Landorus, Larvitar, Mamoswine, Marowak, Marshtomp, Mudbray, Mudsdale, Nidoking, Nidoqueen, Nincada, Numel, Onix, Palossand, Palpitoad, Phanpy, Piloswine, Pupitar, Quagsire, Rhydon, Rhyhorn, Rhyperior, Runerigus, Sandaconda, Sandile, Sandshrew, Sandslash, Sandy Shocks, Sandygast, Seismitoad, Silicobra, Steelix, Stunfisk, Swampert, Swinub, Ting-Lu, Toedscool, Toedscruel, Torterra, Trapinch, Ursaluna, Vibrava, Whiscash, Wooper, Zygarde
+- Veneno (83): Amoonguss, Arbok, Ariados, Beedrill, Bellsprout, Budew, Bulbasaur, Clodsire, Croagunk, Crobat, Dragalge, Drapion, Dustox, Ekans, Eternatus, Fezandipiti, Foongus, Garbodor, Gastly, Gengar, Glimmet, Glimmora, Gloom, Golbat, Grafaiai, Grimer, Gulpin, Haunter, Iron Moth, Ivysaur, Kakuna, Koffing, Mareanie, Muk, Munkidori, Naganadel, Nidoking, Nidoqueen, Nidoran-F, Nidoran-M, Nidorina, Nidorino, Nihilego, Oddish, Okidogi, Overqwil, Pecharunt, Poipole, Qwilfish, Revavroom, Roselia, Roserade, Salandit, Salazzle, Scolipede, Seviper, Shroodle, Skorupi, Skrelp, Skuntank, Sneasler, Spinarak, Stunky, Swalot, Tentacool, Tentacruel, Toxapex, Toxel, Toxicroak, Toxtricity, Trubbish, Varoom, Venipede, Venomoth, Venonat, Venusaur, Victreebel, Vileplume, Weedle, Weepinbell, Weezing, Whirlipede, Zubat
+- Voador (109): Aerodactyl, Altaria, Archen, Archeops, Articuno, Beautifly, Bombirdier, Braviary, Butterfree, Celesteela, Charizard, Chatot, Combee, Corviknight, Corvisquire, Cramorant, Crobat, Dartrix, Delibird, Dodrio, Doduo, Dragonite, Drifblim, Drifloon, Ducklett, Emolga, Enamorus, Farfetch’d, Fearow, Flamigo, Fletchinder, Fletchling, Gligar, Gliscor, Golbat, Gyarados, Hawlucha, Ho-Oh, Honchkrow, Hoothoot, Hoppip, Iron Jugulis, Jumpluff, Kilowattrel, Landorus, Ledian, Ledyba, Lugia, Mandibuzz, Mantine, Mantyke, Masquerain, Minior, Moltres, Mothim, Murkrow, Natu, Ninjask, Noctowl, Noibat, Noivern, Oricorio, Pelipper, Pidgeot, Pidgeotto, Pidgey, Pidove, Pikipek, Rayquaza, Rookidee, Rowlet, Rufflet, Salamence, Scyther, Sigilyph, Skarmory, Skiploom, Spearow, Squawkabilly, Staraptor, Staravia, Starly, Swablu, Swanna, Swellow, Swoobat, Taillow, Talonflame, Thundurus, Togekiss, Togetic, Tornadus, Toucannon, Tranquill, Tropius, Trumbeak, Unfezant, Vespiquen, Vivillon, Vullaby, Wattrel, Wingull, Woobat, Xatu, Yanma, Yanmega, Yveltal, Zapdos, Zubat
+
+## Pokémon por item dropado
+
+Quem dropa cada item. Nomes dos itens em inglês (como aparecem no jogo).
+
+- Ability Shield (1): Aegislash
+- Absorb Bulb (11): Bellossom, Budew, Cottonee, Gloom, Lilligant, Oddish, Petilil, Roselia, Roserade, Vileplume, Whimsicott
+- Acacia Log (1): Komala
+- Air Balloon (5): Drifblim, Drifloon, Igglybuff, Jigglypuff, Wigglytuff
+- Amethyst Shard (3): Glimmet, Glimmora, Sableye
+- Apple (6): Appletun, Applin, Flapple, Munchlax, Snorlax, Torterra
+- Armadillo Scute (2): Sandshrew, Sandslash
+- Aspear Berry (28): Avalugg, Beartic, Bergmite, Carvanha, Cetitan, Cetoddle, Cloyster, Crabominable, Crabrawler, Cryogonal, Cubchoo, Dewgong, Eiscue, Jynx, Lapras, Mamoswine, Mr. Rime, Octillery, Piloswine, Remoraid, Seel, Sharpedo, Shellder, Smoochum, Swinub, Vanillish, Vanillite, Vanilluxe
+- Auspicious Armor (1): Armarouge
+- Babiri Berry (20): Carbink, Clefable, Clefairy, Cleffa, Froslass, Glalie, Granbull, Hatenna, Hatterene, Hattrem, Lycanroc, Mime Jr., Mr. Mime, Patrat, Rockruff, Slurpuff, Snorunt, Snubbull, Swirlix, Watchog
+- Bamboo (3): Pancham, Pangoro, Spinda
+- Basalt (1): Magcargo
+- Beef (3): Bouffalant, Miltank, Tauros
+- Berry Juice (1): Shuckle
+- Big Root (13): Arboliva, Bellsprout, Carnivine, Cradily, Diglett, Dolliv, Dugtrio, Lileep, Smoliv, Tangela, Tangrowth, Victreebel, Weepinbell
+- Black Augurite (9): Boldore, Carkol, Coalossal, Geodude, Gigalith, Golem, Graveler, Roggenrola, Rolycoly
+- Black Belt (12): Hariyama, Hitmonchan, Hitmonlee, Hitmontop, Makuhita, Medicham, Meditite, Sawk, Scrafty, Scraggy, Throh, Tyrogue
+- Black Glasses (4): Krokorok, Krookodile, Sandile, Umbreon
+- Black Sludge (12): Croagunk, Garbodor, Grimer, Gulpin, Koffing, Muk, Revavroom, Swalot, Toxicroak, Trubbish, Varoom, Weezing
+- Blaze Powder (21): Braixen, Centiskorch, Charizard, Charmander, Charmeleon, Delphox, Fennekin, Heatmor, Heatran, Houndoom, Houndour, Larvesta, Litleo, Magby, Magmar, Magmortar, Ponyta, Pyroar, Rapidash, Sizzlipede, Volcarona
+- Blue Ice (1): Eiscue
+- Blue Wool (3): Herdier, Lillipup, Stoutland
+- Bluk Berry (13): Drapion, Golisopod, Honchkrow, Illumise, Indeedee, Liepard, Mandibuzz, Murkrow, Purrloin, Sawk, Skorupi, Vullaby, Wimpod
+- Bone (33): Aerodactyl, Arcanine, Arctovish, Arctozolt, Bastiodon, Boltund, Cranidos, Cubone, Dracovish, Dracozolt, Electrike, Furfrou, Granbull, Greavard, Growlithe, Herdier, Houndoom, Houndour, Houndstone, Lillipup, Lycanroc, Mabosstiff, Manectric, Marowak, Maschiff, Mightyena, Poochyena, Rampardos, Rockruff, Shieldon, Snubbull, Stoutland, Yamper
+- Bone Block (4): Cetitan, Cetoddle, Wailmer, Wailord
+- Bone Meal (23): Alomomola, Arrokuda, Barraskewda, Basculegion, Basculin, Bruxish, Dondozo, Feebas, Finneon, Goldeen, Gyarados, Kabuto, Kabutops, Lumineon, Magikarp, Milotic, Omanyte, Omastar, Remoraid, Seaking, Tatsugiri, Veluza, Wishiwashi
+- Bread (2): Dachsbun, Fidough
+- Bright Powder (8): Beautifly, Illumise, Morelull, Scatterbug, Shiinotic, Spewpa, Vivillon, Volbeat
+- Brown Mushroom (6): Breloom, Morelull, Shiinotic, Shroomish, Toedscool, Toedscruel
+- Brown Wool (4): Bouffalant, Mamoswine, Piloswine, Swinub
+- Cactus (3): Cacnea, Cacturne, Maractus
+- Cake (3): Alcremie, Slurpuff, Swirlix
+- Calcite (3): Garganacl, Nacli, Naclstack
+- Candle (4): Chandelure, Greavard, Lampent, Litwick
+- Carrot (4): Buneary, Bunnelby, Diggersby, Lopunny
+- Cell Battery (5): Charjabug, Grubbin, Minun, Plusle, Vikavolt
+- Charcoal (6): Armarouge, Ceruledge, Charcadet, Ninetales, Turtonator, Vulpix
+- Charcoal Stick (36): Armarouge, Blaziken, Braixen, Ceruledge, Charcadet, Charizard, Charmander, Charmeleon, Chimchar, Cinderace, Combusken, Crocalor, Cyndaquil, Delphox, Emboar, Entei, Fennekin, Flareon, Fuecoco, Incineroar, Infernape, Litten, Moltres, Monferno, Pansear, Pignite, Quilava, Raboot, Scorbunny, Simisear, Skeledirge, Tepig, Torchic, Torkoal, Torracat, Typhlosion
+- Charti Berry (18): Centiskorch, Combee, Delibird, Fearow, Frosmoth, Larvesta, Ledian, Ledyba, Sizzlipede, Snom, Spearow, Swellow, Taillow, Torkoal, Vespiquen, Volcarona, Yanma, Yanmega
+- Cheri Berry (31): Amoonguss, Ampharos, Blitzle, Cherrim, Cherubi, Cutiefly, Dedenne, Dudunsparce, Dunsparce, Electabuzz, Electivire, Electrike, Elekid, Flaaffy, Foongus, Glameow, Kingambit, Manectric, Mareep, Minun, Pachirisu, Pawmi, Pawmo, Pawmot, Plusle, Purugly, Ribombee, Scatterbug, Spewpa, Vivillon, Zebstrika
+- Chesto Berry (31): Cinccino, Drowzee, Exploud, Hippopotas, Hippowdon, Hypno, Komala, Loudred, Mimikyu, Minccino, Munchlax, Munna, Musharna, Politoed, Poliwag, Poliwhirl, Poliwrath, Sealeo, Slaking, Slakoth, Slowbro, Slowking, Slowpoke, Snorlax, Spheal, Spinda, Vigoroth, Wailmer, Wailord, Walrein, Whismur
+- Chicken (67): Altaria, Articuno, Blaziken, Bombirdier, Braviary, Chatot, Combusken, Corviknight, Corvisquire, Cramorant, Dartrix, Decidueye, Delibird, Dodrio, Doduo, Ducklett, Eiscue, Empoleon, Espathra, Farfetch’d, Fearow, Flamigo, Fletchinder, Fletchling, Flittle, Golduck, Honchkrow, Hoothoot, Kilowattrel, Mandibuzz, Murkrow, Natu, Noctowl, Oricorio, Pelipper, Pidgeot, Pidgeotto, Pidgey, Pidove, Pikipek, Piplup, Prinplup, Psyduck, Rookidee, Rowlet, Rufflet, Sirfetch’d, Spearow, Squawkabilly, Staraptor, Staravia, Starly, Swablu, Swanna, Swellow, Taillow, Talonflame, Torchic, Toucannon, Tranquill, Trumbeak, Unfezant, Vullaby, Wattrel, Wingull, Xatu, Zapdos
+- Chilan Berry (17): Bunnelby, Diggersby, Farfetch’d, Herdier, Hoothoot, Kangaskhan, Lillipup, Maushold, Noctowl, Pidgeot, Pidgeotto, Pidgey, Raticate, Rattata, Squawkabilly, Stoutland, Tandemaus
+- Chople Berry (19): Aggron, Aron, Bewear, Bisharp, Buneary, Lairon, Larvitar, Lopunny, Lucario, Nosepass, Obstagoon, Pawniard, Probopass, Pupitar, Riolu, Sneasel, Stufful, Tyranitar, Weavile
+- Clay Ball (21): Baltoy, Barboach, Claydol, Clodsire, Donphan, Gastrodon, Golett, Golurk, Marshtomp, Mudbray, Mudkip, Mudsdale, Palpitoad, Phanpy, Quagsire, Seismitoad, Shellos, Swampert, Tympole, Whiscash, Wooper
+- Cleanse Tag (2): Chimecho, Chingling
+- Coal (4): Carkol, Coalossal, Rolycoly, Torkoal
+- Coba Berry (16): Eldegoss, Gossifleur, Hawlucha, Heracross, Kricketot, Kricketune, Leavanny, Lokix, Nymble, Paras, Parasect, Sewaddle, Sirfetch’d, Sunflora, Sunkern, Swadloon
+- Cod (22): Alomomola, Arctovish, Beartic, Bruxish, Cramorant, Cubchoo, Dewgong, Dracovish, Eiscue, Finizen, Finneon, Lumineon, Mantine, Mantyke, Palafin, Remoraid, Sealeo, Seel, Spheal, Veluza, Walrein, Wishiwashi
+- Colbur Berry (18): Baltoy, Beheeyem, Chimecho, Chingling, Claydol, Elgyem, Espurr, Golett, Golurk, Lunatone, Meowstic, Sigilyph, Solrock, Swoobat, Wobbuffet, Woobat, Wynaut, Zorua
+- Cooked Chicken (1): Moltres
+- Dark Oak Sapling (3): Nuzleaf, Seedot, Shiftry
+- Dawn Stone (7): Froslass, Gallade, Gardevoir, Glalie, Kirlia, Ralts, Snorunt
+- Dead Bush (2): Brambleghast, Bramblin
+- Deep Sea Scale (6): Alomomola, Chinchou, Gorebyss, Lanturn, Luvdisc, Relicanth
+- Deep Sea Tooth (4): Basculin, Carvanha, Huntail, Sharpedo
+- Diamond (2): Carbink, Sableye
+- Dirt (4): Diglett, Drilbur, Dugtrio, Excadrill
+- Dragon Breath (10): Deino, Dragonair, Dragonite, Drampa, Dratini, Hydreigon, Rayquaza, Reshiram, Zekrom, Zweilous
+- Dragon Fang (13): Axew, Bagon, Dragonair, Dragonite, Dratini, Druddigon, Fraxure, Gabite, Garchomp, Gible, Haxorus, Salamence, Shelgon
+- Dragon Scale (12): Bagon, Dragonair, Dragonite, Dratini, Hakamo-o, Horsea, Jangmo-o, Kingdra, Kommo-o, Salamence, Seadra, Shelgon
+- Dubious Disc (1): Porygon-Z
+- Dusk Stone (6): Aegislash, Chandelure, Doublade, Honedge, Lampent, Litwick
+- Echo Shard (11): Blacephalon, Buzzwole, Celesteela, Guzzlord, Kartana, Naganadel, Nihilego, Pheromosa, Poipole, Stakataka, Xurkitree
+- Egg (4): Blissey, Chansey, Exeggcute, Exeggutor
+- Electirizer (3): Electabuzz, Electivire, Elekid
+- Electric Seed (1): Togedemaru
+- Emerald (3): Nickit, Sableye, Thievul
+- Ender Pearl (20): Abra, Alakazam, Beheeyem, Beldum, Elgyem, Gallade, Gardevoir, Gothita, Gothitelle, Gothorita, Grumpig, Kadabra, Kirlia, Metagross, Metang, Rabsca, Ralts, Sigilyph, Spoink, Unown
+- Everstone (6): Boldore, Geodude, Gigalith, Golem, Graveler, Roggenrola
+- Eviolite (1): Eevee
+- Expert Belt (10): Hawlucha, Incineroar, Litten, Lucario, Mienfoo, Mienshao, Riolu, Sawk, Throh, Torracat
+- Fairy Feather (13): Aromatisse, Audino, Clefable, Clefairy, Cleffa, Fezandipiti, Flamigo, Flutter Mane, Spritzee, Sylveon, Togekiss, Togepi, Togetic
+- Feather (72): Archen, Archeops, Arctozolt, Articuno, Blaziken, Bombirdier, Braviary, Chatot, Combusken, Corviknight, Corvisquire, Cramorant, Dartrix, Decidueye, Delibird, Dodrio, Doduo, Dracozolt, Ducklett, Eiscue, Empoleon, Farfetch’d, Fearow, Flamigo, Fletchinder, Fletchling, Golduck, Ho-Oh, Honchkrow, Hoothoot, Kilowattrel, Latias, Latios, Lugia, Mandibuzz, Moltres, Murkrow, Natu, Noctowl, Oricorio, Pelipper, Pidgeot, Pidgeotto, Pidgey, Pidove, Pikipek, Piplup, Prinplup, Psyduck, Rookidee, Rowlet, Rufflet, Sirfetch’d, Spearow, Squawkabilly, Staraptor, Staravia, Starly, Swanna, Swellow, Taillow, Talonflame, Torchic, Toucannon, Tranquill, Trumbeak, Unfezant, Vullaby, Wattrel, Wingull, Xatu, Zapdos
+- Fire Stone (3): Flareon, Pansear, Simisear
+- Flame Orb (1): Heatmor
+- Flint (2): Nosepass, Probopass
+- Float Stone (4): Carbink, Glimmet, Glimmora, Minior
+- Focus Band (3): Machamp, Machoke, Machop
+- Glow Ink Sac (4): Frillish, Jellicent, Tentacool, Tentacruel
+- Gold Nugget (2): Meowth, Persian
+- Golden Helmet (1): Falinks
+- Grassy Seed (4): Bounsweet, Maractus, Steenee, Tsareena
+- Gravel (3): Geodude, Golem, Graveler
+- Grip Claw (4): Sandshrew, Sandslash, Sneasel, Weavile
+- Gunpowder (2): Electrode, Voltorb
+- Haban Berry (19): Arctibax, Axew, Baxcalibur, Cyclizar, Dragapult, Drakloak, Dreepy, Druddigon, Fraxure, Frigibax, Gabite, Garchomp, Gible, Goodra, Goomy, Haxorus, Sliggoo, Tatsugiri, Turtonator
+- Hard Stone (20): Aggron, Aron, Boldore, Bonsly, Crustle, Dwebble, Gigalith, Lairon, Larvitar, Lycanroc, Nosepass, Onix, Probopass, Pupitar, Regirock, Rockruff, Roggenrola, Sudowoodo, Terrakion, Tyranitar
+- Heart Of The Sea (3): Kyogre, Lapras, Manaphy
+- Honey Bottle (10): Combee, Cutiefly, Gloom, Oricorio, Ribombee, Surskit, Teddiursa, Ursaluna, Ursaring, Vespiquen
+- Honeycomb (2): Combee, Vespiquen
+- Ice Stone (1): Glaceon
+- Ink Sac (10): Clobbopus, Grapploct, Horsea, Inkay, Kingdra, Malamar, Octillery, Seadra, Tentacool, Tentacruel
+- Iron Ball (3): Forretress, Mawile, Pineco
+- Iron Block (1): Melmetal
+- Iron Helmet (4): Bisharp, Escavalier, Pawniard, Shelmet
+- Iron Ingot (2): Duraludon, Meltan
+- Iron Nugget (6): Aegislash, Doublade, Honedge, Orthworm, Revavroom, Varoom
+- Iron Sword (3): Aegislash, Doublade, Honedge
+- Jack O Lantern (2): Phantump, Trevenant
+- Kasib Berry (24): Abra, Alakazam, Brambleghast, Bramblin, Cursola, Drifblim, Drifloon, Dusclops, Dusknoir, Duskull, Frillish, Gallade, Gardevoir, Gourgeist, Greavard, Houndstone, Jellicent, Kadabra, Kirlia, Misdreavus, Mismagius, Pumpkaboo, Ralts, Runerigus
+- Kebia Berry (22): Arboliva, Aromatisse, Azumarill, Azurill, Breloom, Carnivine, Comfey, Cottonee, Dolliv, Flabebe, Floette, Florges, Lombre, Lotad, Ludicolo, Marill, Morelull, Shiinotic, Shroomish, Smoliv, Spritzee, Whimsicott
+- Kelp (3): Dhelmise, Dragalge, Skrelp
+- Kings Rock (12): Hariyama, Hawlucha, Kingler, Krabby, Makuhita, Politoed, Poliwag, Poliwhirl, Poliwrath, Slowbro, Slowking, Slowpoke
+- Lagging Tail (9): Copperajah, Cufant, Lickilicky, Lickitung, Onix, Slowbro, Slowking, Slowpoke, Steelix
+- Leaf Stone (3): Leafeon, Pansage, Simisage
+- Leather (15): Blitzle, Bouffalant, Deerling, Farigiraf, Girafarig, Miltank, Mudbray, Mudsdale, Ponyta, Rapidash, Sawsbuck, Stantler, Tauros, Wyrdeer, Zebstrika
+- Leftovers (4): Garbodor, Munchlax, Snorlax, Trubbish
+- Life Orb (1): Absol
+- Light Ball (3): Pichu, Pikachu, Raichu
+- Light Blue Wool (2): Swoobat, Woobat
+- Light Clay (13): Baltoy, Beheeyem, Bronzong, Bronzor, Claydol, Elgyem, Golett, Golurk, Mime Jr., Mr. Mime, Mudbray, Mudsdale, Sigilyph
+- Lily Pad (3): Lombre, Lotad, Ludicolo
+- Lucky Egg (5): Blissey, Chansey, Togekiss, Togepi, Togetic
+- Luminous Moss (5): Corsola, Morelull, Shiinotic, Shuckle, Stonjourner
+- Magma Cream (5): Camerupt, Heatran, Magcargo, Numel, Slugma
+- Magmarizer (3): Magby, Magmar, Magmortar
+- Magnet (10): Jolteon, Magnemite, Magneton, Magnezone, Minun, Nosepass, Plusle, Probopass, Raikou, Zapdos
+- Malicious Armor (1): Ceruledge
+- Medicinal Leek (2): Farfetch’d, Sirfetch’d
+- Melon Seeds (3): Bulbasaur, Ivysaur, Venusaur
+- Mental Herb (10): Bronzong, Bronzor, Leavanny, Lombre, Lotad, Ludicolo, Pancham, Pangoro, Sewaddle, Swadloon
+- Metal Coat (12): Beldum, Cobalion, Corviknight, Genesect, Magnemite, Magneton, Magnezone, Metagross, Metang, Registeel, Skarmory, Steelix
+- Metal Powder (1): Ditto
+- Metronome (3): Chatot, Kricketot, Kricketune
+- Miracle Seed (40): Bayleef, Bulbasaur, Carnivine, Celebi, Cherrim, Cherubi, Chesnaught, Chespin, Chikorita, Dartrix, Decidueye, Floragato, Fomantis, Gourgeist, Grookey, Grotle, Grovyle, Ivysaur, Leafeon, Lurantis, Maractus, Meganium, Meowscarada, Pansage, Pumpkaboo, Quilladin, Rillaboom, Rowlet, Sceptile, Serperior, Servine, Simisage, Snivy, Sprigatito, Thwackey, Torterra, Treecko, Turtwig, Venusaur, Virizion
+- Misty Seed (1): Comfey
+- Moon Stone (8): Clefable, Clefairy, Cleffa, Igglybuff, Jigglypuff, Lunatone, Umbreon, Wigglytuff
+- Mud (2): Rellor, Stunfisk
+- Muscle Band (10): Annihilape, Conkeldurr, Gurdurr, Machamp, Machoke, Machop, Mankey, Passimian, Primeape, Timburr
+- Mutton (7): Ampharos, Dubwool, Flaaffy, Gogoat, Mareep, Skiddo, Wooloo
+- Mystic Water (40): Araquanid, Blastoise, Brionne, Castform, Croconaw, Dewott, Dewpider, Drizzile, Empoleon, Feraligatr, Froakie, Frogadier, Goldeen, Golduck, Greninja, Inteleon, Lapras, Marshtomp, Mudkip, Oshawott, Panpour, Phione, Piplup, Popplio, Primarina, Prinplup, Psyduck, Quaquaval, Quaxly, Quaxwell, Samurott, Seaking, Simipour, Sobble, Squirtle, Suicune, Swampert, Totodile, Vaporeon, Wartortle
+- Name Tag (1): Klefki
+- Nanab Berry (17): Aipom, Ambipom, Copperajah, Cubone, Cufant, Dachsbun, Falinks, Fidough, Galvantula, Grafaiai, Joltik, Marowak, Medicham, Meditite, Oranguru, Shroodle, Tropius
+- Nautilus Shell (2): Omanyte, Omastar
+- Nether Star (1): Groudon
+- Never Melt Ice (22): Abomasnow, Amaura, Articuno, Aurorus, Avalugg, Bergmite, Cryogonal, Dewgong, Froslass, Glaceon, Glalie, Lapras, Mamoswine, Piloswine, Regice, Seel, Snorunt, Snover, Swinub, Vanillish, Vanillite, Vanilluxe
+- Oak Sapling (1): Turtwig
+- Occa Berry (17): Abomasnow, Bronzong, Bronzor, Burmy, Durant, Escavalier, Ferroseed, Ferrothorn, Forretress, Karrablast, Mawile, Mothim, Pansage, Pineco, Simisage, Snover, Wormadam
+- Ochre Froglight (2): Bellibolt, Tadbulb
+- Ominous Trial Key (1): Klefki
+- Oran Berry (27): Audino, Bibarel, Bidoof, Furret, Gogoat, Greedent, Gulpin, Igglybuff, Jigglypuff, Lechonk, Lickilicky, Lickitung, Linoone, Miltank, Oinkologne, Pichu, Pikachu, Raichu, Sentret, Skiddo, Skwovet, Swalot, Teddiursa, Ursaluna, Ursaring, Wigglytuff, Zigzagoon
+- Oval Stone (5): Blissey, Chansey, Exeggcute, Exeggutor, Happiny
+- Passho Berry (24): Bonsly, Carkol, Coalossal, Donphan, Garganacl, Magcargo, Mudbray, Mudsdale, Nacli, Naclstack, Onix, Palossand, Pansear, Phanpy, Rhydon, Rhyhorn, Rhyperior, Rolycoly, Sandygast, Simisear, Slugma, Steelix, Stunfisk, Sudowoodo
+- Payapa Berry (19): Annihilape, Croagunk, Flamigo, Gastly, Gengar, Hariyama, Haunter, Hitmonchan, Hitmonlee, Hitmontop, Makuhita, Mankey, Mienfoo, Mienshao, Passimian, Primeape, Sneasler, Toxicroak, Tyrogue
+- Pearlescent Froglight (3): Froakie, Frogadier, Greninja
+- Peat Block (3): Teddiursa, Ursaluna, Ursaring
+- Pecha Berry (37): Beautifly, Bellossom, Budew, Cascoon, Clodsire, Delcatty, Dragalge, Dustox, Garbodor, Gloom, Gumshoos, Mareanie, Mightyena, Nidoking, Nidoqueen, Nidoran-F, Nidoran-M, Nidorina, Nidorino, Oddish, Poochyena, Roselia, Roserade, Scolipede, Silcoon, Skitty, Skrelp, Skuntank, Stunky, Toxapex, Trubbish, Venipede, Vileplume, Whirlipede, Wurmple, Yungoos, Zangoose
+- Persim Berry (31): Bounsweet, Chatot, Chinchou, Crobat, Drampa, Duosion, Farigiraf, Girafarig, Golbat, Gothita, Gothitelle, Gothorita, Kecleon, Lanturn, Lilligant, Natu, Palpitoad, Petilil, Reuniclus, Seismitoad, Seviper, Solosis, Stantler, Steenee, Tsareena, Tympole, Venomoth, Venonat, Wyrdeer, Xatu, Zubat
+- Phantom Membrane (22): Banette, Crobat, Darkrai, Dragapult, Drakloak, Dreepy, Drifblim, Drifloon, Dusclops, Dusknoir, Duskull, Flutter Mane, Gligar, Gliscor, Golbat, Lunala, Misdreavus, Mismagius, Noibat, Noivern, Shuppet, Zubat
+- Pinap Berry (18): Beedrill, Bellsprout, Clobbopus, Drilbur, Excadrill, Grapploct, Kakuna, Kingler, Klawf, Krabby, Meowth, Oricorio, Persian, Pinsir, Skarmory, Victreebel, Weedle, Weepinbell
+- Poison Barb (31): Ariados, Beedrill, Budew, Cacnea, Cacturne, Combee, Drapion, Gligar, Gliscor, Mareanie, Nidoking, Nidoqueen, Nidoran-F, Nidoran-M, Nidorina, Nidorino, Overqwil, Qwilfish, Roselia, Roserade, Scolipede, Seviper, Skorupi, Sneasler, Spinarak, Tentacool, Tentacruel, Toxapex, Venipede, Vespiquen, Whirlipede
+- Poppy (3): Flabebe, Floette, Florges
+- Porkchop (10): Emboar, Grumpig, Lechonk, Mamoswine, Oinkologne, Pignite, Piloswine, Spoink, Swinub, Tepig
+- Potato (2): Diglett, Dugtrio
+- Prism Scale (4): Feebas, Finneon, Lumineon, Milotic
+- Prismarine Crystals (2): Chinchou, Lanturn
+- Prismarine Shard (5): Horsea, Kingdra, Overqwil, Qwilfish, Seadra
+- Protector (4): Donphan, Rhydon, Rhyhorn, Rhyperior
+- Psychic Gem (1): Deoxys
+- Psychic Seed (5): Blipbug, Dottler, Exeggcute, Exeggutor, Orbeetle
+- Pufferfish (2): Overqwil, Qwilfish
+- Pumpkin Seeds (2): Gourgeist, Pumpkaboo
+- Quick Claw (12): Anorith, Armaldo, Luxio, Luxray, Meowth, Persian, Sandshrew, Sandslash, Shinx, Sneasel, Weavile, Zangoose
+- Quick Powder (1): Ditto
+- Rabbit (7): Buneary, Bunnelby, Cinderace, Diggersby, Lopunny, Raboot, Scorbunny
+- Rabbit Foot (7): Buneary, Bunnelby, Cinderace, Diggersby, Lopunny, Raboot, Scorbunny
+- Rabbit Hide (7): Buneary, Bunnelby, Cinderace, Diggersby, Lopunny, Raboot, Scorbunny
+- Raw Copper (5): Boldore, Copperajah, Cufant, Gigalith, Roggenrola
+- Raw Iron (19): Aggron, Aron, Bronzong, Bronzor, Dhelmise, Durant, Ferroseed, Ferrothorn, Klang, Klink, Klinklang, Lairon, Magnemite, Magneton, Magnezone, Steelix, Tinkatink, Tinkaton, Tinkatuff
+- Rawst Berry (31): Arcanine, Armarouge, Camerupt, Capsakid, Ceruledge, Chandelure, Charcadet, Darmanitan, Darumaka, Fletchinder, Fletchling, Growlithe, Heatmor, Houndoom, Houndour, Lampent, Litleo, Litwick, Magby, Magmar, Magmortar, Ninetales, Numel, Phantump, Poltchageist, Pyroar, Scovillain, Sinistcha, Talonflame, Trevenant, Vulpix
+- Razor Claw (11): Absol, Hakamo-o, Jangmo-o, Kabuto, Kabutops, Kommo-o, Perrserker, Sneasel, Sneasler, Weavile, Zangoose
+- Razor Fang (14): Arbok, Bruxish, Crobat, Ekans, Farigiraf, Girafarig, Gligar, Gliscor, Golbat, Mawile, Seviper, Tyrantrum, Tyrunt, Zubat
+- Razz Berry (19): Blipbug, Bombirdier, Braviary, Conkeldurr, Dottler, Gurdurr, Kilowattrel, Orbeetle, Pidove, Rufflet, Throh, Timburr, Tinkatink, Tinkaton, Tinkatuff, Tranquill, Unfezant, Volbeat, Wattrel
+- Reaper Cloth (4): Darkrai, Dusclops, Dusknoir, Duskull
+- Red Mushroom (4): Amoonguss, Foongus, Paras, Parasect
+- Redstone (3): Electabuzz, Electivire, Elekid
+- Relic Coin (2): Gholdengo, Gimmighoul
+- Revival Herb (5): Leavanny, Lilligant, Petilil, Sewaddle, Swadloon
+- Rindo Berry (19): Barbaracle, Barboach, Binacle, Chewtle, Corsola, Drednaw, Finneon, Gastrodon, Geodude, Golem, Graveler, Lumineon, Panpour, Quagsire, Relicanth, Shellos, Simipour, Whiscash, Wooper
+- Roasted Leek (2): Capsakid, Scovillain
+- Rocky Helmet (4): Aerodactyl, Dudunsparce, Dunsparce, Kingambit
+- Room Service (1): Indeedee
+- Rose Bush (2): Roselia, Roserade
+- Roseli Berry (19): Absol, Deino, Grimmsnarl, Hakamo-o, Hydreigon, Impidimp, Jangmo-o, Kommo-o, Morgrem, Morpeko, Nickit, Pancham, Pangoro, Sableye, Scrafty, Scraggy, Thievul, Zoroark, Zweilous
+- Rotten Flesh (26): Ariados, Electrike, Galvantula, Greavard, Houndoom, Houndour, Houndstone, Joltik, Liepard, Litleo, Lycanroc, Mabosstiff, Mandibuzz, Manectric, Maschiff, Mightyena, Poochyena, Purrloin, Pyroar, Raticate, Rattata, Rockruff, Salandit, Salazzle, Spinarak, Vullaby
+- Sacred Ash (2): Entei, Ho-Oh
+- Salmon (13): Arrokuda, Barraskewda, Basculegion, Basculin, Buizel, Dondozo, Feebas, Floatzel, Goldeen, Gyarados, Magikarp, Seaking, Tatsugiri
+- Sand (4): Hippopotas, Hippowdon, Palossand, Sandygast
+- Sharp Beak (21): Braviary, Corvisquire, Dodrio, Doduo, Fearow, Fletchinder, Kilowattrel, Mandibuzz, Pidgeot, Pidgeotto, Skarmory, Spearow, Staraptor, Staravia, Swanna, Swellow, Talonflame, Toucannon, Tranquill, Trumbeak, Unfezant
+- Shed Shell (15): Accelgor, Beautifly, Beedrill, Butterfree, Dustox, Goodra, Goomy, Ninjask, Scrafty, Scraggy, Seviper, Shedinja, Sliggoo, Venomoth, Vivillon
+- Shell Bell (6): Clamperl, Cloyster, Dewott, Oshawott, Samurott, Shellder
+- Shiny Stone (4): Sylveon, Togekiss, Togepi, Togetic
+- Shuca Berry (18): Glimmet, Glimmora, Luxio, Luxray, Magnemite, Magneton, Magnezone, Orthworm, Ponyta, Rapidash, Revavroom, Salandit, Salazzle, Shinx, Togedemaru, Toxel, Toxtricity, Varoom
+- Silk Scarf (10): Cinccino, Delcatty, Eevee, Furfrou, Furret, Garbodor, Minccino, Sentret, Skitty, Trubbish
+- Silver Powder (9): Butterfree, Dustox, Frosmoth, Larvesta, Masquerain, Mothim, Snom, Venomoth, Volcarona
+- Slime Ball (16): Duosion, Eelektrik, Eelektross, Goodra, Goomy, Grimer, Lickilicky, Lickitung, Mareanie, Muk, Pyukumuku, Reuniclus, Sliggoo, Solosis, Toxapex, Tynamo
+- Smoke Ball (6): Koffing, Salandit, Salazzle, Spiritomb, Torkoal, Weezing
+- Snowball (12): Abomasnow, Beartic, Cubchoo, Froslass, Frosmoth, Glalie, Snom, Snorunt, Snover, Vanillish, Vanillite, Vanilluxe
+- Soft Sand (16): Diglett, Drilbur, Dugtrio, Excadrill, Flygon, Hippopotas, Hippowdon, Nincada, Palossand, Sandaconda, Sandshrew, Sandslash, Sandygast, Silicobra, Trapinch, Vibrava
+- Soothe Bell (2): Chimecho, Chingling
+- Spell Tag (15): Banette, Cofagrigus, Gastly, Gengar, Haunter, Mimikyu, Misdreavus, Mismagius, Phantump, Polteageist, Shuppet, Sinistea, Spiritomb, Trevenant, Yamask
+- Spider Eye (6): Ariados, Galvantula, Joltik, Spidops, Spinarak, Tarountula
+- Stick (12): Bibarel, Bidoof, Braixen, Brambleghast, Bramblin, Delphox, Grookey, Grovyle, Rillaboom, Sceptile, Thwackey, Treecko
+- Sticky Barb (5): Cacnea, Cacturne, Ferroseed, Ferrothorn, Maractus
+- Stone (2): Onix, Stonjourner
+- Stone Axe (1): Kleavor
+- String (27): Ariados, Burmy, Cascoon, Caterpie, Charjabug, Forretress, Galvantula, Grubbin, Joltik, Kakuna, Larvesta, Leavanny, Metapod, Pineco, Scatterbug, Sewaddle, Silcoon, Spewpa, Spidops, Spinarak, Swadloon, Tarountula, Venomoth, Venonat, Weedle, Wormadam, Wurmple
+- Sugar (4): Alcremie, Milcery, Slurpuff, Swirlix
+- Sun Stone (2): Espeon, Solrock
+- Sunflower (2): Skiploom, Sunflora
+- Sweet Berries (14): Abomasnow, Cherrim, Cherubi, Grotle, Nickit, Ninetales, Snover, Teddiursa, Thievul, Ursaluna, Ursaring, Vulpix, Zoroark, Zorua
+- Tanga Berry (20): Cacnea, Cacturne, Espathra, Exeggcute, Exeggutor, Flittle, Fomantis, Grumpig, Inkay, Krokorok, Krookodile, Lurantis, Mabosstiff, Malamar, Maschiff, Nuzleaf, Sandile, Seedot, Shiftry, Spoink
+- Tasty Tail (3): Slowbro, Slowking, Slowpoke
+- Terracotta (2): Crustle, Dwebble
+- Throat Spray (6): Brionne, Exploud, Loudred, Popplio, Primarina, Whismur
+- Thunder Stone (4): Jolteon, Pichu, Pikachu, Raichu
+- Toxic Orb (2): Grimer, Muk
+- Trial Key (1): Klefki
+- Turtle Scute (8): Blastoise, Carracosta, Chewtle, Drednaw, Squirtle, Tirtouga, Turtonator, Wartortle
+- Twisted Spoon (12): Abra, Alakazam, Espeon, Gallade, Gardevoir, Gothita, Gothitelle, Gothorita, Kadabra, Kirlia, Mewtwo, Ralts
+- Upgrade (1): Porygon2
+- Verdant Froglight (1): Politoed
+- Vine (2): Tangela, Tangrowth
+- Wacan Berry (20): Buizel, Corviknight, Corvisquire, Cramorant, Dodrio, Doduo, Ducklett, Floatzel, Goldeen, Gyarados, Magikarp, Mantine, Mantyke, Masquerain, Pelipper, Rookidee, Seaking, Surskit, Swanna, Wingull
+- Water Stone (3): Panpour, Simipour, Vaporeon
+- Wepear Berry (20): Araquanid, Bellibolt, Boltund, Bouffalant, Butterfree, Caterpie, Charjabug, Dewpider, Grubbin, Kleavor, Machamp, Machoke, Machop, Metapod, Perrserker, Scizor, Scyther, Tadbulb, Vikavolt, Yamper
+- Wheat Seeds (3): Maushold, Sunkern, Tandemaus
+- White Wool (11): Altaria, Cottonee, Dubwool, Eldegoss, Flaaffy, Furfrou, Jumpluff, Mareep, Swablu, Whimsicott, Wooloo
+- Wide Lens (3): Sableye, Yanma, Yanmega
+- Wise Glasses (7): Hoothoot, Medicham, Meditite, Natu, Noctowl, Oranguru, Xatu
+- Yache Berry (29): Altaria, Appletun, Applin, Bagon, Deerling, Dragonair, Dragonite, Dratini, Emolga, Flapple, Flygon, Gligar, Gliscor, Hoppip, Jumpluff, Noibat, Noivern, Salamence, Sawsbuck, Shelgon, Skiploom, Staraptor, Staravia, Starly, Swablu, Toedscool, Toedscruel, Trapinch, Vibrava
