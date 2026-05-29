@@ -75,17 +75,23 @@ def facts_filter_instruction(language: str) -> str:
             "You have the `filtrar_pokemon` tool: it filters the modpack's Pokémon by type, "
             "category (legendary/mythical) and/or dropped item and returns the exact list with its "
             "count. ALWAYS call it for any question about which/how many Pokémon match a type, "
-            "category or item — including crossed criteria (e.g. legendary Electric-types). LIST "
-            "every name it returns, do not summarize or omit them. Use the guide only for the "
-            "modpack's general totals. Never invent names."
+            "category or item — including crossed criteria (e.g. legendary Electric-types). Item "
+            "names are in English: translate the item in the question before calling (e.g. 'lágrima "
+            "de ghast' -> 'Ghast Tear'). LIST every name it returns, do not summarize or omit them. "
+            "The drop data is COMPLETE: if the tool returns no Pokémon, answer that NO Pokémon in "
+            "the modpack drops/matches that — never say you don't have the information. Use the "
+            "guide only for the modpack's general totals. Never invent names."
         )
     return (
         "Você tem a ferramenta `filtrar_pokemon`: filtra os Pokémon do modpack por tipo, categoria "
         "(lendário/mítico) e/ou item dropado e devolve a lista exata com a contagem. SEMPRE chame a "
         "ferramenta para qualquer pergunta sobre quais/quantos Pokémon batem num tipo, categoria ou "
-        "item — inclusive cruzando critérios (ex.: lendários do tipo Elétrico). LISTE todos os nomes "
-        "que ela retornar, sem resumir nem omitir. Use o guia apenas para os totais gerais do "
-        "modpack. Nunca invente nomes."
+        "item — inclusive cruzando critérios (ex.: lendários do tipo Elétrico). Os nomes de itens são "
+        "em inglês: traduza o item da pergunta antes de chamar (ex.: 'lágrima de ghast' -> 'Ghast "
+        "Tear'). LISTE todos os nomes que ela retornar, sem resumir nem omitir. A lista de drops é "
+        "COMPLETA: se a ferramenta não devolver nenhum Pokémon, responda que NENHUM Pokémon do "
+        "modpack dropa/corresponde a isso — nunca diga que não tem a informação. Use o guia apenas "
+        "para os totais gerais do modpack. Nunca invente nomes."
     )
 
 

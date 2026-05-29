@@ -1,5 +1,6 @@
 from modpack_bot.prompts import (
     build_system_prompt,
+    facts_filter_instruction,
     facts_listing_message,
     fallback_message,
     non_pokemon_instruction,
@@ -39,6 +40,19 @@ def test_system_prompt_embeds_guide_and_instruction():
 def test_system_prompt_english_variant():
     prompt = build_system_prompt("G", "I", "en")
     assert "Always respond in English" in prompt
+
+
+def test_facts_filter_instruction_translates_items_and_owns_empty_result():
+    # "quais pokemons dropam lagrima de gast" used to hit the generic "don't have
+    # info" fallback while the English "ghast tear" answered "none drop it". The
+    # instruction now tells the model to translate the item and treat an empty
+    # tool result as "no Pokémon drops it", never the fallback.
+    pt = facts_filter_instruction("pt")
+    assert "Ghast Tear" in pt and "traduza" in pt
+    assert "NENHUM Pokémon" in pt and "nunca diga que não tem a informação" in pt
+    en = facts_filter_instruction("en")
+    assert "Ghast Tear" in en and "translate" in en
+    assert "NO Pokémon" in en and "never say you don't have" in en
 
 
 def test_system_prompt_constrains_scope_to_the_question():
