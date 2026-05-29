@@ -6,7 +6,10 @@ on them by their public methods, so tests substitute in-memory fakes.
 
 import os
 
-VALID_GUIDES = frozenset({"market.md", "rules.md", "wiki.md", "faq.md", "facts.md"})
+# Ordered so the generated router catalog is deterministic; VALID_GUIDES is the
+# membership check derived from it.
+ROUTABLE_GUIDES = ("market.md", "rules.md", "wikigui.md", "faq.md", "facts.md")
+VALID_GUIDES = frozenset(ROUTABLE_GUIDES)
 
 
 class GuideRepository:
@@ -20,7 +23,7 @@ class GuideRepository:
         return self._read("core.md")
 
     def load_guide(self, name: str) -> str:
-        """Read one routable guide (market.md / rules.md / wiki.md)."""
+        """Read one routable guide (market.md / rules.md / wikigui.md)."""
         if name not in VALID_GUIDES:
             raise ValueError(f"unknown guide {name!r}, expected one of {sorted(VALID_GUIDES)}")
         return self._read(name)

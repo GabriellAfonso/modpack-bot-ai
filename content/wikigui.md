@@ -1,4 +1,4 @@
-# CobblemonWikiGui — Referência para o bot
+# CobblemonWikiGui — wiki de um Pokémon pelo comando /pwiki
 
 GUI server-side que abre uma "wiki" de um Pokémon. Aberta por **comando**, não há item nem keybind.
 
@@ -22,7 +22,7 @@ Navegação: dentro da wiki, slots 48/50 = Pokémon anterior/próximo por númer
 
 ---
 
-## O que dá pra descobrir
+## O que a wiki mostra de um Pokémon (tipo, fraqueza, evolução, spawn, drops, golpes, habilidades, stats)
 
 Tela principal. Cada item é um botão com lore. Passar o mouse pra ler a lore.
 
@@ -58,7 +58,7 @@ Lore = requisitos da evolução: Level, Friendship, held item, trade (qualquer/e
 
 ---
 
-## Como o bot deve responder
+## Notas para o assistente
 
 A wiki acima descreve a **ferramenta** `/pwiki`, não os dados de cada Pokémon. Os dados por Pokémon (spawn, evolução, tipo, etc.) ficam na seção **"Dados dos Pokémon"** mais abaixo, quando existirem.
 
@@ -90,6 +90,6 @@ Nunca mande só "use /pwiki" cru quando você tiver o dado — responda primeiro
 
 ---
 
-## Dados dos Pokémon
+### Dados dos Pokémon
 
-Os dados de cada Pokémon **não ficam aqui** — quando a pergunta cita um Pokémon real, o sistema entrega a **carta** daquele Pokémon (tipo, fraqueza, stats, spawn, evolução, drops, formas) num bloco próprio, e você responde direto com base nela (caso 1). Este arquivo (`wiki.md`) só é usado quando **nenhum Pokémon** é identificado — aí vale o mapa de botões acima pra orientar `/pwiki`, ou a regra do `[Sistema]` pra recusar não-Pokémon (stronghold etc.).
+Os dados de cada Pokémon **não ficam aqui** — quando a pergunta cita um Pokémon real, o sistema entrega a **carta** daquele Pokémon (tipo, fraqueza, stats, spawn, evolução, drops, formas) num bloco próprio, e você responde direto com base nela (caso 1). Este arquivo (`wikigui.md`) só é usado quando **nenhum Pokémon** é identificado — aí vale o mapa de botões acima pra orientar `/pwiki`, ou a regra do `[Sistema]` pra recusar não-Pokémon (stronghold etc.).

@@ -38,7 +38,7 @@ def facts_listing_message(lines: list[str], language: str) -> str:
 
 
 def pokemon_instruction(pokemon: str, language: str) -> str:
-    """Directive used when a Pokémon card replaces wiki.md as the guide."""
+    """Directive used when a Pokémon card replaces wikigui.md as the guide."""
     if language == "en":
         return (
             f"The guide below is the data sheet for the Pokémon {pokemon}. Answer using only "
@@ -53,7 +53,7 @@ def pokemon_instruction(pokemon: str, language: str) -> str:
 
 
 def non_pokemon_instruction(language: str) -> str:
-    """Directive used on wiki.md when the question is NOT about a Pokémon."""
+    """Directive used on wikigui.md when the question is NOT about a Pokémon."""
     if language == "en":
         return (
             "This question is not about a Pokémon (stronghold, village, items, blocks are "

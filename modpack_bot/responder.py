@@ -24,7 +24,7 @@ from modpack_bot.prompts import (
 from modpack_bot.router import Router
 from modpack_bot.text import collapse_blank_lines, wants_full_list
 
-_WIKI_GUIDE = "wiki.md"
+_WIKI_GUIDE = "wikigui.md"
 _FACTS_GUIDE = "facts.md"
 
 
@@ -152,10 +152,10 @@ class Responder:
         return facts_listing_message(lines, language)
 
     def _apply_wiki_gate(self, message: str, guide: str, language: str) -> tuple[str, str]:
-        """Pokémon gate (wiki.md only): deterministic name detection.
+        """Pokémon gate (wikigui.md only): deterministic name detection.
 
         Found a Pokémon -> swap in its card (data) and instruct the model to
-        point at `/pwiki` for anything missing. Found none -> keep wiki.md (the
+        point at `/pwiki` for anything missing. Found none -> keep wikigui.md (the
         tool's doc) and forbid suggesting `/pwiki` for non-Pokémon (stronghold).
         """
         pokemon = detect_pokemon(message, self._pokemon_names)

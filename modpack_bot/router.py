@@ -1,8 +1,9 @@
 """Classify an incoming message into (guide_file, language)."""
 
 from modpack_bot.admins import TOOL_ADMINS
-from modpack_bot.guides import VALID_GUIDES, GuideRepository
+from modpack_bot.guides import ROUTABLE_GUIDES, VALID_GUIDES, GuideRepository
 from modpack_bot.llm import ROUTER_MODELS, ModelCompleter
+from modpack_bot.router_catalog import CATALOG_PLACEHOLDER, build_catalog
 
 # A routed result: the guide file OR a tool label to answer from (None when
 # nothing fits) + language.
@@ -21,8 +22,8 @@ def parse_route(raw: str) -> Route:
     Unknown guides collapse to None; unknown languages default to pt.
 
     Example:
-        >>> parse_route("wiki.md | en")
-        ('wiki.md', 'en')
+        >>> parse_route("wikigui.md | en")
+        ('wikigui.md', 'en')
         >>> parse_route("nonsense")
         (None, 'pt')
     """
@@ -45,7 +46,7 @@ class Router:
     def route(self, message: str) -> Route:
         raw = self._completer.complete(
             messages=[
-                {"role": "system", "content": self._guides.load_core()},
+                {"role": "system", "content": self._system_prompt()},
                 {"role": "user", "content": message},
             ],
             models=ROUTER_MODELS,
@@ -53,3 +54,9 @@ class Router:
             temperature=0,
         )
         return parse_route(raw)
+
+    def _system_prompt(self) -> str:
+        """core.md with its {{ARQUIVOS}} token replaced by the generated catalog,
+        so the routable files and their sections come from the guides themselves."""
+        catalog = build_catalog(ROUTABLE_GUIDES, self._guides.load_guide)
+        return self._guides.load_core().replace(CATALOG_PLACEHOLDER, catalog)

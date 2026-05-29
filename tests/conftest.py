@@ -72,7 +72,10 @@ class FakeGuideRepository:
         return self._core
 
     def load_guide(self, name: str) -> str:
-        return self._guides[name]
+        # Lenient: guides not stubbed read as empty so building the router catalog
+        # (which loads every routable guide) doesn't require tests that only care
+        # about one guide to stub all of them.
+        return self._guides.get(name, "")
 
 
 class FakeCardRepository:

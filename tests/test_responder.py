@@ -52,7 +52,7 @@ def test_faq_routes_as_regular_guide_without_wiki_gate():
     assert responder.answer("qual o discord") == "REPLY"
     prompt = completer.last_system_prompt
     assert "FAQ TEXT" in prompt
-    # the wiki gate is wiki.md-only: faq must not carry its /pwiki instructions.
+    # the wiki gate is wikigui.md-only: faq must not carry its /pwiki instructions.
     assert "/pwiki" not in prompt
 
 
@@ -211,8 +211,8 @@ def test_admins_tool_without_resolver_falls_back():
 
 def test_wiki_swaps_in_pokemon_card():
     responder, completer = make_responder(
-        route_reply="wiki.md|pt",
-        guides={"wiki.md": "WIKI DOC"},
+        route_reply="wikigui.md|pt",
+        guides={"wikigui.md": "WIKI DOC"},
         cards={"pikachu": "PIKACHU CARD"},
     )
     responder.answer("info do pikachu")
@@ -224,7 +224,7 @@ def test_wiki_swaps_in_pokemon_card():
 
 def test_wiki_without_pokemon_keeps_doc_and_forbids_pwiki():
     responder, completer = make_responder(
-        route_reply="wiki.md|pt", guides={"wiki.md": "WIKI DOC"}, cards={}
+        route_reply="wikigui.md|pt", guides={"wikigui.md": "WIKI DOC"}, cards={}
     )
     responder.answer("onde fica a vila")
     prompt = completer.last_system_prompt

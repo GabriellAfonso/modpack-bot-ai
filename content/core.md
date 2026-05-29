@@ -10,20 +10,18 @@ Onde:
 
 ## Arquivos disponíveis
 
-- **market.md** — Mercado, compra e venda de Pokémon e itens, preços, anúncios, GTS, economia, imposto, expiração, listagens, saldo, dinheiro, como ganhar dinheiro.
-- **rules.md** — Regras do servidor, griefing, roubo, cheats, construções, punições, comportamento, farms, lag, o que é permitido ou proibido.
-- **wiki.md** — Wiki de Pokémon (comando `/pwiki`): onde encontrar/spawn, horário, evolução, tipo, fraqueza, drops, golpes/TMs, habilidades, stats, catch rate, EVs, formas, Gigantamax. Use para perguntas sobre UM Pokémon específico.
-- **faq.md** — Informações gerais do servidor: versão do Minecraft, IP/como conectar, Discord, modpack/launcher, quem é o dono/staff, como doar/apoiar, VIP/ranks.
-- **facts.md** — Números do modpack: quantos Pokémon existem, quantos biomas, lista de tipos, quantos Pokémon têm spawn natural, a lista de todos os Pokémon de cada tipo, quem dropa cada item (índice item→Pokémon), e a lista de Pokémon lendários e míticos. Use para contagens e listas gerais, incluindo "liste todos os Pokémon do tipo X", "quem dropa o item Y" e "quais os lendários" (não um Pokémon específico).
+{{ARQUIVOS}}
 - **tool:admins** — Quem são os admins/staff, como falar com um admin, contato da moderação. (não é arquivo: responde ao vivo com as menções `@` do cargo Admin)
+
+> A linha de cada arquivo acima é o título do arquivo seguido das suas seções. A pergunta cai no arquivo cuja seção melhor responde (ex.: "quais comandos do market" → seção "Comandos" de market.md). Pra perguntas sobre UM Pokémon específico (onde nasce, evolução, fraqueza, drops, golpes), use wikigui.md.
 
 ## Exemplos
 
 - "como vendo um pokemon?" → `market.md|pt`
 - "list the server rules" → `rules.md|en`
 - "is there a tax?" → `market.md|en`
-- "onde encontro pikachu?" → `wiki.md|pt`
-- "how do i evolve eevee?" → `wiki.md|en`
+- "onde encontro pikachu?" → `wikigui.md|pt`
+- "how do i evolve eevee?" → `wikigui.md|en`
 - "qual a versão do minecraft?" → `faq.md|pt`
 - "what's the server ip?" → `faq.md|en`
 - "qual o discord do server?" → `faq.md|pt`
