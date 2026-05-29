@@ -64,6 +64,18 @@ def select_facts(message: str, facts: str) -> str:
     return "\n".join(picked)
 
 
+def facts_counts_header(facts: str) -> str:
+    """The small counts header of facts.md (totals + per-type summary line).
+
+    Used as the guide for the tool-backed answer path: the big per-type/category
+    lists are NOT inlined (the `filtrar_pokemon` tool fetches names on demand), so
+    the prompt stays tiny instead of dumping hundreds of names. Falls back to the
+    whole text when facts has no list sections.
+    """
+    sections = _split_sections(facts)
+    return sections[0] if sections else facts
+
+
 def _split_sections(
     facts: str,
 ) -> tuple[str, dict[str, str], dict[str, str], dict[str, str]] | None:

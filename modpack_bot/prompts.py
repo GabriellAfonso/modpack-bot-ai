@@ -5,6 +5,11 @@ instructions written for the LLM to read — kept in their own module so the
 wording lives in one place and the logic around it stays testable.
 """
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from modpack_bot.llm import TokenUsage
+
 # Shown to the player when no guide fits, or when the wiki gate rejects.
 _FALLBACK = {
     "pt": "Não tenho essa informação, pergunta num canal de suporte!",
@@ -61,6 +66,37 @@ def non_pokemon_instruction(language: str) -> str:
         "Minecraft). Não mencione `/pwiki`. Se for sobre como usar a própria wiki, explique com "
         f'base no guia; senão responda exatamente: "{_FALLBACK["pt"]}"'
     )
+
+
+def facts_filter_instruction(language: str) -> str:
+    """Directive used on facts.md: point the model at the `filtrar_pokemon` tool."""
+    if language == "en":
+        return (
+            "You have the `filtrar_pokemon` tool: it filters the modpack's Pokémon by type, "
+            "category (legendary/mythical) and/or dropped item and returns the exact list with its "
+            "count. ALWAYS call it for any question about which/how many Pokémon match a type, "
+            "category or item — including crossed criteria (e.g. legendary Electric-types). LIST "
+            "every name it returns, do not summarize or omit them. Use the guide only for the "
+            "modpack's general totals. Never invent names."
+        )
+    return (
+        "Você tem a ferramenta `filtrar_pokemon`: filtra os Pokémon do modpack por tipo, categoria "
+        "(lendário/mítico) e/ou item dropado e devolve a lista exata com a contagem. SEMPRE chame a "
+        "ferramenta para qualquer pergunta sobre quais/quantos Pokémon batem num tipo, categoria ou "
+        "item — inclusive cruzando critérios (ex.: lendários do tipo Elétrico). LISTE todos os nomes "
+        "que ela retornar, sem resumir nem omitir. Use o guia apenas para os totais gerais do "
+        "modpack. Nunca invente nomes."
+    )
+
+
+def usage_suffix(usage: "TokenUsage") -> str:
+    """Small footer showing the token cost of producing the answer.
+
+    Example:
+        >>> usage_suffix(TokenUsage(120, 30))
+        '\\n\\n`⚙ 150 tokens (entrada 120 / saída 30)`'
+    """
+    return f"\n\n`⚙ {usage.total} tokens (entrada {usage.prompt} / saída {usage.completion})`"
 
 
 def build_system_prompt(guide: str, instruction: str, language: str) -> str:

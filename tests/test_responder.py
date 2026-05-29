@@ -8,12 +8,21 @@ from tests.conftest import (
 )
 
 
-def make_responder(route_reply, answer_reply="ANSWER", guides=None, cards=None, admins=None):
-    completer = FakeCompleter(route_reply, answer_reply)
+def make_responder(
+    route_reply,
+    answer_reply="ANSWER",
+    guides=None,
+    cards=None,
+    admins=None,
+    show_usage=False,
+    tool_call=None,
+):
+    completer = FakeCompleter(route_reply, answer_reply, tool_call=tool_call)
     guide_repo = FakeGuideRepository(guides=guides or {})
     card_repo = FakeCardRepository(cards=cards or {})
     router = Router(completer, guide_repo)
-    return Responder(router, completer, guide_repo, card_repo, admins), completer
+    responder = Responder(router, completer, guide_repo, card_repo, admins, show_usage)
+    return responder, completer
 
 
 def test_no_matching_guide_returns_fallback_pt():
@@ -85,15 +94,17 @@ def test_full_list_request_answers_from_python_without_answer_llm():
     assert len(completer.calls) == 1
 
 
-def test_count_question_still_uses_answer_llm_with_trimmed_facts():
+def test_count_question_uses_filter_tool_with_counts_header_only():
     responder, completer = make_responder(
         route_reply="facts.md|pt", answer_reply="Existem 1", guides={"facts.md": _FACTS_DOC}
     )
     assert responder.answer("quantos pokemons de fogo tem?") == "Existem 1"
-    assert len(completer.calls) == 2  # router + answer
-    # specific type question gets only its line — not the global total (would get cited).
-    assert "- Fogo (1): Charizard" in completer.last_system_prompt
-    assert "Total de Pokémon no modpack: 1" not in completer.last_system_prompt
+    assert len(completer.calls) == 2  # router + tool-backed answer
+    prompt = completer.last_system_prompt
+    # the small counts header is the guide; the big per-type list is NOT inlined
+    # (it bloated the prompt and made the model paraphrase) — the tool fetches names.
+    assert "Total de Pokémon no modpack: 1" in prompt
+    assert "- Fogo (1): Charizard" not in prompt
 
 
 def test_answer_collapses_extra_blank_lines_from_model():
@@ -117,6 +128,70 @@ def test_legendary_question_lists_from_python_without_answer_llm():
     assert "- Lendários (1): Mewtwo" in reply
     # the list is built in Python; the answer model must NOT be called.
     assert len(completer.calls) == 1
+
+
+_CROSS_FACTS = (
+    "# Números do Modpack\n"
+    "\n"
+    "- Total de Pokémon no modpack: 3\n"
+    "\n"
+    "## Pokémon por tipo\n"
+    "\n"
+    "- Elétrico (2): Pikachu, Zapdos\n"
+    "\n"
+    "## Pokémon por item dropado\n"
+    "\n"
+    "- Leather (1): Ponyta\n"
+    "\n"
+    "## Pokémon por categoria\n"
+    "\n"
+    "- Lendários (2): Mewtwo, Zapdos\n"
+)
+
+
+def test_cross_axis_facts_question_uses_filter_tool():
+    # "lendários do tipo elétrico" crosses two axes — no precomputed line exists,
+    # so the answer model is given the filter tool and the dispatch intersects.
+    responder, completer = make_responder(
+        route_reply="facts.md|pt",
+        answer_reply="É o Zapdos.",
+        guides={"facts.md": _CROSS_FACTS},
+        tool_call=("filtrar_pokemon", {"types": ["electric"], "categories": ["legendary"]}),
+    )
+    reply = responder.answer("tem algum lendario do tipo eletrico?")
+    assert reply == "É o Zapdos."
+    assert completer.tool_result == "1 Pokémon: Zapdos"  # intersection, not both lists
+    assert len(completer.calls) == 2  # router + tool-backed answer
+
+
+def test_cross_axis_full_list_phrasing_skips_listing_for_the_tool():
+    # "quais ... do tipo ..." matches both a category and a type line; the
+    # deterministic listing must NOT fire (it would concatenate both full lists).
+    responder, completer = make_responder(
+        route_reply="facts.md|pt",
+        guides={"facts.md": _CROSS_FACTS},
+        tool_call=("filtrar_pokemon", {"types": ["electric"], "categories": ["legendary"]}),
+    )
+    responder.answer("quais lendarios do tipo eletrico?")
+    assert completer.tool_result == "1 Pokémon: Zapdos"
+    assert len(completer.calls) == 2  # not the 1-call deterministic listing
+
+
+def test_usage_footer_appended_when_enabled():
+    responder, _ = make_responder(
+        route_reply="market.md|pt", answer_reply="REPLY", guides={"market.md": "G"}, show_usage=True
+    )
+    reply = responder.answer("quanto custa")
+    # router + answer = 2 calls * TokenUsage(10, 5) = 30 total.
+    assert reply.startswith("REPLY")
+    assert "30 tokens (entrada 20 / saída 10)" in reply
+
+
+def test_usage_footer_absent_by_default():
+    responder, _ = make_responder(
+        route_reply="market.md|pt", answer_reply="REPLY", guides={"market.md": "G"}
+    )
+    assert responder.answer("quanto custa") == "REPLY"
 
 
 def test_admins_tool_returns_mentions_verbatim_without_answer_llm():

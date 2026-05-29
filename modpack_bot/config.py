@@ -19,6 +19,7 @@ class Settings:
     channel_id: str
     content_dir: str = "content"
     admin_role: str = "Admin"  # Discord role whose members the admins tool lists.
+    show_token_usage: bool = True  # append the per-message token cost footer.
 
 
 def _require(name: str) -> str:
@@ -36,4 +37,5 @@ def load_settings() -> Settings:
         groq_api_key=_require("GROQ_API_KEY"),
         channel_id=_require("CANAL_ID"),
         admin_role=os.getenv("ADMIN_ROLE", "Admin"),
+        show_token_usage=os.getenv("SHOW_TOKEN_USAGE", "true").lower() == "true",
     )

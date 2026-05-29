@@ -16,7 +16,7 @@ def build_responder(settings: Settings, admins: DiscordAdminResolver) -> Respond
     guides = GuideRepository(settings.content_dir)
     cards = CardRepository(settings.content_dir)
     router = Router(completer, guides)
-    return Responder(router, completer, guides, cards, admins)
+    return Responder(router, completer, guides, cards, admins, settings.show_token_usage)
 
 
 def main() -> None:

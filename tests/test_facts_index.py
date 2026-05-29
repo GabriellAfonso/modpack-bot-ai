@@ -1,4 +1,4 @@
-from modpack_bot.facts_index import matched_facts_lines, select_facts
+from modpack_bot.facts_index import facts_counts_header, matched_facts_lines, select_facts
 
 _FACTS = (
     "# Números do Modpack\n"
@@ -24,6 +24,19 @@ _FACTS = (
     "- Lendários (1): Mewtwo\n"
     "- Míticos (1): Mew\n"
 )
+
+
+def test_counts_header_drops_every_name_list():
+    header = facts_counts_header(_FACTS)
+    assert "Total de Pokémon no modpack: 3" in header
+    # none of the per-type/item/category name lists leak into the header.
+    assert "Charizard" not in header
+    assert "Leather" not in header
+    assert "Mewtwo" not in header
+
+
+def test_counts_header_returns_whole_text_without_sections():
+    assert facts_counts_header("# só um header\n") == "# só um header\n"
 
 
 def test_general_question_keeps_only_the_counts_header():
