@@ -10,6 +10,16 @@
 - Early returns over nested ifs. Max 2 levels of indentation.
 - Exception messages must include the offending value and expected shape.
 
+## Language
+
+- All code is in English: identifiers, function/variable names, comments,
+  docstrings, commit messages, test names. No Portuguese in code.
+- Exception: string literals that are part of the product may be in
+  Portuguese — user-facing messages and prompts/instructions written for
+  the LLM to read (it reasons better with the request in its own language).
+- A Portuguese string is a deliberate choice, not a default. If a string is
+  internal (logs, errors, keys), keep it in English.
+
 ## Comments
 
 - Keep your own comments. Don't strip them on refactor — they carry
