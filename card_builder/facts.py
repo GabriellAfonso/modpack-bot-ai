@@ -8,6 +8,7 @@ drift from the cards.
 
 import unicodedata
 
+from card_builder.categories import CATEGORIES
 from card_builder.context import Json
 from card_builder.naming import item_name
 from card_builder.type_chart import TYPE_PT
@@ -116,6 +117,47 @@ def render_item_droppers(droppers: dict[str, list[str]]) -> str:
     return "\n".join(lines)
 
 
+def _species_labels(data: Json) -> list[str]:
+    """The species' Cobblemon `labels`, or empty when the field is missing."""
+    labels = data.get("labels") or []
+    return [str(label) for label in labels]
+
+
+def collect_category_members(species: list[tuple[str, Json]]) -> dict[str, list[str]]:
+    """{cobblemon_label: [display_name, …]} for every surfaced category label.
+
+    Only labels in CATEGORIES are kept (legendary, mythical) — the rest of
+    Cobblemon's labels are generations/forms and not player-facing categories.
+
+    Example:
+        >>> collect_category_members([("mew", {"name": "Mew", \
+"labels": ["gen1", "mythical"]})])
+        {'mythical': ['Mew']}
+    """
+    members: dict[str, list[str]] = {}
+    for key, data in species:
+        display = data.get("name", key)
+        for label in _species_labels(data):
+            if label in CATEGORIES:
+                members.setdefault(label, []).append(display)
+    return members
+
+
+def render_category_members(members: dict[str, list[str]]) -> str:
+    """One line per category in CATEGORIES order, PT name, names sorted.
+
+    '- Lendários (2): Mewtwo, Rayquaza'. Empty categories are skipped.
+    """
+    lines = []
+    for label, category in CATEGORIES.items():
+        names = members.get(label)
+        if not names:
+            continue
+        names = sorted(names, key=_sort_key)
+        lines.append(f"- {category.pt_name} ({len(names)}): {', '.join(names)}")
+    return "\n".join(lines)
+
+
 def render_types_line(type_counts: dict[str, int]) -> str:
     """'- Água (123), Fogo (98), …' in PT, sorted by PT name."""
     names = sorted((TYPE_PT.get(t, t) for t in type_counts), key=_sort_key)
@@ -160,5 +202,11 @@ def build_facts(
         "Quem dropa cada item. Nomes dos itens em inglês (como aparecem no jogo).",
         "",
         render_item_droppers(collect_item_droppers(species)),
+        "",
+        "## Pokémon por categoria",
+        "",
+        "Lendários e míticos, conforme classificados pelo jogo.",
+        "",
+        render_category_members(collect_category_members(species)),
     ]
     return "\n".join(lines) + "\n"

@@ -1,9 +1,11 @@
 from card_builder.context import Json
 from card_builder.facts import (
     build_facts,
+    collect_category_members,
     collect_item_droppers,
     collect_type_members,
     collect_types,
+    render_category_members,
     render_item_droppers,
     render_type_members,
     render_types_line,
@@ -113,3 +115,36 @@ def test_build_facts_lists_pokemon_per_item():
 def test_build_facts_is_deterministic():
     args = (_SPECIES, {"squirtle": [{}]}, {"#tag": "Ocean"})
     assert build_facts(*args) == build_facts(*args)
+
+
+_CATEGORY_SPECIES: list[tuple[str, Json]] = [
+    ("mewtwo", {"name": "Mewtwo", "primaryType": "psychic", "labels": ["gen1", "legendary"]}),
+    ("rayquaza", {"name": "Rayquaza", "primaryType": "dragon", "labels": ["gen3", "legendary"]}),
+    ("mew", {"name": "Mew", "primaryType": "psychic", "labels": ["gen1", "mythical"]}),
+    ("pikachu", {"name": "Pikachu", "primaryType": "electric", "labels": ["gen1"]}),
+]
+
+
+def test_collect_category_members_keeps_only_surfaced_labels():
+    members = collect_category_members(_CATEGORY_SPECIES)
+    assert members == {"legendary": ["Mewtwo", "Rayquaza"], "mythical": ["Mew"]}
+
+
+def test_collect_category_members_ignores_species_without_labels():
+    assert collect_category_members([("pidgey", {"name": "Pidgey"})]) == {}
+
+
+def test_render_category_members_sorted_names_with_pt_labels():
+    rendered = render_category_members({"legendary": ["Rayquaza", "Articuno"], "mythical": ["Mew"]})
+    assert rendered == "- Lendários (2): Articuno, Rayquaza\n- Míticos (1): Mew"
+
+
+def test_render_category_members_skips_empty_categories():
+    assert render_category_members({"legendary": ["Mewtwo"]}) == "- Lendários (1): Mewtwo"
+
+
+def test_build_facts_lists_legendaries_and_mythicals():
+    facts = build_facts(_CATEGORY_SPECIES, {}, {"#tag": "Ocean"})
+    assert "## Pokémon por categoria" in facts
+    assert "- Lendários (2): Mewtwo, Rayquaza" in facts
+    assert "- Míticos (1): Mew" in facts

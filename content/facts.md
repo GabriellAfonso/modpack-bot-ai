@@ -267,3 +267,10 @@ Quem dropa cada item. Nomes dos itens em inglês (como aparecem no jogo).
 - Wide Lens (3): Sableye, Yanma, Yanmega
 - Wise Glasses (7): Hoothoot, Medicham, Meditite, Natu, Noctowl, Oranguru, Xatu
 - Yache Berry (29): Altaria, Appletun, Applin, Bagon, Deerling, Dragonair, Dragonite, Dratini, Emolga, Flapple, Flygon, Gligar, Gliscor, Hoppip, Jumpluff, Noibat, Noivern, Salamence, Sawsbuck, Shelgon, Skiploom, Staraptor, Staravia, Starly, Swablu, Toedscool, Toedscruel, Trapinch, Vibrava
+
+## Pokémon por categoria
+
+Lendários e míticos, conforme classificados pelo jogo.
+
+- Lendários (71): Articuno, Azelf, Calyrex, Chi-Yu, Chien-Pao, Cobalion, Cosmoem, Cosmog, Cresselia, Dialga, Enamorus, Entei, Eternatus, Fezandipiti, Giratina, Glastrier, Groudon, Heatran, Ho-Oh, Koraidon, Kubfu, Kyogre, Kyurem, Landorus, Latias, Latios, Lugia, Lunala, Mesprit, Mewtwo, Miraidon, Moltres, Munkidori, Necrozma, Ogerpon, Okidogi, Palkia, Raikou, Rayquaza, Regice, Regidrago, Regieleki, Regigigas, Regirock, Registeel, Reshiram, Silvally, Solgaleo, Spectrier, Suicune, Tapu Bulu, Tapu Fini, Tapu Koko, Tapu Lele, Terapagos, Terrakion, Thundurus, Ting-Lu, Tornadus, Type: Null, Urshifu, Uxie, Virizion, Wo-Chien, Xerneas, Yveltal, Zacian, Zamazenta, Zapdos, Zekrom, Zygarde
+- Míticos (23): Arceus, Celebi, Darkrai, Deoxys, Diancie, Genesect, Hoopa, Jirachi, Keldeo, Magearna, Manaphy, Marshadow, Melmetal, Meloetta, Meltan, Mew, Pecharunt, Phione, Shaymin, Victini, Volcanion, Zarude, Zeraora

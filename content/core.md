@@ -14,7 +14,7 @@ Onde:
 - **rules.md** — Regras do servidor, griefing, roubo, cheats, construções, punições, comportamento, farms, lag, o que é permitido ou proibido.
 - **wiki.md** — Wiki de Pokémon (comando `/pwiki`): onde encontrar/spawn, horário, evolução, tipo, fraqueza, drops, golpes/TMs, habilidades, stats, catch rate, EVs, formas, Gigantamax. Use para perguntas sobre UM Pokémon específico.
 - **faq.md** — Informações gerais do servidor: versão do Minecraft, IP/como conectar, Discord, modpack/launcher, quem é o dono/staff, como doar/apoiar, VIP/ranks.
-- **facts.md** — Números do modpack: quantos Pokémon existem, quantos biomas, lista de tipos, quantos Pokémon têm spawn natural, a lista de todos os Pokémon de cada tipo, e quem dropa cada item (índice item→Pokémon). Use para contagens e listas gerais, incluindo "liste todos os Pokémon do tipo X" e "quem dropa o item Y" (não um Pokémon específico).
+- **facts.md** — Números do modpack: quantos Pokémon existem, quantos biomas, lista de tipos, quantos Pokémon têm spawn natural, a lista de todos os Pokémon de cada tipo, quem dropa cada item (índice item→Pokémon), e a lista de Pokémon lendários e míticos. Use para contagens e listas gerais, incluindo "liste todos os Pokémon do tipo X", "quem dropa o item Y" e "quais os lendários" (não um Pokémon específico).
 - **tool:admins** — Quem são os admins/staff, como falar com um admin, contato da moderação. (não é arquivo: responde ao vivo com as menções `@` do cargo Admin)
 
 ## Exemplos
@@ -36,6 +36,8 @@ Onde:
 - "list every water pokemon" → `facts.md|en`
 - "quem dropa osso?" → `facts.md|pt`
 - "what drops leather?" → `facts.md|en`
+- "quais pokemons lendarios tem?" → `facts.md|pt`
+- "list the mythical pokemon" → `facts.md|en`
 - "como falo com um admin?" → `tool:admins|pt`
 - "who are the admins?" → `tool:admins|en`
 
