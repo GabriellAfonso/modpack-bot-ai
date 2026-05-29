@@ -1,0 +1,81 @@
+# Alcremie  (#869 · Fada)
+Stats base: HP 65 / Atk 60 / Def 75 / SpA 110 / SpD 121 / Spd 64
+Fraco contra: 2x Veneno, Aço
+Habilidades: Sweetveil, Aromaveil (oculta)
+Catch rate: 100 · EV yield: 2 SpD · Egg groups: Fairy, Amorphous
+Drops: Sugar (qtd 0-2), Cake (5.0%)
+
+## Spawn
+- [common] aether; qualquer bioma da superfície, perto de Cake — nível 22-50
+- [common] aether; qualquer bioma da superfície, perto de Saccharine Trees — nível 22-50
+- [uncommon] aether; qualquer bioma da superfície, perto de Sugar Cane — nível 22-50
+- [common] qualquer bioma da superfície, sem ver o céu — nível 22-50
+
+## Evolui de
+- Milcery — subir de nível (segurando Strawberry Sweet, de dia)
+- Milcery — subir de nível (segurando Love Sweet, de dia)
+- Milcery — subir de nível (segurando Berry Sweet, de dia)
+- Milcery — subir de nível (segurando Clover Sweet, de dia)
+- Milcery — subir de nível (segurando Flower Sweet, de dia)
+- Milcery — subir de nível (segurando Star Sweet, de dia)
+- Milcery — subir de nível (segurando Ribbon Sweet, de dia)
+- Milcery — subir de nível (segurando Strawberry Sweet, de dia)
+- Milcery — subir de nível (segurando Love Sweet, de dia)
+- Milcery — subir de nível (segurando Berry Sweet, de dia)
+- Milcery — subir de nível (segurando Clover Sweet, de dia)
+- Milcery — subir de nível (segurando Flower Sweet, de dia)
+- Milcery — subir de nível (segurando Star Sweet, de dia)
+- Milcery — subir de nível (segurando Ribbon Sweet, de dia)
+- Milcery — subir de nível (segurando Strawberry Sweet, de noite)
+- Milcery — subir de nível (segurando Love Sweet, de noite)
+- Milcery — subir de nível (segurando Berry Sweet, de noite)
+- Milcery — subir de nível (segurando Clover Sweet, de noite)
+- Milcery — subir de nível (segurando Flower Sweet, de noite)
+- Milcery — subir de nível (segurando Star Sweet, de noite)
+- Milcery — subir de nível (segurando Ribbon Sweet, de noite)
+- Milcery — subir de nível (segurando Strawberry Sweet, de noite)
+- Milcery — subir de nível (segurando Love Sweet, de noite)
+- Milcery — subir de nível (segurando Berry Sweet, de noite)
+- Milcery — subir de nível (segurando Clover Sweet, de noite)
+- Milcery — subir de nível (segurando Flower Sweet, de noite)
+- Milcery — subir de nível (segurando Star Sweet, de noite)
+- Milcery — subir de nível (segurando Ribbon Sweet, de noite)
+- Milcery — subir de nível (segurando Strawberry Sweet, de noite)
+- Milcery — subir de nível (segurando Love Sweet, de noite)
+- Milcery — subir de nível (segurando Berry Sweet, de noite)
+- Milcery — subir de nível (segurando Clover Sweet, de noite)
+- Milcery — subir de nível (segurando Flower Sweet, de noite)
+- Milcery — subir de nível (segurando Star Sweet, de noite)
+- Milcery — subir de nível (segurando Ribbon Sweet, de noite)
+- Milcery — subir de nível (segurando Strawberry Sweet, de noite)
+- Milcery — subir de nível (segurando Love Sweet, de noite)
+- Milcery — subir de nível (segurando Berry Sweet, de noite)
+- Milcery — subir de nível (segurando Clover Sweet, de noite)
+- Milcery — subir de nível (segurando Flower Sweet, de noite)
+- Milcery — subir de nível (segurando Star Sweet, de noite)
+- Milcery — subir de nível (segurando Ribbon Sweet, de noite)
+- Milcery — subir de nível (segurando Strawberry Sweet, de dia)
+- Milcery — subir de nível (segurando Love Sweet, de dia)
+- Milcery — subir de nível (segurando Berry Sweet, de dia)
+- Milcery — subir de nível (segurando Clover Sweet, de dia)
+- Milcery — subir de nível (segurando Flower Sweet, de dia)
+- Milcery — subir de nível (segurando Star Sweet, de dia)
+- Milcery — subir de nível (segurando Ribbon Sweet, de dia)
+- Milcery — subir de nível (segurando Strawberry Sweet, de dia)
+- Milcery — subir de nível (segurando Love Sweet, de dia)
+- Milcery — subir de nível (segurando Berry Sweet, de dia)
+- Milcery — subir de nível (segurando Clover Sweet, de dia)
+- Milcery — subir de nível (segurando Flower Sweet, de dia)
+- Milcery — subir de nível (segurando Star Sweet, de dia)
+- Milcery — subir de nível (segurando Ribbon Sweet, de dia)
+- Milcery — subir de nível (segurando Strawberry Sweet, ao entardecer)
+- Milcery — subir de nível (segurando Love Sweet, ao entardecer)
+- Milcery — subir de nível (segurando Berry Sweet, ao entardecer)
+- Milcery — subir de nível (segurando Clover Sweet, ao entardecer)
+- Milcery — subir de nível (segurando Flower Sweet, ao entardecer)
+- Milcery — subir de nível (segurando Star Sweet, ao entardecer)
+- Milcery — subir de nível (segurando Ribbon Sweet, ao entardecer)
+
+Formas: Ruby-Cream, Matcha-Cream, Mint-Cream, Lemon-Cream, Salted-Cream, Ruby-Swirl, Caramel-Swirl, Rainbow-Swirl, Gmax · Gigantamax: sim
+
+_Mais detalhes (golpes, TMs, EVs completos): `/pwiki alcremie`._

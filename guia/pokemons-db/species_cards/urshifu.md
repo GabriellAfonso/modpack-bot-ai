@@ -1,0 +1,16 @@
+# Urshifu  (#892 · Lutador/Sombrio)
+Stats base: HP 100 / Atk 130 / Def 100 / SpA 63 / SpD 60 / Spd 97
+Fraco contra: 4x Fada · 2x Lutador, Voador
+Habilidades: Unseenfist, Unseenfist (oculta)
+Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
+
+## Spawn
+- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+
+## Evolui de
+- Kubfu — usar Scroll Of Darkness
+- Kubfu — usar Scroll Of Waters
+
+Formas: Rapid-Strike, Gmax, Rapid-Strike-Gmax · Gigantamax: sim
+
+_Mais detalhes (golpes, TMs, EVs completos): `/pwiki urshifu`._

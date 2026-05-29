@@ -1,0 +1,13 @@
+# Genesect  (#649 · Inseto/Aço)
+Stats base: HP 71 / Atk 120 / Def 95 / SpA 120 / SpD 95 / Spd 99
+Fraco contra: 4x Fogo
+Habilidades: Download, Download (oculta)
+Catch rate: 3 · EV yield: 1 Atk, 1 SpA, 1 Spd · Egg groups: Undiscovered
+Drops: Metal Coat
+
+## Spawn
+- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+
+Formas: Douse, Shock, Burn, Chill
+
+_Mais detalhes (golpes, TMs, EVs completos): `/pwiki genesect`._
