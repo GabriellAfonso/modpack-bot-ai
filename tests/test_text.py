@@ -18,6 +18,13 @@ def test_wants_full_list_true_for_explicit_request():
     assert wants_full_list("list all of them") is True
 
 
+def test_wants_full_list_true_for_quais_phrasing():
+    # "quais X tem" is a list request ("which ones are there"); without this the
+    # bot dropped to the LLM with only the bare roster line and rambled.
+    assert wants_full_list("quais pokemons lendarios tem?") is True
+    assert wants_full_list("which legendaries are there?") is True
+
+
 def test_wants_full_list_false_for_normal_question():
     assert wants_full_list("onde acho pikachu?") is False
 

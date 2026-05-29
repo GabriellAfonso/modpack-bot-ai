@@ -18,6 +18,11 @@ _FACTS = (
     "\n"
     "- Blaze Powder (1): Ponyta\n"
     "- Leather (2): Ponyta, Rapidash\n"
+    "\n"
+    "## Pokémon por categoria\n"
+    "\n"
+    "- Lendários (1): Mewtwo\n"
+    "- Míticos (1): Mew\n"
 )
 
 
@@ -32,7 +37,8 @@ def test_type_question_adds_only_that_type_line():
     result = select_facts("lista todos os pokemons tipo fogo", _FACTS)
     assert "- Fogo (1): Charizard" in result
     assert "Água (2)" not in result
-    assert "Total de Pokémon no modpack: 3" in result  # header always kept
+    # global totals are dropped on a specific question so the model can't cite them.
+    assert "Total de Pokémon no modpack: 3" not in result
 
 
 def test_type_question_matches_english_type_id():
@@ -64,3 +70,18 @@ def test_matched_lines_returns_type_then_item_lines():
 
 def test_matched_lines_empty_for_general_count_question():
     assert matched_facts_lines("quantos pokemon tem?", _FACTS) == []
+
+
+def test_legendary_question_adds_only_the_legendary_line():
+    result = select_facts("quais pokemons lendarios tem?", _FACTS)
+    assert result == "- Lendários (1): Mewtwo"
+
+
+def test_mythical_question_matches_english_synonym():
+    result = select_facts("list the mythical pokemon", _FACTS)
+    assert result == "- Míticos (1): Mew"
+
+
+def test_category_and_type_questions_do_not_cross_match():
+    assert "Lendários" not in select_facts("tipo fogo", _FACTS)
+    assert "Fogo" not in select_facts("quais lendarios", _FACTS)

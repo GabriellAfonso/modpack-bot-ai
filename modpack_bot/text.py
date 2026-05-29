@@ -5,7 +5,8 @@ import unicodedata
 
 # Explicit request for a full list (e.g. "lista todos os biomas", "completo").
 _FULL_LIST_PATTERN = re.compile(
-    r"\b(todos|todas|complet[oa]s?|lista(r|\b)|liste|list all|all of them|every|inteir)",
+    r"\b(todos|todas|complet[oa]s?|lista(r|\b)|liste|list all|all of them|every|inteir"
+    r"|quais|which)",
     re.IGNORECASE,
 )
 

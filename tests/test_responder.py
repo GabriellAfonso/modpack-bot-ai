@@ -67,6 +67,10 @@ _FACTS_DOC = (
     "## Pokémon por item dropado\n"
     "\n"
     "- Leather (1): Ponyta\n"
+    "\n"
+    "## Pokémon por categoria\n"
+    "\n"
+    "- Lendários (1): Mewtwo\n"
 )
 
 
@@ -87,7 +91,9 @@ def test_count_question_still_uses_answer_llm_with_trimmed_facts():
     )
     assert responder.answer("quantos pokemons de fogo tem?") == "Existem 1"
     assert len(completer.calls) == 2  # router + answer
-    assert "Total de Pokémon no modpack: 1" in completer.last_system_prompt
+    # specific type question gets only its line — not the global total (would get cited).
+    assert "- Fogo (1): Charizard" in completer.last_system_prompt
+    assert "Total de Pokémon no modpack: 1" not in completer.last_system_prompt
 
 
 def test_answer_collapses_extra_blank_lines_from_model():
@@ -97,6 +103,20 @@ def test_answer_collapses_extra_blank_lines_from_model():
         guides={"market.md": "GUIDE"},
     )
     assert responder.answer("quantos tipo agua") == "Tipo Água: 154.\n\nNo mundo: 890."
+
+
+def test_legendary_question_lists_from_python_without_answer_llm():
+    # "quais lendários tem?" is a full-list request ("which ones are there"). It
+    # must hit the deterministic listing, not the LLM — feeding the bare roster
+    # line to the answer model made it ramble instead of listing the names.
+    responder, completer = make_responder(
+        route_reply="facts.md|pt", answer_reply="Mewtwo", guides={"facts.md": _FACTS_DOC}
+    )
+    reply = responder.answer("quais pokemons lendarios tem?")
+    assert "Aqui está:" in reply
+    assert "- Lendários (1): Mewtwo" in reply
+    # the list is built in Python; the answer model must NOT be called.
+    assert len(completer.calls) == 1
 
 
 def test_admins_tool_returns_mentions_verbatim_without_answer_llm():
