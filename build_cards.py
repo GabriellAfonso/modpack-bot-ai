@@ -1,13 +1,13 @@
-"""Gera 'cartas' compactas por Pokémon a partir do banco consolidado.
+"""Generate compact per-Pokémon 'cards' from the consolidated database.
 
-Roda OFFLINE, 1x (e de novo só quando os dados mudarem: addon, novos mons,
-ou edição do biome_map.md). O bot nunca chama isto — em runtime ele só lê a
-carta pronta em species_cards/<nome>.md.
+Runs OFFLINE, once (and again only when the data changes: addon, new mons,
+or an edit to biome_map.md). The bot never calls this — at runtime it only
+reads the ready-made card at species_cards/<name>.md.
 
-Lê:  guia/pokemons-db/species/*.json
-     guia/pokemons-db/spawn_pool_world/*.json
-     guia/pokemons-db/biome_map.md
-Gera: guia/pokemons-db/species_cards/<nome>.md
+Reads:  guia/pokemons-db/species/*.json
+        guia/pokemons-db/spawn_pool_world/*.json
+        guia/pokemons-db/biome_map.md
+Writes: guia/pokemons-db/species_cards/<name>.md
 """
 
 import json
@@ -19,18 +19,18 @@ BASE = os.path.join("guia", "pokemons-db")
 SPECIES_DIR = os.path.join(BASE, "species")
 SPAWN_DIR = os.path.join(BASE, "spawn_pool_world")
 BIOME_MAP = os.path.join(BASE, "biome_map.md")
-OUT_DIR = os.path.join(BASE, "species_cards")        # versão enxuta (padrão)
-OUT_FULL_DIR = os.path.join(BASE, "species_cards_full")  # versão completa (sob pedido)
+OUT_DIR = os.path.join(BASE, "species_cards")        # slim version (default)
+OUT_FULL_DIR = os.path.join(BASE, "species_cards_full")  # full version (on request)
 
-MAX_SPAWN_LINHAS = 6
-MAX_BIOMAS = 5
+MAX_SPAWN_LINES = 6
+MAX_BIOMES = 5
 
-# Quando True, não trunca biomas nem linhas de spawn (gera a versão completa).
-COMPLETO = False
+# When True, neither biomes nor spawn lines are truncated (generates the full version).
+FULL = False
 
-# ---------------------------------------------------------------- tipos / PT
+# ---------------------------------------------------------------- types / PT
 
-TIPO_PT = {
+TYPE_PT = {
     "normal": "Normal", "fire": "Fogo", "water": "Água", "electric": "Elétrico",
     "grass": "Grama", "ice": "Gelo", "fighting": "Lutador", "poison": "Veneno",
     "ground": "Terra", "flying": "Voador", "psychic": "Psíquico", "bug": "Inseto",
@@ -38,8 +38,8 @@ TIPO_PT = {
     "steel": "Aço", "fairy": "Fada",
 }
 
-# Eficácia ofensiva: atacante -> (super-eficaz 2x, pouco-eficaz 0.5x, sem efeito 0x)
-_OFENSIVA = {
+# Offensive effectiveness: attacker -> (super-effective 2x, not-very-effective 0.5x, no effect 0x)
+_OFFENSIVE = {
     "normal": ([], ["rock", "steel"], ["ghost"]),
     "fire": (["grass", "ice", "bug", "steel"], ["fire", "water", "rock", "dragon"], []),
     "water": (["fire", "ground", "rock"], ["water", "grass", "dragon"], []),
@@ -60,143 +60,141 @@ _OFENSIVA = {
     "fairy": (["fighting", "dragon", "dark"], ["fire", "poison", "steel"], []),
 }
 
-def _mult(atacante, defensor):
-    sup, fraco, zero = _OFENSIVA[atacante]
-    if defensor in zero:
+def _mult(attacker, defender):
+    strong, weak, immune = _OFFENSIVE[attacker]
+    if defender in immune:
         return 0.0
-    if defensor in sup:
+    if defender in strong:
         return 2.0
-    if defensor in fraco:
+    if defender in weak:
         return 0.5
     return 1.0
 
-def fraquezas(tipos):
-    """Devolve {tipo_atacante: multiplicador} só pros multiplicadores > 1."""
-    out = {}
-    for atk in _OFENSIVA:
+def weaknesses(types):
+    """Return {attacking_type: multiplier} only for multipliers > 1."""
+    result = {}
+    for atk in _OFFENSIVE:
         m = 1.0
-        for d in tipos:
+        for d in types:
             m *= _mult(atk, d)
         if m > 1:
-            out[atk] = m
-    return out
+            result[atk] = m
+    return result
 
 # ---------------------------------------------------------------- biome_map
 
-def carregar_biomas():
-    """Tag (#mod:is_x) -> string curta de biomas vanilla (ou rótulo especial)."""
-    mapa = {}
+def load_biomes():
+    """Tag (#mod:is_x) -> short vanilla biome string (or a special label)."""
+    mapping = {}
     if not os.path.exists(BIOME_MAP):
-        return mapa
-    bloco = None
-    especial = None
+        return mapping
+    current_tag = None
     with open(BIOME_MAP, encoding="utf-8") as f:
-        for linha in f:
-            m = re.match(r"^## (#\S+)", linha)
+        for line in f:
+            m = re.match(r"^## (#\S+)", line)
             if m:
-                bloco = m.group(1)
-                especial = None
+                current_tag = m.group(1)
                 continue
-            if bloco is None:
+            if current_tag is None:
                 continue
-            if "TODOS os biomas" in linha:
-                mapa[bloco] = "qualquer bioma da superfície"
-            mv = re.match(r"^- \*\*Vanilla:\*\* (.+)", linha)
-            if mv and bloco not in mapa:
-                mapa[bloco] = mv.group(1).strip()
-    return mapa
+            if "TODOS os biomas" in line:
+                mapping[current_tag] = "qualquer bioma da superfície"
+            vanilla_match = re.match(r"^- \*\*Vanilla:\*\* (.+)", line)
+            if vanilla_match and current_tag not in mapping:
+                mapping[current_tag] = vanilla_match.group(1).strip()
+    return mapping
 
-BIOMAS = carregar_biomas()
+BIOMES = load_biomes()
 
-def resolver_bioma(tag):
-    if tag in BIOMAS:
-        v = BIOMAS[tag]
-        if v == "qualquer bioma da superfície":
-            return v
-        partes = [p.strip() for p in v.split(",")]
-        if COMPLETO or len(partes) <= MAX_BIOMAS:
-            return ", ".join(partes)
-        return ", ".join(partes[:MAX_BIOMAS]) + "…"
-    # tag de mod externo não mapeada -> nome limpo
-    limpo = tag.split(":")[-1].replace("is_", "").replace("_", " ")
-    return limpo
+def resolve_biome(tag):
+    if tag in BIOMES:
+        value = BIOMES[tag]
+        if value == "qualquer bioma da superfície":
+            return value
+        parts = [p.strip() for p in value.split(",")]
+        if FULL or len(parts) <= MAX_BIOMES:
+            return ", ".join(parts)
+        return ", ".join(parts[:MAX_BIOMES]) + "…"
+    # unmapped external-mod tag -> clean name
+    clean = tag.split(":")[-1].replace("is_", "").replace("_", " ")
+    return clean
 
-def resolver_biomas(tags):
-    return "; ".join(resolver_bioma(t) for t in tags)
+def resolve_biomes(tags):
+    return "; ".join(resolve_biome(t) for t in tags)
 
 # ---------------------------------------------------------------- utils
 
-def nome_item(item_id):
+def item_name(item_id):
     return item_id.split(":")[-1].replace("_", " ").title()
 
-def titulo(s):
+def titleize(s):
     return s.replace("_", " ").title()
 
 # ---------------------------------------------------------------- spawns
 
-def indexar_spawns():
-    """nome_da_especie -> lista de entradas de spawn (agrupadas de todos os arquivos)."""
-    idx = {}
+def index_spawns():
+    """species_name -> list of spawn entries (grouped from all files)."""
+    index = {}
     for f in glob.glob(os.path.join(SPAWN_DIR, "*.json")):
-        d = json.load(open(f, encoding="utf-8"))
-        if not d.get("enabled", True):
+        pool = json.load(open(f, encoding="utf-8"))
+        if not pool.get("enabled", True):
             continue
-        for s in d.get("spawns", []):
-            nome = str(s.get("pokemon", "")).split()[0].lower()
-            if nome:
-                idx.setdefault(nome, []).append(s)
-    return idx
+        for spawn in pool.get("spawns", []):
+            name = str(spawn.get("pokemon", "")).split()[0].lower()
+            if name:
+                index.setdefault(name, []).append(spawn)
+    return index
 
-SPAWN_IDX = indexar_spawns()
+SPAWN_INDEX = index_spawns()
 
-def render_spawn(s):
-    cond = s.get("condition", {})
-    bucket = s.get("bucket", "?")
+def render_spawn(spawn):
+    condition = spawn.get("condition", {})
+    bucket = spawn.get("bucket", "?")
 
-    partes = []
-    if cond.get("biomes"):
-        # só onde NASCE; biomas de anticondition são ruído pra essa pergunta.
-        partes.append(resolver_biomas(cond["biomes"]))
+    parts = []
+    if condition.get("biomes"):
+        # only where it SPAWNS; anticondition biomes are noise for this question.
+        parts.append(resolve_biomes(condition["biomes"]))
 
-    tr = cond.get("timeRange")
-    if tr:
-        partes.append({"day": "de dia", "night": "de noite", "dusk": "ao entardecer"}.get(tr, tr))
+    time_range = condition.get("timeRange")
+    if time_range:
+        parts.append({"day": "de dia", "night": "de noite", "dusk": "ao entardecer"}.get(time_range, time_range))
 
-    if cond.get("canSeeSky") is False:
-        partes.append("sem ver o céu")
-    if cond.get("isRaining") is True:
-        partes.append("chovendo")
-    if cond.get("structures"):
-        partes.append("perto de " + ", ".join(titulo(x.split(":")[-1]) for x in cond["structures"]))
-    if cond.get("neededNearbyBlocks"):
-        partes.append("perto de " + ", ".join(nome_item(x) for x in cond["neededNearbyBlocks"]))
-    if cond.get("moonPhase") is not None:
-        partes.append(f"lua fase {cond['moonPhase']}")
+    if condition.get("canSeeSky") is False:
+        parts.append("sem ver o céu")
+    if condition.get("isRaining") is True:
+        parts.append("chovendo")
+    if condition.get("structures"):
+        parts.append("perto de " + ", ".join(titleize(x.split(":")[-1]) for x in condition["structures"]))
+    if condition.get("neededNearbyBlocks"):
+        parts.append("perto de " + ", ".join(item_name(x) for x in condition["neededNearbyBlocks"]))
+    if condition.get("moonPhase") is not None:
+        parts.append(f"lua fase {condition['moonPhase']}")
 
-    nivel = s.get("level", "?")
-    corpo = ", ".join(partes) if partes else "condições variadas"
-    return f"- [{bucket}] {corpo} — nível {nivel}"
+    level = spawn.get("level", "?")
+    body = ", ".join(parts) if parts else "condições variadas"
+    return f"- [{bucket}] {body} — nível {level}"
 
-def bloco_spawn(nome):
-    spawns = SPAWN_IDX.get(nome, [])
+def spawn_block(name):
+    spawns = SPAWN_INDEX.get(name, [])
     if not spawns:
         return None
-    linhas = []
-    vistos = set()
-    for s in spawns:
-        l = render_spawn(s)
-        if l not in vistos:
-            vistos.add(l)
-            linhas.append(l)
+    lines = []
+    seen = set()
+    for spawn in spawns:
+        line = render_spawn(spawn)
+        if line not in seen:
+            seen.add(line)
+            lines.append(line)
     extra = ""
-    if not COMPLETO and len(linhas) > MAX_SPAWN_LINHAS:
-        extra = f"\n- … (+{len(linhas) - MAX_SPAWN_LINHAS} condições; veja `/pwiki {nome}` → Biome Spawns)"
-        linhas = linhas[:MAX_SPAWN_LINHAS]
-    return "\n".join(linhas) + extra
+    if not FULL and len(lines) > MAX_SPAWN_LINES:
+        extra = f"\n- … (+{len(lines) - MAX_SPAWN_LINES} condições; veja `/pwiki {name}` → Biome Spawns)"
+        lines = lines[:MAX_SPAWN_LINES]
+    return "\n".join(lines) + extra
 
-# ---------------------------------------------------------------- evoluções
+# ---------------------------------------------------------------- evolutions
 
-def render_req(r):
+def render_requirement(r):
     v = r.get("variant")
     if v == "level":
         return f"nível {r.get('minLevel', r.get('amount', '?'))}+"
@@ -205,38 +203,38 @@ def render_req(r):
     if v == "time_range":
         return {"day": "de dia", "night": "de noite", "dusk": "ao entardecer"}.get(r.get("range"), r.get("range", ""))
     if v == "biome":
-        # tag de bioma real (#mod:is_x) -> biomas; tag interna de evolução
-        # (#cobblemon:evolution/...) não é bioma de verdade -> "certos biomas".
-        def _leg(tag):
+        # real biome tag (#mod:is_x) -> biomes; internal evolution tag
+        # (#cobblemon:evolution/...) is not a real biome -> "certos biomas".
+        def _label(tag):
             if not tag:
                 return None
-            if tag in BIOMAS:
-                return resolver_bioma(tag)
+            if tag in BIOMES:
+                return resolve_biome(tag)
             if "is_" in tag and "/" not in tag:
-                return resolver_bioma(tag)
+                return resolve_biome(tag)
             return "certos biomas"
-        cond = _leg(r.get("biomeCondition"))
-        anti = _leg(r.get("biomeAnticondition"))
+        cond = _label(r.get("biomeCondition"))
+        anti = _label(r.get("biomeAnticondition"))
         if cond:
             return "em " + cond
         if anti and anti != "certos biomas":
             return "fora de " + anti
-        return None  # anti em bioma interno: pouco informativo, omite
+        return None  # anti on an internal biome: not very informative, omit
     if v == "held_item":
-        return "segurando " + nome_item(r.get("itemCondition", ""))
+        return "segurando " + item_name(r.get("itemCondition", ""))
     if v == "structure":
-        return "perto de " + titulo(str(r.get("structureCondition", r.get("structure", ""))).split(":")[-1])
+        return "perto de " + titleize(str(r.get("structureCondition", r.get("structure", ""))).split(":")[-1])
     if v == "has_move":
-        return "conhecendo " + titulo(r.get("move", ""))
+        return "conhecendo " + titleize(r.get("move", ""))
     if v == "has_move_type":
-        return "com golpe do tipo " + TIPO_PT.get(r.get("type"), r.get("type", ""))
+        return "com golpe do tipo " + TYPE_PT.get(r.get("type"), r.get("type", ""))
     if v == "moon_phase":
         return f"lua fase {r.get('moonPhase', '?')}"
     if v == "weather":
         return "com tempo específico"
     if v == "properties":
-        alvo = r.get("target", "")
-        return {"gender=male": "sendo macho", "gender=female": "sendo fêmea"}.get(alvo, alvo)
+        target = r.get("target", "")
+        return {"gender=male": "sendo macho", "gender=female": "sendo fêmea"}.get(target, target)
     if v == "property_range":
         return f"{r.get('feature', '')} {r.get('range', '')}".strip()
     if v == "use_move":
@@ -253,13 +251,13 @@ def render_req(r):
         return "após um avanço (advancement)"
     return v or ""
 
-def render_metodo(e):
-    """Só o método da evolução, ex.: 'usar Water Stone' / 'subir de nível (…)'."""
+def render_method(e):
+    """Only the evolution method, e.g. 'usar Water Stone' / 'subir de nível (…)'."""
     variant = e.get("variant", "")
-    reqs = [render_req(r) for r in e.get("requirements", [])]
+    reqs = [render_requirement(r) for r in e.get("requirements", [])]
     reqs = [r for r in reqs if r]
     if variant == "item_interact":
-        base = "usar " + nome_item(e.get("requiredContext", "item"))
+        base = "usar " + item_name(e.get("requiredContext", "item"))
     elif variant == "trade":
         base = "trocar"
     else:  # level_up / level
@@ -268,134 +266,134 @@ def render_metodo(e):
         base += " (" + ", ".join(reqs) + ")"
     return base
 
-def render_evo(e):
-    return f"- {titulo(e.get('result', '?'))} — {render_metodo(e)}"
+def render_evolution(e):
+    return f"- {titleize(e.get('result', '?'))} — {render_method(e)}"
 
-# Índice reverso: nome_base -> [(quem_evolui_nele, método)]. Pra carta do alvo
-# (ex.: Vaporeon) dizer "Evolui de: Eevee — usar Water Stone".
+# Reverse index: base_name -> [(who_evolves_into_it, method)]. For the target's
+# card (e.g. Vaporeon) to say "Evolui de: Eevee — usar Water Stone".
 SPECIES_FILES = {os.path.basename(f)[:-5] for f in glob.glob(os.path.join(SPECIES_DIR, "*.json"))}
 
-def indexar_pre_evolucoes():
+def index_pre_evolutions():
     pre = {}
     for f in glob.glob(os.path.join(SPECIES_DIR, "*.json")):
-        d = json.load(open(f, encoding="utf-8"))
-        origem = d["name"]
-        for e in d.get("evolutions", []):
-            bruto = re.sub(r"[^a-z0-9]", "", e.get("result", "").lower())
-            alvo = bruto if bruto in SPECIES_FILES else e.get("result", "").split()[0].lower()
-            pre.setdefault(alvo, []).append((origem, render_metodo(e)))
+        species = json.load(open(f, encoding="utf-8"))
+        source = species["name"]
+        for e in species.get("evolutions", []):
+            raw = re.sub(r"[^a-z0-9]", "", e.get("result", "").lower())
+            target = raw if raw in SPECIES_FILES else e.get("result", "").split()[0].lower()
+            pre.setdefault(target, []).append((source, render_method(e)))
     return pre
 
-PRE_EVO = indexar_pre_evolucoes()
+PRE_EVOLUTIONS = index_pre_evolutions()
 
-# ---------------------------------------------------------------- carta
+# ---------------------------------------------------------------- card
 
-def construir_carta(d, chave):
-    nome = d["name"]
-    tipos = [d["primaryType"]] + ([d["secondaryType"]] if d.get("secondaryType") else [])
-    tipos_pt = "/".join(TIPO_PT.get(t, t) for t in tipos)
+def build_card(species, key):
+    name = species["name"]
+    types = [species["primaryType"]] + ([species["secondaryType"]] if species.get("secondaryType") else [])
+    types_pt = "/".join(TYPE_PT.get(t, t) for t in types)
 
-    L = [f"# {nome}  (#{d['nationalPokedexNumber']} · {tipos_pt})"]
+    lines = [f"# {name}  (#{species['nationalPokedexNumber']} · {types_pt})"]
 
-    bs = d["baseStats"]
-    L.append(
-        f"Stats base: HP {bs['hp']} / Atk {bs['attack']} / Def {bs['defence']} / "
-        f"SpA {bs['special_attack']} / SpD {bs['special_defence']} / Spd {bs['speed']}"
+    stats = species["baseStats"]
+    lines.append(
+        f"Stats base: HP {stats['hp']} / Atk {stats['attack']} / Def {stats['defence']} / "
+        f"SpA {stats['special_attack']} / SpD {stats['special_defence']} / Spd {stats['speed']}"
     )
 
-    # fraquezas
-    fr = fraquezas(tipos)
-    if fr:
-        x4 = [TIPO_PT.get(t, t) for t, m in fr.items() if m >= 4]
-        x2 = [TIPO_PT.get(t, t) for t, m in fr.items() if m == 2]
-        ps = []
+    # weaknesses
+    weak_map = weaknesses(types)
+    if weak_map:
+        x4 = [TYPE_PT.get(t, t) for t, m in weak_map.items() if m >= 4]
+        x2 = [TYPE_PT.get(t, t) for t, m in weak_map.items() if m == 2]
+        parts = []
         if x4:
-            ps.append("4x " + ", ".join(x4))
+            parts.append("4x " + ", ".join(x4))
         if x2:
-            ps.append("2x " + ", ".join(x2))
-        L.append("Fraco contra: " + " · ".join(ps))
+            parts.append("2x " + ", ".join(x2))
+        lines.append("Fraco contra: " + " · ".join(parts))
 
-    # habilidades
-    habs = []
-    for a in d.get("abilities", []):
+    # abilities
+    abilities = []
+    for a in species.get("abilities", []):
         if a.startswith("h:"):
-            habs.append(titulo(a[2:]) + " (oculta)")
+            abilities.append(titleize(a[2:]) + " (oculta)")
         else:
-            habs.append(titulo(a))
-    if habs:
-        L.append("Habilidades: " + ", ".join(habs))
+            abilities.append(titleize(a))
+    if abilities:
+        lines.append("Habilidades: " + ", ".join(abilities))
 
     EV_LABEL = {"hp": "HP", "attack": "Atk", "defence": "Def",
                 "special_attack": "SpA", "special_defence": "SpD", "speed": "Spd"}
     ev = ", ".join(f"{v} {EV_LABEL.get(k, k)}"
-                   for k, v in d.get("evYield", {}).items() if v)
-    metainfo = [f"Catch rate: {d.get('catchRate', '?')}"]
+                   for k, v in species.get("evYield", {}).items() if v)
+    meta = [f"Catch rate: {species.get('catchRate', '?')}"]
     if ev:
-        metainfo.append(f"EV yield: {ev}")
-    if d.get("eggGroups"):
-        metainfo.append("Egg groups: " + ", ".join(titulo(g) for g in d["eggGroups"]))
-    L.append(" · ".join(metainfo))
+        meta.append(f"EV yield: {ev}")
+    if species.get("eggGroups"):
+        meta.append("Egg groups: " + ", ".join(titleize(g) for g in species["eggGroups"]))
+    lines.append(" · ".join(meta))
 
     # drops
-    drops = d.get("drops", {}).get("entries", [])
+    drops = species.get("drops", {}).get("entries", [])
     if drops:
-        def _drop(e):
-            nm = nome_item(e["item"])
-            if "percentage" in e:
-                return f"{nm} ({e['percentage']}%)"
-            if "quantityRange" in e:
-                return f"{nm} (qtd {e['quantityRange']})"
+        def _drop(entry):
+            nm = item_name(entry["item"])
+            if "percentage" in entry:
+                return f"{nm} ({entry['percentage']}%)"
+            if "quantityRange" in entry:
+                return f"{nm} (qtd {entry['quantityRange']})"
             return nm
-        L.append("Drops: " + ", ".join(_drop(e) for e in drops))
+        lines.append("Drops: " + ", ".join(_drop(entry) for entry in drops))
 
     # spawn
-    sb = bloco_spawn(chave)
-    if sb:
-        L.append("\n## Spawn\n" + sb)
+    spawn_text = spawn_block(key)
+    if spawn_text:
+        lines.append("\n## Spawn\n" + spawn_text)
     else:
-        L.append("\n## Spawn\n- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).")
+        lines.append("\n## Spawn\n- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).")
 
-    # evolução (pra frente)
-    evos = d.get("evolutions", [])
-    if evos:
-        L.append("\n## Evolui em\n" + "\n".join(render_evo(e) for e in evos))
+    # evolution (forward)
+    evolutions = species.get("evolutions", [])
+    if evolutions:
+        lines.append("\n## Evolui em\n" + "\n".join(render_evolution(e) for e in evolutions))
 
-    # pré-evolução (de onde vem) — resolve "como obtenho/evoluo pra X"
-    pre = PRE_EVO.get(chave, [])
-    if pre:
-        L.append("\n## Evolui de\n" + "\n".join(f"- {src} — {met}" for src, met in pre))
+    # pre-evolution (where it comes from) — answers "how do I get/evolve into X"
+    pre_evos = PRE_EVOLUTIONS.get(key, [])
+    if pre_evos:
+        lines.append("\n## Evolui de\n" + "\n".join(f"- {src} — {met}" for src, met in pre_evos))
 
-    # formas / gmax
-    formas = [f.get("name") for f in d.get("forms", []) if f.get("name")]
-    gmax = any("gmax" in f.get("aspects", []) for f in d.get("forms", []))
-    rodape = []
-    if formas:
-        rodape.append("Formas: " + ", ".join(formas))
+    # forms / gmax
+    forms = [f.get("name") for f in species.get("forms", []) if f.get("name")]
+    gmax = any("gmax" in f.get("aspects", []) for f in species.get("forms", []))
+    footer = []
+    if forms:
+        footer.append("Formas: " + ", ".join(forms))
     if gmax:
-        rodape.append("Gigantamax: sim")
-    if rodape:
-        L.append("\n" + " · ".join(rodape))
+        footer.append("Gigantamax: sim")
+    if footer:
+        lines.append("\n" + " · ".join(footer))
 
-    L.append(f"\n_Mais detalhes (golpes, TMs, EVs completos): `/pwiki {chave}`._")
-    return "\n".join(L)
+    lines.append(f"\n_Mais detalhes (golpes, TMs, EVs completos): `/pwiki {key}`._")
+    return "\n".join(lines)
 
 # ---------------------------------------------------------------- main
 
 def main():
-    global COMPLETO
-    arquivos = glob.glob(os.path.join(SPECIES_DIR, "*.json"))
-    dados = [(os.path.basename(f)[:-5], json.load(open(f, encoding="utf-8"))) for f in arquivos]
+    global FULL
+    files = glob.glob(os.path.join(SPECIES_DIR, "*.json"))
+    species_data = [(os.path.basename(f)[:-5], json.load(open(f, encoding="utf-8"))) for f in files]
 
-    for modo, destino in [(False, OUT_DIR), (True, OUT_FULL_DIR)]:
-        COMPLETO = modo
-        os.makedirs(destino, exist_ok=True)
-        for chave, d in dados:
-            carta = construir_carta(d, chave)
-            with open(os.path.join(destino, chave + ".md"), "w", encoding="utf-8") as out:
-                out.write(carta)
-        rotulo = "completas" if modo else "enxutas"
-        print(f"Geradas {len(dados)} cartas {rotulo} em {destino}")
-    print(f"Tags de bioma carregadas: {len(BIOMAS)}")
+    for full, dest in [(False, OUT_DIR), (True, OUT_FULL_DIR)]:
+        FULL = full
+        os.makedirs(dest, exist_ok=True)
+        for key, species in species_data:
+            card = build_card(species, key)
+            with open(os.path.join(dest, key + ".md"), "w", encoding="utf-8") as out:
+                out.write(card)
+        label = "full" if full else "slim"
+        print(f"Generated {len(species_data)} {label} cards in {dest}")
+    print(f"Biome tags loaded: {len(BIOMES)}")
 
 
 if __name__ == "__main__":

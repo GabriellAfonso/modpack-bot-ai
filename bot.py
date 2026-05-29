@@ -10,112 +10,112 @@ load_dotenv()
 
 groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# Modelos por etapa, em ordem de prioridade (cai pro próximo em rate limit).
-# Roteador = classificação trivial, modelo barato basta.
-# Resposta = qualidade importa (não degenerar/alucinar): 70b primário, scout
-# (cota de 500K/dia) pega o overflow, 8b é o último recurso. Tudo instruct puro
-# (sem modelos de raciocínio, que poderiam vazar tokens de <think> na resposta).
-MODELOS_ROTEADOR = [
+# Models per stage, in priority order (falls through to the next on rate limit).
+# Router = trivial classification, a cheap model is enough.
+# Answer = quality matters (must not degenerate/hallucinate): 70b primary, scout
+# (500K/day quota) takes the overflow, 8b is the last resort. All pure instruct
+# (no reasoning models, which could leak <think> tokens into the answer).
+ROUTER_MODELS = [
     "llama-3.1-8b-instant",
     "meta-llama/llama-4-scout-17b-16e-instruct",
 ]
-MODELOS_RESPOSTA = [
+ANSWER_MODELS = [
     "llama-3.3-70b-versatile",
     "meta-llama/llama-4-scout-17b-16e-instruct",
     "llama-3.1-8b-instant",
 ]
 
-def completar(messages, modelos, **kwargs):
-    """Tenta os modelos da lista em ordem; ao pegar rate limit, cai pro próximo."""
-    ultimo_erro = None
-    for modelo in modelos:
+def complete(messages, models, **kwargs):
+    """Try the models in order; on a rate limit, fall through to the next one."""
+    last_error = None
+    for model in models:
         try:
-            return groq.chat.completions.create(model=modelo, messages=messages, **kwargs)
+            return groq.chat.completions.create(model=model, messages=messages, **kwargs)
         except RateLimitError as e:
-            ultimo_erro = e
+            last_error = e
             continue
-    raise ultimo_erro
+    raise last_error
 
-GUIA_DIR = "guia"
+GUIDE_DIR = "guia"
 
-with open(os.path.join(GUIA_DIR, "core.md"), "r", encoding="utf-8") as f:
+with open(os.path.join(GUIDE_DIR, "core.md"), "r", encoding="utf-8") as f:
     CORE = f.read()
 
-ARQUIVOS_VALIDOS = {"market.md", "rules.md", "wiki.md"}
+VALID_GUIDES = {"market.md", "rules.md", "wiki.md"}
 
-# Dicionário canônico de Pokémon: os nomes das cartas pré-geradas em
-# species_cards/ são a fonte da verdade do que é (e do que não é) um Pokémon.
-# (species/ é só insumo do build_cards.py — fica fora do repo/runtime.)
-# Lookup em memória, 0 tokens.
-CARDS_DIR = os.path.join(GUIA_DIR, "pokemons-db", "species_cards")
-CARDS_FULL_DIR = os.path.join(GUIA_DIR, "pokemons-db", "species_cards_full")
-POKEMONS = {f[:-3] for f in os.listdir(CARDS_DIR) if f.endswith(".md")}
+# Canonical Pokémon dictionary: the names of the pre-generated cards in
+# species_cards/ are the source of truth for what is (and isn't) a Pokémon.
+# (species/ is only build_cards.py input — it stays out of the repo/runtime.)
+# In-memory lookup, 0 tokens.
+CARDS_DIR = os.path.join(GUIDE_DIR, "pokemons-db", "species_cards")
+CARDS_FULL_DIR = os.path.join(GUIDE_DIR, "pokemons-db", "species_cards_full")
+POKEMON_NAMES = {f[:-3] for f in os.listdir(CARDS_DIR) if f.endswith(".md")}
 
-def _tokens(texto: str) -> list[str]:
-    """Minúsculas, sem acento, só pedaços alfanuméricos."""
-    texto = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode()
-    return re.findall(r"[a-z0-9]+", texto.lower())
+def _tokens(text: str) -> list[str]:
+    """Lowercase, accent-stripped, alphanumeric chunks only."""
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    return re.findall(r"[a-z0-9]+", text.lower())
 
-def detectar_pokemon(mensagem: str) -> str | None:
-    """Acha o nome de um Pokémon na mensagem, ou None se não houver.
+def detect_pokemon(message: str) -> str | None:
+    """Find a Pokémon name in the message, or None if there isn't one.
 
-    Normaliza igual aos nomes de arquivo (mrmime, hooh, tapukoko...). Junta
-    pares de palavras adjacentes ('mr mime' -> 'mrmime') e, por último, tenta
-    um fuzzy conservador pra typos ('pikachuu' -> 'pikachu')."""
-    tokens = _tokens(mensagem)
-    bigramas = [a + b for a, b in zip(tokens, tokens[1:])]
-    for candidato in bigramas + tokens:  # bigrama primeiro (match mais longo)
-        if candidato in POKEMONS:
-            return candidato
+    Normalizes the same way as the file names (mrmime, hooh, tapukoko...). Joins
+    adjacent word pairs ('mr mime' -> 'mrmime') and, as a last step, tries a
+    conservative fuzzy match for typos ('pikachuu' -> 'pikachu')."""
+    tokens = _tokens(message)
+    bigrams = [a + b for a, b in zip(tokens, tokens[1:])]
+    for candidate in bigrams + tokens:  # bigram first (longest match)
+        if candidate in POKEMON_NAMES:
+            return candidate
     for t in tokens:
         if len(t) >= 4:
-            m = difflib.get_close_matches(t, POKEMONS, n=1, cutoff=0.85)
+            m = difflib.get_close_matches(t, POKEMON_NAMES, n=1, cutoff=0.85)
             if m:
                 return m[0]
     return None
 
-def rotear(mensagem: str) -> tuple[str | None, str]:
-    """Retorna (arquivo, idioma). arquivo é None se nenhum se encaixar."""
-    rota = completar(
-        modelos=MODELOS_ROTEADOR,
+def route(message: str) -> tuple[str | None, str]:
+    """Return (guide_file, language). guide_file is None if none fits."""
+    routing = complete(
+        models=ROUTER_MODELS,
         max_tokens=15,
         temperature=0,
         messages=[
             {"role": "system", "content": CORE},
-            {"role": "user", "content": mensagem}
+            {"role": "user", "content": message}
         ]
     )
-    saida = rota.choices[0].message.content.strip().lower()
+    output = routing.choices[0].message.content.strip().lower()
 
-    arquivo, _, idioma = saida.partition("|")
-    arquivo = arquivo.strip()
-    idioma = idioma.strip()
+    guide_file, _, language = output.partition("|")
+    guide_file = guide_file.strip()
+    language = language.strip()
 
-    arquivo = arquivo if arquivo in ARQUIVOS_VALIDOS else None
-    idioma = idioma if idioma in ("pt", "en") else "pt"
+    guide_file = guide_file if guide_file in VALID_GUIDES else None
+    language = language if language in ("pt", "en") else "pt"
 
-    return arquivo, idioma
+    return guide_file, language
 
-def carregar_guia(arquivo: str) -> str:
-    with open(os.path.join(GUIA_DIR, arquivo), "r", encoding="utf-8") as f:
+def load_guide(name: str) -> str:
+    with open(os.path.join(GUIDE_DIR, name), "r", encoding="utf-8") as f:
         return f.read()
 
-# Pedido explícito de lista completa (ex.: "lista todos os biomas", "completo").
-PADRAO_COMPLETO = re.compile(
+# Explicit request for a full list (e.g. "lista todos os biomas", "completo").
+FULL_LIST_PATTERN = re.compile(
     r"\b(todos|todas|complet[oa]s?|lista(r|\b)|liste|list all|all of them|every|inteir)",
     re.IGNORECASE,
 )
 
-def quer_lista_completa(mensagem: str) -> bool:
-    return bool(PADRAO_COMPLETO.search(mensagem))
+def wants_full_list(message: str) -> bool:
+    return bool(FULL_LIST_PATTERN.search(message))
 
-def carregar_carta(nome: str, completo: bool = False) -> str | None:
-    """Lê a carta pré-gerada de um Pokémon. completo=True usa a versão sem
-    truncamento (sob pedido); cai pra enxuta se a completa não existir."""
-    for d in ([CARDS_FULL_DIR, CARDS_DIR] if completo else [CARDS_DIR]):
-        caminho = os.path.join(d, nome + ".md")
-        if os.path.exists(caminho):
-            with open(caminho, "r", encoding="utf-8") as f:
+def load_card(name: str, full: bool = False) -> str | None:
+    """Read a Pokémon's pre-generated card. full=True uses the untruncated
+    version (on request); falls back to the slim one if the full is missing."""
+    for directory in ([CARDS_FULL_DIR, CARDS_DIR] if full else [CARDS_DIR]):
+        path = os.path.join(directory, name + ".md")
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
                 return f.read()
     return None
 
@@ -125,7 +125,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    print(f"Bot online como {client.user}")
+    print(f"Bot online as {client.user}")
 
 @client.event
 async def on_message(message):
@@ -144,42 +144,42 @@ async def on_message(message):
 
     async with message.channel.typing():
         try:
-            arquivo, idioma = rotear(message.content)
+            guide_file, language = route(message.content)
 
-            if arquivo is None:
-                if idioma == "en":
+            if guide_file is None:
+                if language == "en":
                     await message.reply("I don't have that information, please ask in a support channel!")
                 else:
                     await message.reply("Não tenho essa informação, pergunta num canal de suporte!")
                 return
 
-            guia = carregar_guia(arquivo)
+            guide = load_guide(guide_file)
 
-            # Gate de Pokémon (só pro wiki.md): detecção determinística do nome.
-            # - achou Pokémon  -> carrega a CARTA dele (dados) no lugar do wiki.md.
-            # - não achou      -> mantém o wiki.md (doc da ferramenta) e instrui a
-            #                      nunca sugerir /pwiki com não-Pokémon (stronghold).
-            # A instrução vai como diretiva (não rotulada) e o guia é só dado puro,
-            # pra um modelo pequeno não imitar/repetir rótulos no texto final.
-            instrucao_pt = instrucao_en = ""
-            if arquivo == "wiki.md":
-                pkmn = detectar_pokemon(message.content)
-                carta = carregar_carta(pkmn, quer_lista_completa(message.content)) if pkmn else None
-                if carta:
-                    guia = carta
-                    instrucao_pt = f"O guia abaixo é a ficha de dados do Pokémon {pkmn}. Responda à pergunta usando só esses dados. Pra golpes/TMs ou algo que não esteja na ficha, diga pra usar `/pwiki {pkmn}`. Não invente dados."
-                    instrucao_en = f"The guide below is the data sheet for the Pokémon {pkmn}. Answer using only this data. For moves/TMs or anything not in the sheet, tell them to use `/pwiki {pkmn}`. Do not invent data."
+            # Pokémon gate (wiki.md only): deterministic name detection.
+            # - found a Pokémon -> load its CARD (data) in place of wiki.md.
+            # - found none      -> keep wiki.md (the tool's doc) and instruct it to
+            #                       never suggest /pwiki for non-Pokémon (stronghold).
+            # The instruction goes in as a directive (unlabeled) and the guide is
+            # pure data, so a small model won't mimic/repeat labels in the final text.
+            instruction_pt = instruction_en = ""
+            if guide_file == "wiki.md":
+                pokemon = detect_pokemon(message.content)
+                card = load_card(pokemon, wants_full_list(message.content)) if pokemon else None
+                if card:
+                    guide = card
+                    instruction_pt = f"O guia abaixo é a ficha de dados do Pokémon {pokemon}. Responda à pergunta usando só esses dados. Pra golpes/TMs ou algo que não esteja na ficha, diga pra usar `/pwiki {pokemon}`. Não invente dados."
+                    instruction_en = f"The guide below is the data sheet for the Pokémon {pokemon}. Answer using only this data. For moves/TMs or anything not in the sheet, tell them to use `/pwiki {pokemon}`. Do not invent data."
                 else:
-                    instrucao_pt = "Esta pergunta não é sobre um Pokémon (stronghold, vila, itens e blocos são do Minecraft). Não mencione `/pwiki`. Se for sobre como usar a própria wiki, explique com base no guia; senão responda exatamente: \"Não tenho essa informação, pergunta num canal de suporte!\""
-                    instrucao_en = "This question is not about a Pokémon (stronghold, village, items, blocks are Minecraft things). Do not mention `/pwiki`. If it's about how to use the wiki tool itself, explain from the guide; otherwise reply with exactly: \"I don't have that information, please ask in a support channel!\""
+                    instruction_pt = "Esta pergunta não é sobre um Pokémon (stronghold, vila, itens e blocos são do Minecraft). Não mencione `/pwiki`. Se for sobre como usar a própria wiki, explique com base no guia; senão responda exatamente: \"Não tenho essa informação, pergunta num canal de suporte!\""
+                    instruction_en = "This question is not about a Pokémon (stronghold, village, items, blocks are Minecraft things). Do not mention `/pwiki`. If it's about how to use the wiki tool itself, explain from the guide; otherwise reply with exactly: \"I don't have that information, please ask in a support channel!\""
 
-            if idioma == "en":
-                system_prompt = f"You are the assistant for a Minecraft server. Answer simply and directly, like an experienced player helping another, using only the guide below. If the answer isn't in the guide, say 'I don't have that information, please ask in a support channel!'. {instrucao_en} Keep biome, item and move names EXACTLY as written in the guide (do not translate them). When listing, list each name once and never repeat. Break the answer into short paragraphs: put each distinct topic (e.g. how to evolve vs. where to find it in the wild) in its own paragraph, separated by a blank line. Output ONLY the final message for the player — plain text, no internal notes, no labels like [System], no meta commentary, no made-up follow-up questions. Always respond in English.\n\n--- GUIA ---\n{guia}"
+            if language == "en":
+                system_prompt = f"You are the assistant for a Minecraft server. Answer simply and directly, like an experienced player helping another, using only the guide below. If the answer isn't in the guide, say 'I don't have that information, please ask in a support channel!'. {instruction_en} Keep biome, item and move names EXACTLY as written in the guide (do not translate them). When listing, list each name once and never repeat. Break the answer into short paragraphs: put each distinct topic (e.g. how to evolve vs. where to find it in the wild) in its own paragraph, separated by a blank line. Output ONLY the final message for the player — plain text, no internal notes, no labels like [System], no meta commentary, no made-up follow-up questions. Always respond in English.\n\n--- GUIA ---\n{guide}"
             else:
-                system_prompt = f"Você é o assistente do servidor de Minecraft. Responda de forma simples e direta, como um jogador experiente ajudando outro, usando só o guia abaixo. Se a resposta não estiver no guia, diga 'Não tenho essa informação, pergunta num canal de suporte!'. {instrucao_pt} Mantenha os nomes de bioma, item e golpe EXATAMENTE como estão no guia (não traduza). Ao listar, cite cada nome só uma vez e nunca repita. Quebre a resposta em parágrafos curtos: coloque cada assunto distinto (ex.: como evoluir vs. onde encontrar no mundo) num parágrafo próprio, separado por uma linha em branco. Devolva APENAS a mensagem final pro jogador — texto puro, sem notas internas, sem rótulos tipo [Sistema], sem comentários meta, sem inventar perguntas de acompanhamento. Responda sempre em português.\n\n--- GUIA ---\n{guia}"
+                system_prompt = f"Você é o assistente do servidor de Minecraft. Responda de forma simples e direta, como um jogador experiente ajudando outro, usando só o guia abaixo. Se a resposta não estiver no guia, diga 'Não tenho essa informação, pergunta num canal de suporte!'. {instruction_pt} Mantenha os nomes de bioma, item e golpe EXATAMENTE como estão no guia (não traduza). Ao listar, cite cada nome só uma vez e nunca repita. Quebre a resposta em parágrafos curtos: coloque cada assunto distinto (ex.: como evoluir vs. onde encontrar no mundo) num parágrafo próprio, separado por uma linha em branco. Devolva APENAS a mensagem final pro jogador — texto puro, sem notas internas, sem rótulos tipo [Sistema], sem comentários meta, sem inventar perguntas de acompanhamento. Responda sempre em português.\n\n--- GUIA ---\n{guide}"
 
-            resposta = completar(
-                modelos=MODELOS_RESPOSTA,
+            answer = complete(
+                models=ANSWER_MODELS,
                 max_tokens=500,
                 temperature=0.4,
                 frequency_penalty=0.6,
@@ -190,7 +190,7 @@ async def on_message(message):
                 ]
             )
 
-            await message.reply(resposta.choices[0].message.content)
+            await message.reply(answer.choices[0].message.content)
 
         except Exception as e:
             print(e)
