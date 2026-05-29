@@ -39,3 +39,10 @@ def test_system_prompt_embeds_guide_and_instruction():
 def test_system_prompt_english_variant():
     prompt = build_system_prompt("G", "I", "en")
     assert "Always respond in English" in prompt
+
+
+def test_system_prompt_constrains_scope_to_the_question():
+    # guards the "answer only what was asked" rule (faq.md over-answered with the
+    # neighbouring port/launcher entries when asked just the modpack version).
+    assert "SOMENTE o que foi perguntado" in build_system_prompt("G", "I", "pt")
+    assert "ONLY what was asked" in build_system_prompt("G", "I", "en")

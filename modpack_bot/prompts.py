@@ -104,8 +104,9 @@ def build_system_prompt(guide: str, instruction: str, language: str) -> str:
     if language == "en":
         return (
             "You are the assistant for a Minecraft server. Answer simply and directly, like an "
-            "experienced player helping another, using only the guide below. If the answer isn't "
-            f"in the guide, say '{_FALLBACK['en']}'. {instruction} Keep biome, item and move "
+            "experienced player helping another, using only the guide below. Answer ONLY what was "
+            "asked — do not tack on neighbouring facts from the guide the player did not ask for. "
+            f"If the answer isn't in the guide, say '{_FALLBACK['en']}'. {instruction} Keep biome, item and move "
             "names EXACTLY as written in the guide (do not translate them). When listing, list "
             "each name once and never repeat. Break the answer into short paragraphs: put each "
             "distinct topic (e.g. how to evolve vs. where to find it in the wild) in its own "
@@ -115,7 +116,8 @@ def build_system_prompt(guide: str, instruction: str, language: str) -> str:
         )
     return (
         "Você é o assistente do servidor de Minecraft. Responda de forma simples e direta, como "
-        "um jogador experiente ajudando outro, usando só o guia abaixo. Se a resposta não "
+        "um jogador experiente ajudando outro, usando só o guia abaixo. Responda SOMENTE o que foi "
+        "perguntado — não acrescente fatos vizinhos do guia que o jogador não pediu. Se a resposta não "
         f"estiver no guia, diga '{_FALLBACK['pt']}'. {instruction} Mantenha os nomes de bioma, "
         "item e golpe EXATAMENTE como estão no guia (não traduza). Ao listar, cite cada nome só "
         "uma vez e nunca repita. Quebre a resposta em parágrafos curtos: coloque cada assunto "
