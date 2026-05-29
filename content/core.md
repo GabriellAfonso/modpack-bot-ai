@@ -36,6 +36,10 @@ Onde:
 - "what drops leather?" → `facts.md|en`
 - "quais pokemons lendarios tem?" → `facts.md|pt`
 - "list the mythical pokemon" → `facts.md|en`
+- "como funciona a máquina de gacha?" → `gacha.md|pt`
+- "what does the poke gacha machine give?" → `gacha.md|en`
+- "como consigo koban coin?" → `gacha.md|pt`
+- "what's in a cherish capsule?" → `gacha.md|en`
 - "como falo com um admin?" → `tool:admins|pt`
 - "who are the admins?" → `tool:admins|en`
 

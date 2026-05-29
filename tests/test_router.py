@@ -19,6 +19,10 @@ def test_parse_admins_tool_label_is_routable():
     assert parse_route("tool:admins|pt") == ("tool:admins", "pt")
 
 
+def test_parse_gacha_is_a_valid_guide():
+    assert parse_route("gacha.md|pt") == ("gacha.md", "pt")
+
+
 def test_parse_unknown_language_defaults_to_pt():
     assert parse_route("market.md|fr") == ("market.md", "pt")
 

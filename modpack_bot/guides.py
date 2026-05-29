@@ -8,7 +8,7 @@ import os
 
 # Ordered so the generated router catalog is deterministic; VALID_GUIDES is the
 # membership check derived from it.
-ROUTABLE_GUIDES = ("market.md", "rules.md", "wikigui.md", "faq.md", "facts.md")
+ROUTABLE_GUIDES = ("market.md", "rules.md", "wikigui.md", "faq.md", "facts.md", "gacha.md")
 VALID_GUIDES = frozenset(ROUTABLE_GUIDES)
 
 
