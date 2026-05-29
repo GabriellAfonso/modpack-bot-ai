@@ -1,0 +1,3 @@
+# Normalize line endings: the repo is LF-only. Prevents CRLF drift on
+# Windows/WSL checkouts from showing every file as modified.
+* text=auto eol=lf
