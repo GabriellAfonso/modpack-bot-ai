@@ -8,7 +8,7 @@ import json
 from dataclasses import dataclass
 from typing import Callable, Protocol
 
-from groq import Groq, RateLimitError
+from groq import BadRequestError, Groq, RateLimitError
 
 # A single chat message, e.g. {"role": "system", "content": "..."}.
 Message = dict[str, str]
@@ -146,13 +146,23 @@ class GroqCompleter:
     ) -> str:
         """Like complete, but the model may call `tools`; the loop runs them and
         feeds results back until it returns text. Rate limit restarts on the next
-        model (a tool conversation can't migrate mid-flight)."""
+        model (a tool conversation can't migrate mid-flight). A smaller model that
+        emits a malformed tool call (wrong name/args -> Groq 400 tool_use_failed)
+        also falls through; if every model fails that way we answer without tools
+        so the player still gets text instead of a crash."""
         last_error: RateLimitError | None = None
+        tool_call_rejected = False
         for model in models:
             try:
                 return self._run_tool_loop(model, messages, tools, dispatch, max_tokens, temperature)
             except RateLimitError as error:
                 last_error = error
+            except BadRequestError as error:
+                if not _is_tool_use_failed(error):
+                    raise
+                tool_call_rejected = True
+        if tool_call_rejected:
+            return self.complete(messages, models, max_tokens=max_tokens, temperature=temperature)
         raise last_error if last_error else RuntimeError(f"no models given: {models!r}")
 
     def _run_tool_loop(
@@ -188,6 +198,20 @@ class GroqCompleter:
         )
         self._usage += _usage_of(response)
         return response.choices[0].message
+
+
+def _is_tool_use_failed(error: BadRequestError) -> bool:
+    """True when Groq rejected the model's OWN tool call (it emitted a function
+    name/args not in the request) rather than rejecting our request shape.
+
+    Body looks like {"error": {"code": "tool_use_failed", ...}}; only that code
+    is safe to retry on a different model or by dropping tools entirely.
+    """
+    body = error.body
+    if not isinstance(body, dict):
+        return False
+    inner = body.get("error")
+    return isinstance(inner, dict) and inner.get("code") == "tool_use_failed"
 
 
 def _usage_of(response: object) -> TokenUsage:

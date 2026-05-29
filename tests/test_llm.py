@@ -1,6 +1,18 @@
 """GroqCompleter behaviour, driven by a named fake Groq client (no network)."""
 
+import httpx
+from groq import BadRequestError
+
 from modpack_bot.llm import GroqCompleter, TokenUsage
+
+
+def _tool_use_failed_error() -> BadRequestError:
+    """The exact 400 Groq raises when a model emits a tool call whose name/args
+    are not in the request (e.g. a typo'd 'filtar_pokemon')."""
+    request = httpx.Request("POST", "https://api.groq.com/openai/v1/chat/completions")
+    response = httpx.Response(400, request=request)
+    body = {"error": {"message": "tool call validation failed", "code": "tool_use_failed"}}
+    return BadRequestError("tool_use_failed", response=response, body=body)
 
 
 class _Usage:
@@ -47,7 +59,10 @@ class _FakeCompletions:
 
     def create(self, **kwargs: object) -> _Response:
         self.calls.append(kwargs)
-        return self._responses.pop(0)
+        item = self._responses.pop(0)
+        if isinstance(item, Exception):
+            raise item
+        return item
 
 
 class FakeGroqClient:
@@ -110,3 +125,39 @@ def test_complete_with_tools_runs_tool_then_returns_text():
         message.get("role") == "tool" and message["content"] == "1 Pokémon: Zapdos"
         for message in second_messages
     )
+
+
+def test_complete_with_tools_falls_through_to_next_model_on_bad_tool_call():
+    # First model emits a malformed tool call (Groq 400); the next model answers.
+    final = _Response(_ReplyMessage("é o Zapdos"), _Usage(5, 4))
+    client = FakeGroqClient([_tool_use_failed_error(), final])
+    completer = GroqCompleter("key", client=client)
+
+    out = completer.complete_with_tools(
+        [{"role": "system", "content": "s"}],
+        ["m1", "m2"],
+        tools=[{"type": "function"}],
+        dispatch=lambda name, arguments: "unused",
+        max_tokens=10,
+        temperature=0,
+    )
+    assert out == "é o Zapdos"
+
+
+def test_complete_with_tools_answers_without_tools_when_all_models_reject():
+    # Every model botches the tool call -> last resort is a plain answer, not a crash.
+    plain = _Response(_ReplyMessage("resposta sem ferramenta"), _Usage(5, 4))
+    client = FakeGroqClient([_tool_use_failed_error(), _tool_use_failed_error(), plain])
+    completer = GroqCompleter("key", client=client)
+
+    out = completer.complete_with_tools(
+        [{"role": "system", "content": "s"}],
+        ["m1", "m2"],
+        tools=[{"type": "function"}],
+        dispatch=lambda name, arguments: "unused",
+        max_tokens=10,
+        temperature=0,
+    )
+    assert out == "resposta sem ferramenta"
+    # The fallback call dropped tools entirely.
+    assert "tools" not in client.completions.calls[-1]
