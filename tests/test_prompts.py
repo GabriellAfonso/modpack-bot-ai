@@ -1,0 +1,35 @@
+from modpack_bot.prompts import (
+    build_system_prompt,
+    fallback_message,
+    non_pokemon_instruction,
+    pokemon_instruction,
+)
+
+
+def test_fallback_message_per_language():
+    assert "suporte" in fallback_message("pt")
+    assert "support channel" in fallback_message("en")
+    assert fallback_message("xx") == fallback_message("pt")  # default
+
+
+def test_pokemon_instruction_names_the_pokemon_and_pwiki():
+    pt = pokemon_instruction("pikachu", "pt")
+    assert "pikachu" in pt and "/pwiki pikachu" in pt and "Não invente" in pt
+    en = pokemon_instruction("pikachu", "en")
+    assert "Do not invent" in en
+
+
+def test_non_pokemon_instruction_forbids_pwiki():
+    assert "Não mencione `/pwiki`" in non_pokemon_instruction("pt")
+    assert "Do not mention `/pwiki`" in non_pokemon_instruction("en")
+
+
+def test_system_prompt_embeds_guide_and_instruction():
+    prompt = build_system_prompt("GUIDE BODY", "INSTRUCTION X", "pt")
+    assert "GUIDE BODY" in prompt and "INSTRUCTION X" in prompt
+    assert "português" in prompt
+
+
+def test_system_prompt_english_variant():
+    prompt = build_system_prompt("G", "I", "en")
+    assert "Always respond in English" in prompt
