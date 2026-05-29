@@ -36,7 +36,7 @@ def complete(messages, models, **kwargs):
             continue
     raise last_error
 
-GUIDE_DIR = "guia"
+GUIDE_DIR = "guide"
 
 with open(os.path.join(GUIDE_DIR, "core.md"), "r", encoding="utf-8") as f:
     CORE = f.read()

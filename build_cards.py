@@ -4,10 +4,10 @@ Runs OFFLINE, once (and again only when the data changes: addon, new mons,
 or an edit to biome_map.md). The bot never calls this — at runtime it only
 reads the ready-made card at species_cards/<name>.md.
 
-Reads:  guia/pokemons-db/species/*.json
-        guia/pokemons-db/spawn_pool_world/*.json
-        guia/pokemons-db/biome_map.md
-Writes: guia/pokemons-db/species_cards/<name>.md
+Reads:  guide/pokemons-db/species/*.json
+        guide/pokemons-db/spawn_pool_world/*.json
+        guide/pokemons-db/biome_map.md
+Writes: guide/pokemons-db/species_cards/<name>.md
 """
 
 import json
@@ -15,7 +15,7 @@ import glob
 import os
 import re
 
-BASE = os.path.join("guia", "pokemons-db")
+BASE = os.path.join("guide", "pokemons-db")
 SPECIES_DIR = os.path.join(BASE, "species")
 SPAWN_DIR = os.path.join(BASE, "spawn_pool_world")
 BIOME_MAP = os.path.join(BASE, "biome_map.md")

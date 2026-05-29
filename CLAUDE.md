@@ -12,8 +12,9 @@
 
 ## Language
 
-- All code is in English: identifiers, function/variable names, comments,
-  docstrings, commit messages, test names. No Portuguese in code.
+- All code is in English: file, directory and module names, identifiers,
+  function/variable names, comments, docstrings, commit messages, test names.
+  No Portuguese anywhere in code or paths.
 - Exception: string literals that are part of the product may be in
   Portuguese — user-facing messages and prompts/instructions written for
   the LLM to read (it reasons better with the request in its own language).

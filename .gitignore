@@ -9,7 +9,7 @@ __pycache__/
 # Dados-fonte do pokemons-db: insumo só do build_cards.py, não vai pro runtime.
 # As cartas geradas (species_cards/ e species_cards_full/) SÃO versionadas —
 # é o que o bot lê em runtime. Pra rebuildar, é preciso ter a fonte abaixo.
-guia/pokemons-db/species/
-guia/pokemons-db/spawn_pool_world/
-guia/pokemons-db/biome_map.md
-guia/pokemons-db/_report.md
+guide/pokemons-db/species/
+guide/pokemons-db/spawn_pool_world/
+guide/pokemons-db/biome_map.md
+guide/pokemons-db/_report.md
