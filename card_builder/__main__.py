@@ -4,7 +4,7 @@ import os
 
 from card_builder.builder import build_all
 
-_BASE_DIR = os.path.join("guide", "pokemons-db")
+_BASE_DIR = os.path.join("content", "pokemons-db")
 
 
 def main() -> None:

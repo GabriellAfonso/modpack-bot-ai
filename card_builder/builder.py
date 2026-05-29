@@ -9,6 +9,7 @@ from card_builder.biomes import load_biomes
 from card_builder.card import build_card
 from card_builder.context import BuildContext, Json, RenderContext, RenderOptions
 from card_builder.evolutions import index_pre_evolutions
+from card_builder.facts import build_facts
 from card_builder.spawns import index_spawns
 
 
@@ -21,6 +22,7 @@ class Paths:
     biome_map: str
     slim_out: str
     full_out: str
+    facts_out: str
 
 
 def paths_for(base_dir: str) -> Paths:
@@ -31,6 +33,8 @@ def paths_for(base_dir: str) -> Paths:
         biome_map=os.path.join(base_dir, "biome_map.md"),
         slim_out=os.path.join(base_dir, "species_cards"),
         full_out=os.path.join(base_dir, "species_cards_full"),
+        # facts.md sits beside the guides in content/, not under pokemons-db.
+        facts_out=os.path.join(os.path.dirname(base_dir), "facts.md"),
     )
 
 
@@ -57,6 +61,9 @@ def build_all(base_dir: str) -> None:
                           (RenderOptions(full=True), paths.full_out)]:
         ctx = BuildContext(RenderContext(biomes, options), spawn_index, pre_evolutions)
         _write_cards(species, dest, ctx)
+    with open(paths.facts_out, "w", encoding="utf-8") as out:
+        out.write(build_facts(species, spawn_index, biomes))
+    print(f"Generated facts.md at {paths.facts_out}")
     print(f"Biome tags loaded: {len(biomes)}")
 
 
