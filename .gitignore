@@ -1,6 +1,11 @@
 # Segredos — NUNCA commitar
 .env
 
+# Índice RAG (vetores): gerado no deploy a partir dos .md já versionados +
+# do modelo de embedding local. Não vai pro git (plan.md §13.3); o bot
+# rebuilda no startup se a pasta não existir.
+content/index/
+
 # Ambiente Python
 venv/
 wsl_venv/

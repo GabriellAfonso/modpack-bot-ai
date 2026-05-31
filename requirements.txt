@@ -1,3 +1,12 @@
 discord.py==2.7.1
 groq==1.4.0
 python-dotenv==1.2.2
+
+# RAG retrieval (local embeddings, offline index).
+# CPU-only torch: e5-small embeds on CPU; the GPU/CUDA wheel adds ~3.4 GB of
+# dead weight (nvidia-* + triton). Pin the +cpu build from the PyTorch index.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.12.0+cpu
+llama-index-core==0.14.22
+llama-index-embeddings-huggingface==0.7.0
+sentence-transformers==5.5.1
