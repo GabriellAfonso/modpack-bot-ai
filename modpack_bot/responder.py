@@ -1,14 +1,16 @@
 """Orchestrates a player message into a final answer string.
 
-This is the heart of the runtime: route → pick guide (or swap in a Pokémon
-card) → build the prompt → ask the answer model. It returns plain text, so the
+This is the heart of the runtime. Deterministic gates run first for precision
+at zero Groq tokens (admins -> Pokémon card -> facts), and semantic retrieval
+(RAG) is the general fallback (plan.md §4). It returns plain text, so the
 Discord layer only has to reply with it and the whole flow is testable end to
-end with fakes (no Discord, no Groq, no filesystem).
+end with fakes (no Discord, no Groq, no embedding model).
 """
 
-from modpack_bot.admins import TOOL_ADMINS, AdminResolver, admins_message
+from modpack_bot.admins import AdminResolver, admins_message
 from modpack_bot.facts_index import facts_counts_header, matched_facts_lines
 from modpack_bot.guides import CardRepository, GuideRepository
+from modpack_bot.intent import admins_intent, detect_language, facts_intent
 from modpack_bot.llm import ANSWER_MODELS, ModelCompleter
 from modpack_bot.pokemon import detect_pokemon
 from modpack_bot.pokemon_filter import build_pokemon_filter, filter_tool_spec, make_dispatch
@@ -17,14 +19,12 @@ from modpack_bot.prompts import (
     facts_filter_instruction,
     facts_listing_message,
     fallback_message,
-    non_pokemon_instruction,
     pokemon_instruction,
     usage_suffix,
 )
-from modpack_bot.router import Router
+from modpack_bot.retrieval import ContextRetriever
 from modpack_bot.text import collapse_blank_lines, wants_full_list
 
-_WIKI_GUIDE = "wikigui.md"
 _FACTS_GUIDE = "facts.md"
 
 
@@ -33,14 +33,14 @@ class Responder:
 
     def __init__(
         self,
-        router: Router,
+        retriever: ContextRetriever,
         completer: ModelCompleter,
         guides: GuideRepository,
         cards: CardRepository,
         admins: AdminResolver | None = None,
         show_usage: bool = False,
     ) -> None:
-        self._router = router
+        self._retriever = retriever
         self._completer = completer
         self._guides = guides
         self._cards = cards
@@ -52,25 +52,23 @@ class Responder:
         """Full pipeline; returns the player-facing text (or the fallback).
 
         Token usage is reset up front and read at the end so the optional footer
-        reflects every model call this one message made (router + answer + tools).
+        reflects every model call this one message made (answer + any tools).
         """
         self._completer.reset_usage()
-        return self._with_usage(self._route_and_answer(message))
+        return self._with_usage(self._gate_and_answer(message))
 
-    def _route_and_answer(self, message: str) -> str:
-        """Route the message and produce the bare answer text (no usage footer)."""
-        guide_file, language = self._router.route(message)
-        if guide_file is None:
-            return fallback_message(language)
-        if guide_file == TOOL_ADMINS:
+    def _gate_and_answer(self, message: str) -> str:
+        """Deterministic gates first (precision, 0 tokens), RAG as fallback (§4)."""
+        language = detect_language(message)
+        if admins_intent(message):
             return self._answer_admins(language)
-        guide = self._guides.load_guide(guide_file)
-        if guide_file == _WIKI_GUIDE:
-            guide, instruction = self._apply_wiki_gate(message, guide, language)
-            return self._answer_from_guide(message, guide, instruction, language)
-        if guide_file == _FACTS_GUIDE:
-            return self._answer_facts(message, guide, language)
-        return self._answer_from_guide(message, guide, "", language)
+        pokemon = detect_pokemon(message, self._pokemon_names)
+        if pokemon:
+            return self._answer_pokemon(message, pokemon, language)
+        facts = self._guides.load_guide(_FACTS_GUIDE)
+        if facts_intent(message, facts):
+            return self._answer_facts(message, facts, language)
+        return self._answer_from_rag(message, language)
 
     def _with_usage(self, text: str) -> str:
         """Append the token-cost footer when the runtime enabled it."""
@@ -78,10 +76,29 @@ class Responder:
             return text
         return text + usage_suffix(self._completer.usage)
 
+    def _answer_pokemon(self, message: str, pokemon: str, language: str) -> str:
+        """Inject the detected Pokémon's card and answer (the wiki gate, §4.2).
+
+        Falls back to RAG only if the card vanished from disk — detect_pokemon
+        already guarantees the name exists in the card set.
+        """
+        card = self._cards.load_card(pokemon, wants_full_list(message))
+        if card is None:
+            return self._answer_from_rag(message, language)
+        return self._answer_from_guide(message, card, pokemon_instruction(pokemon, language), language)
+
+    def _answer_from_rag(self, message: str, language: str) -> str:
+        """Fallback: retrieve top-k passages locally and answer from them, or the
+        fallback message when nothing relevant is found (§4.4)."""
+        passages = self._retriever.retrieve(message)
+        if not passages:
+            return fallback_message(language)
+        return self._answer_from_guide(message, "\n\n".join(passages), "", language)
+
     def _answer_from_guide(
         self, message: str, guide: str, instruction: str, language: str
     ) -> str:
-        """Plain answer-model call over a guide (market/rules/faq/wiki)."""
+        """Plain answer-model call over a context blob (card / RAG passages)."""
         answer = self._completer.complete(
             messages=[
                 {"role": "system", "content": build_system_prompt(guide, instruction, language)},
@@ -150,16 +167,3 @@ class Responder:
         if len(lines) != 1:
             return None
         return facts_listing_message(lines, language)
-
-    def _apply_wiki_gate(self, message: str, guide: str, language: str) -> tuple[str, str]:
-        """Pokémon gate (wikigui.md only): deterministic name detection.
-
-        Found a Pokémon -> swap in its card (data) and instruct the model to
-        point at `/pwiki` for anything missing. Found none -> keep wikigui.md (the
-        tool's doc) and forbid suggesting `/pwiki` for non-Pokémon (stronghold).
-        """
-        pokemon = detect_pokemon(message, self._pokemon_names)
-        card = self._cards.load_card(pokemon, wants_full_list(message)) if pokemon else None
-        if card:
-            return card, pokemon_instruction(pokemon, language)
-        return guide, non_pokemon_instruction(language)

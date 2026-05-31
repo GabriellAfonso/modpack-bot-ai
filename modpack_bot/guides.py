@@ -6,29 +6,20 @@ on them by their public methods, so tests substitute in-memory fakes.
 
 import os
 
-# Ordered so the generated router catalog is deterministic; VALID_GUIDES is the
-# membership check derived from it.
-ROUTABLE_GUIDES = ("market.md", "rules.md", "wikigui.md", "faq.md", "facts.md", "gacha.md")
-VALID_GUIDES = frozenset(ROUTABLE_GUIDES)
-
 
 class GuideRepository:
-    """Reads the routed guide files (core.md plus the routable guides)."""
+    """Reads a guide file at runtime.
+
+    Since the RAG migration only facts.md is read directly (for the facts gate);
+    the other guides reach the answer model through the retrieved index instead.
+    Read fresh on each call so editing a guide needs no restart.
+    """
 
     def __init__(self, content_dir: str) -> None:
         self._content_dir = content_dir
 
-    def load_core(self) -> str:
-        """The router system prompt; read fresh so edits don't need a restart."""
-        return self._read("core.md")
-
     def load_guide(self, name: str) -> str:
-        """Read one routable guide (market.md / rules.md / wikigui.md)."""
-        if name not in VALID_GUIDES:
-            raise ValueError(f"unknown guide {name!r}, expected one of {sorted(VALID_GUIDES)}")
-        return self._read(name)
-
-    def _read(self, name: str) -> str:
+        """Read a guide file by name (e.g. facts.md for the facts gate)."""
         with open(os.path.join(self._content_dir, name), "r", encoding="utf-8") as file:
             return file.read()
 

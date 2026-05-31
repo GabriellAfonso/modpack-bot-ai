@@ -21,15 +21,10 @@ ToolDispatch = Callable[[str, dict[str, object]], str]
 # that keeps re-requesting tools can never spin forever.
 _MAX_TOOL_ROUNDS = 4
 
-# Models per stage, in priority order (falls through to the next on rate limit).
-# Router = trivial classification, a cheap model is enough.
-# Answer = quality matters (must not degenerate/hallucinate): 70b primary, scout
+# Answer models in priority order (falls through to the next on rate limit).
+# Quality matters (must not degenerate/hallucinate): 70b primary, scout
 # (500K/day quota) takes the overflow, 8b is the last resort. All pure instruct
 # (no reasoning models, which could leak <think> tokens into the answer).
-ROUTER_MODELS = [
-    "llama-3.1-8b-instant",
-    "meta-llama/llama-4-scout-17b-16e-instruct",
-]
 ANSWER_MODELS = [
     "llama-3.3-70b-versatile",
     "meta-llama/llama-4-scout-17b-16e-instruct",
@@ -92,7 +87,7 @@ class GroqCompleter:
     """ModelCompleter backed by the Groq API.
 
     Accumulates token usage across every call since the last reset_usage(), so a
-    caller can report the cost of one whole pipeline (router + answer + tools).
+    caller can report the cost of one whole pipeline (answer + any tool calls).
     """
 
     def __init__(self, api_key: str, client: "Groq | None" = None) -> None:

@@ -1,6 +1,6 @@
 """Shared named fakes for the bot-runtime tests (no inline stubs)."""
 
-from modpack_bot.llm import Message, ROUTER_MODELS, TokenUsage, ToolDispatch, ToolSpec
+from modpack_bot.llm import Message, TokenUsage, ToolDispatch, ToolSpec
 
 # Fixed per-call cost so usage-footer assertions are deterministic.
 _USAGE_PER_CALL = TokenUsage(10, 5)
@@ -9,19 +9,15 @@ _USAGE_PER_CALL = TokenUsage(10, 5)
 class FakeCompleter:
     """ModelCompleter that returns canned text and records every call.
 
-    Distinguishes the router stage from the answer stage by the model list,
-    so one fake drives a whole Responder pipeline. `tool_call`, when set to a
-    (name, arguments) pair, makes complete_with_tools run the dispatch once so a
-    test can assert what the real tool would return.
+    `tool_call`, when set to a (name, arguments) pair, makes complete_with_tools
+    run the dispatch once so a test can assert what the real tool would return.
     """
 
     def __init__(
         self,
-        route_reply: str = "market.md|pt",
         answer_reply: str = "ANSWER",
         tool_call: "tuple[str, dict[str, object]] | None" = None,
     ) -> None:
-        self.route_reply = route_reply
         self.answer_reply = answer_reply
         self.tool_call = tool_call
         self.tool_result: str | None = None
@@ -38,7 +34,7 @@ class FakeCompleter:
     def complete(self, messages: list[Message], models: list[str], **kwargs: object) -> str:
         self.calls.append((messages, models))
         self._usage += _USAGE_PER_CALL
-        return self.route_reply if models == ROUTER_MODELS else self.answer_reply
+        return self.answer_reply
 
     def complete_with_tools(
         self,
@@ -64,17 +60,12 @@ class FakeCompleter:
 class FakeGuideRepository:
     """In-memory stand-in for GuideRepository."""
 
-    def __init__(self, core: str = "CORE", guides: dict[str, str] | None = None) -> None:
-        self._core = core
+    def __init__(self, guides: dict[str, str] | None = None) -> None:
         self._guides = guides or {}
 
-    def load_core(self) -> str:
-        return self._core
-
     def load_guide(self, name: str) -> str:
-        # Lenient: guides not stubbed read as empty so building the router catalog
-        # (which loads every routable guide) doesn't require tests that only care
-        # about one guide to stub all of them.
+        # Lenient: a guide not stubbed reads as empty, so a test that only cares
+        # about facts.md needn't stub every file.
         return self._guides.get(name, "")
 
 
@@ -89,6 +80,22 @@ class FakeCardRepository:
 
     def load_card(self, name: str, full: bool = False) -> str | None:
         return self._cards.get(name)
+
+
+class FakeRetriever:
+    """ContextRetriever that returns canned passages and records each query.
+
+    Mirrors FakeCompleter: the Responder's RAG fallback is driven without
+    loading the embedding model or the persisted index.
+    """
+
+    def __init__(self, passages: list[str] | None = None) -> None:
+        self._passages = passages or []
+        self.queries: list[str] = []
+
+    def retrieve(self, query: str) -> list[str]:
+        self.queries.append(query)
+        return self._passages
 
 
 class FakeAdminResolver:

@@ -8,9 +8,6 @@ Responder stays decoupled from discord.py and is testable with a named fake.
 
 from typing import Protocol
 
-# Routed label the cheap router emits for this tool (see core.md).
-TOOL_ADMINS = "tool:admins"
-
 _NO_ADMINS = {
     "pt": "Não consegui pegar a lista de admins agora. Procura alguém com o cargo Admin no Discord!",
     "en": "I couldn't fetch the admin list right now. Look for someone with the Admin role on Discord!",
