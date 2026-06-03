@@ -9,7 +9,10 @@ from typing import Protocol
 
 from modpack_bot.embedding import DEFAULT_EMBED_MODEL, build_embed_model
 
-_DEFAULT_TOP_K = 4
+# 6, not 4: a buried prize line (master_ball lives in one capsule subsection) is
+# crowded out of the top 4 by gacha chunks that share the word "Master" (e.g.
+# "Rocket Prize Master"). Subchunks are small, so 6 stays well under Groq's TPM cap.
+_DEFAULT_TOP_K = 6
 
 
 class ContextRetriever(Protocol):

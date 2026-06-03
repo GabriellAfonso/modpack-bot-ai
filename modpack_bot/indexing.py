@@ -14,6 +14,13 @@ _CARD_SOURCE = "card"
 _HEADING_PREFIX = "## "
 _SECTION_SEPARATOR = "\n## "
 
+# Sections larger than this are split by `### ` so a buried line (one item among
+# the ~300 in the gacha capsule section) keeps a focused embedding instead of
+# being averaged away — otherwise a query like "master ball" never retrieves it.
+_MAX_SECTION_CHARS = 1800
+_SUBHEADING_PREFIX = "### "
+_SUBSECTION_SEPARATOR = "\n### "
+
 
 @dataclass(frozen=True)
 class Chunk:
@@ -45,10 +52,29 @@ def chunk_guide(text: str, source: str) -> list[Chunk]:
         >>> [c.section for c in chunk_guide("# T\\nintro\\n## A\\nx", "faq.md")]
         ['# T', '## A']
     """
-    return [
-        Chunk(text=body, source=source, section=heading)
-        for heading, body in _split_sections(text)
-    ]
+    chunks: list[Chunk] = []
+    for heading, body in _split_sections(text):
+        chunks.extend(_chunk_section(heading, body, source))
+    return chunks
+
+
+def _chunk_section(heading: str, body: str, source: str) -> list[Chunk]:
+    """One chunk per `## ` section, but split oversized sections by `### `.
+
+    A huge section (the gacha capsule contents) averages a buried `master_ball`
+    line into noise; splitting it gives each subsection a focused embedding. Each
+    subchunk re-prefixes the parent `## ` heading so it still carries the section
+    topic. Sections within the size budget (or with no `### `) stay a single chunk.
+    """
+    if len(body) <= _MAX_SECTION_CHARS or _SUBSECTION_SEPARATOR not in body:
+        return [Chunk(text=body, source=source, section=heading)]
+    parts = body.split(_SUBSECTION_SEPARATOR)
+    chunks = [Chunk(text=parts[0].strip(), source=source, section=heading)]
+    for part in parts[1:]:
+        sub = (_SUBHEADING_PREFIX + part).strip()
+        text = f"{heading}\n\n{sub}"
+        chunks.append(Chunk(text=text, source=source, section=sub.splitlines()[0]))
+    return chunks
 
 
 def chunk_card(text: str, pokemon: str) -> Chunk:
@@ -62,12 +88,17 @@ def chunk_card(text: str, pokemon: str) -> Chunk:
 
 
 def discover_guides(content_dir: str) -> list[str]:
-    """Guide .md paths under content_dir (recursive), minus the Pokémon DB and
-    core.md (the removed router prompt). Picks up future mod subfolders for free.
+    """Guide .md paths under content_dir (recursive), minus the Pokémon DB,
+    core.md (the removed router prompt) and facts.md. Picks up future mod
+    subfolders for free.
+
+    facts.md is excluded because the deterministic facts gate already serves it
+    (intent.py): its per-item/type sections are single multi-thousand-token chunks
+    that, when retrieved, blow past Groq's 12k TPM cap (HTTP 413).
 
     Example:
         >>> # content/market.md and content/cobbled_gacha/capsulas.md, but not
-        >>> # content/core.md nor anything under content/pokemons-db/.
+        >>> # content/core.md, content/facts.md nor anything under pokemons-db/.
     """
     pattern = os.path.join(content_dir, "**", "*.md")
     paths = glob.glob(pattern, recursive=True)
@@ -119,8 +150,8 @@ def _split_sections(text: str) -> list[tuple[str, str]]:
 
 
 def _is_guide(path: str, content_dir: str) -> bool:
-    """A discovered .md is a guide unless it is core.md or under pokemons-db/."""
+    """A discovered .md is a guide unless it is core.md/facts.md or under pokemons-db/."""
     relative = os.path.relpath(path, content_dir)
-    if relative == "core.md":
+    if relative in ("core.md", "facts.md"):
         return False
     return not relative.startswith("pokemons-db" + os.sep)

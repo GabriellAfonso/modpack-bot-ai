@@ -38,6 +38,35 @@ def test_chunk_guide_keeps_heading_inside_each_chunk_text():
     assert taxas.pokemon is None
 
 
+def _big_section_guide() -> str:
+    """A `## ` section over the size budget, with `### ` subsections — like the
+    gacha capsule contents where `master_ball` is one line among hundreds."""
+    a3 = "### Ultra Capsule\n" + "filler item, " * 200
+    a5 = "### Cherish Capsule\nmaster_ball: 1\n"
+    return f"## Conteúdo das cápsulas\n\nintro\n\n{a3}\n\n{a5}"
+
+
+def test_chunk_guide_splits_oversized_section_by_h3():
+    chunks = chunk_guide(_big_section_guide(), "gacha.md")
+    sections = [chunk.section for chunk in chunks]
+    assert sections == ["## Conteúdo das cápsulas", "### Ultra Capsule", "### Cherish Capsule"]
+
+
+def test_chunk_guide_subsection_reprefixes_parent_heading():
+    chunks = chunk_guide(_big_section_guide(), "gacha.md")
+    cherish = next(chunk for chunk in chunks if chunk.section == "### Cherish Capsule")
+    assert cherish.text.startswith("## Conteúdo das cápsulas\n\n### Cherish Capsule")
+    assert "master_ball: 1" in cherish.text
+    assert cherish.source == "gacha.md"
+
+
+def test_chunk_guide_keeps_small_section_with_h3_as_one_chunk():
+    # Under the size budget, a `### ` subheading does not force a split.
+    guide = "## Tipos\n\n### Fogo\nCharmander\n\n### Água\nSquirtle"
+    chunks = chunk_guide(guide, "faq.md")
+    assert [chunk.section for chunk in chunks] == ["## Tipos"]
+
+
 def test_chunk_guide_handles_text_with_no_sections():
     chunks = chunk_guide("# Só título\n\nUma linha.\n", "faq.md")
     assert len(chunks) == 1
@@ -58,9 +87,12 @@ def test_chunk_card_is_a_single_card_sourced_chunk():
     )
 
 
-def test_discover_guides_is_recursive_and_excludes_db_and_core(tmp_path):
+def test_discover_guides_is_recursive_and_excludes_db_core_and_facts(tmp_path):
     (tmp_path / "market.md").write_text("x", encoding="utf-8")
     (tmp_path / "core.md").write_text("x", encoding="utf-8")
+    # facts.md is served by the deterministic facts gate; its giant per-item
+    # sections would bust Groq's 12k TPM cap if retrieved (HTTP 413).
+    (tmp_path / "facts.md").write_text("x", encoding="utf-8")
     mod = tmp_path / "cobbled_gacha"
     mod.mkdir()
     (mod / "capsulas.md").write_text("x", encoding="utf-8")
