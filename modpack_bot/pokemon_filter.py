@@ -44,12 +44,42 @@ class PokemonFilter:
         axes = [
             _resolve(types, self._types),
             _resolve(categories, self._categories),
-            _resolve(items, self._items),
+            self._resolve_items(items),
         ]
         constraining = [axis for axis in axes if axis is not None]
         if not constraining:
             return []
         return sorted(set.intersection(*constraining), key=_sort_key)
+
+    def _resolve_items(self, terms: list[str]) -> "set[str] | None":
+        """Union of droppers for every item term, or None when no terms (axis off)."""
+        if not terms:
+            return None
+        matched: set[str] = set()
+        for term in terms:
+            matched |= self._item_match(term)
+        return matched
+
+    def _item_match(self, term: str) -> set[str]:
+        """Droppers for one item term: exact label first, else any label whose
+        tokens are a superset of the term's.
+
+        The answer model translates the item before calling, but may stop at the
+        base word — "slime" instead of the actual item "Slime Ball". The token
+        fallback maps "slime" -> "Slime Ball" while an exact term like "bone"
+        still resolves to "Bone" alone (it never widens to "Bone Meal").
+        """
+        key = _key(term)
+        if key in self._items:
+            return set(self._items[key])
+        wanted = set(key.split())
+        if not wanted:
+            return set()
+        matched: set[str] = set()
+        for label, droppers in self._items.items():
+            if wanted <= set(label.split()):
+                matched |= droppers
+        return matched
 
 
 def build_pokemon_filter(facts_md: str) -> PokemonFilter:

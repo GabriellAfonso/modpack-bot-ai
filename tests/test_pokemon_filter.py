@@ -20,6 +20,8 @@ _FACTS = (
     "## Pokémon por item dropado\n"
     "\n"
     "- Bone (2): Cubone, Raikou\n"
+    "- Bone Meal (1): Cubone\n"
+    "- Slime Ball (1): Grimer\n"
     "\n"
     "## Pokémon por categoria\n"
     "\n"
@@ -63,6 +65,24 @@ def test_query_keeps_multiword_names_intact():
     # "Type: Null" has a colon and must survive the comma split as one name.
     pokemon_filter = build_pokemon_filter(_FACTS)
     assert "Type: Null" in pokemon_filter.query([], ["legendary"], [])
+
+
+def test_query_item_resolves_base_word_to_full_label():
+    # The model may pass "slime" while the item is "Slime Ball" — token-superset
+    # fallback maps it to the right line.
+    pokemon_filter = build_pokemon_filter(_FACTS)
+    assert pokemon_filter.query([], [], ["slime"]) == ["Grimer"]
+
+
+def test_query_item_exact_label_does_not_widen_to_longer_labels():
+    # "Bone" must stay "Bone" and never pull in "Bone Meal".
+    pokemon_filter = build_pokemon_filter(_FACTS)
+    assert pokemon_filter.query([], [], ["bone"]) == ["Cubone", "Raikou"]
+
+
+def test_query_item_full_label_still_matches():
+    pokemon_filter = build_pokemon_filter(_FACTS)
+    assert pokemon_filter.query([], [], ["Slime Ball"]) == ["Grimer"]
 
 
 def test_build_without_sections_yields_empty_filter():
