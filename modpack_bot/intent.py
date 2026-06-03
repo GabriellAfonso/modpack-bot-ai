@@ -5,6 +5,7 @@ index matches. Keeps the common path at one Groq call (the answer) instead of
 two (the old router + answer).
 """
 
+from card_builder.type_chart import TYPE_PT
 from modpack_bot.facts_index import matched_facts_lines
 from modpack_bot.text import normalize_tokens, wants_full_list
 
@@ -34,6 +35,41 @@ _ADMIN_MARKERS = frozenset(
 # Counting words; the listing words ("quais", "todos", "lista", "which"...) are
 # already covered by wants_full_list, so they are not duplicated here.
 _COUNT_MARKERS = frozenset({"quantos", "quantas", "quanto", "qtos", "qto", "total", "numero"})
+
+# Generic "where does a Pokémon spawn / how to find one" cues. A NAMED Pokémon is
+# answered earlier from its card (which has a Spawn section); these only fire for
+# the nameless version ("como descubro onde um pokemon spawna"), which otherwise
+# falls to RAG and collides with the gacha spawn-machine docs (term "spawn").
+_SPAWN_VERBS = frozenset(
+    {
+        "spawn", "spawna", "spawnam", "spawnar", "nasce", "nascem", "encontro",
+        "encontrar", "acho", "achar", "acha", "pego", "pegar", "spawns", "find",
+    }
+)
+_POKEMON_WORDS = frozenset({"pokemon", "pokemons", "pokemom", "mon", "bicho", "bichinho"})
+
+# Drop verbs. Item names in facts.md are English ("Bone", "Slime Ball"), so a PT
+# query ("quais dropam osso") never matches an item line verbatim. These cues let
+# a drop question reach the facts tool path, where the model translates the item
+# before calling `filtrar_pokemon` — instead of falling to RAG and dumping the
+# whole item-drop section (~5k tokens -> HTTP 413).
+_DROP_MARKERS = frozenset(
+    {
+        "dropa", "dropam", "dropar", "drop", "drops", "dropado", "dropada",
+        "dropados", "dropadas", "larga", "largam", "solta", "soltam",
+    }
+)
+
+# Gacha/casino prize terms. A "drop" question that names one of these is about
+# what a gacha MACHINE hands out as a prize, not which Pokémon drops an item on
+# death — it belongs to RAG over the gacha guides, not the facts drop tool (the
+# tool only knows Pokémon item drops, so it answers "nenhum Pokémon corresponde").
+_PRIZE_SOURCE_MARKERS = frozenset(
+    {
+        "gacha", "cassino", "casino", "capsula", "capsulas", "capsule",
+        "maquina", "maquinas", "giro", "giros", "girar", "premio", "premios",
+    }
+)
 
 _DEFAULT_LANGUAGE = "pt"
 
@@ -72,6 +108,11 @@ def facts_intent(message: str, facts: str) -> bool:
     - it asks to count or list ("quantos"/"quais"/"lista"/"todos"...), and
     - it names a facts.md axis (a type, item, or category).
 
+    A drop verb ("dropa"/"larga"/...) also satisfies the axis half: the item is
+    named in English in facts.md, so a PT item never matches verbatim — routing on
+    the verb sends the question to the tool path, which translates the item and
+    queries `filtrar_pokemon`, instead of letting it fall to RAG (plan.md §4/§7).
+
     The conjunction keeps two kinds of question out of the facts path:
     - "quais comandos do market" — a cue but no axis -> RAG over the guide.
     - "pokemon de fogo que nasce no deserto" — a type axis but no counting cue:
@@ -84,7 +125,50 @@ def facts_intent(message: str, facts: str) -> bool:
     """
     if not _asks_count_or_list(message):
         return False
+    if _asks_about_drops(message):
+        return True
     return bool(matched_facts_lines(message, facts))
+
+
+def _asks_about_drops(message: str) -> bool:
+    """True for a drop verb (the item axis, language-agnostic), UNLESS a gacha/
+    prize term is present — "dropar master ball no gacha" is a machine-prize
+    question for RAG, not the Pokémon item-drop tool (which would wrongly answer
+    "nenhum Pokémon corresponde")."""
+    tokens = set(normalize_tokens(message))
+    if tokens & _PRIZE_SOURCE_MARKERS:
+        return False
+    return bool(tokens & _DROP_MARKERS)
+
+
+def spawn_help_intent(message: str) -> bool:
+    """True for a generic 'where does a Pokémon spawn / how to find one' question.
+
+    A spawn/find verb AND the bare word "pokemon" are required; a NAMED question
+    ("onde o pikachu spawna") never reaches here — it carries the species, is
+    caught by the card gate first, and answered from the card's Spawn data. A
+    message that names a TYPE ("pokemon de fogo que nasce no deserto") is excluded
+    too: that is a descriptive filter for RAG over the cards, not a meta question.
+
+    Example:
+        >>> spawn_help_intent("como descubro onde um pokemon spawna?")
+        True
+        >>> spawn_help_intent("onde fica o market?")
+        False
+    """
+    tokens = set(normalize_tokens(message))
+    if not (tokens & _SPAWN_VERBS and tokens & _POKEMON_WORDS):
+        return False
+    return not _names_a_type(tokens)
+
+
+def _names_a_type(tokens: set[str]) -> bool:
+    """True when a Pokémon type is named (PT label or English id) — a descriptive
+    filter that belongs to RAG over the cards, not the generic spawn-help hint."""
+    for english, pt_name in TYPE_PT.items():
+        if english in tokens or " ".join(normalize_tokens(pt_name)) in tokens:
+            return True
+    return False
 
 
 def _asks_count_or_list(message: str) -> bool:

@@ -1,4 +1,9 @@
-from modpack_bot.intent import admins_intent, detect_language, facts_intent
+from modpack_bot.intent import (
+    admins_intent,
+    detect_language,
+    facts_intent,
+    spawn_help_intent,
+)
 
 _FACTS = (
     "# Números do Modpack\n"
@@ -63,3 +68,42 @@ def test_facts_intent_false_for_descriptive_axis_query_without_count_cue():
     # spawn question, not a count/list — the filter tool has no biome param, so
     # it must fall through to RAG over the cards, not the facts gate.
     assert facts_intent("pokemon de fogo que nasce no deserto", _FACTS) is False
+
+
+def test_facts_intent_true_for_drop_query_with_untranslated_pt_item():
+    # "osso" never matches the English "Bone" line verbatim; the drop verb routes
+    # it to the tool path (which translates the item) instead of RAG.
+    assert facts_intent("quais pokemons dropam osso?", _FACTS) is True
+
+
+def test_facts_intent_true_for_drop_query_even_without_listing_word():
+    assert facts_intent("quantos pokemon largam slime?", _FACTS) is True
+
+
+def test_facts_intent_false_for_drop_verb_without_count_or_list_cue():
+    # A drop verb alone is not enough — it must still be a count/list question.
+    assert facts_intent("como faço pra dropar osso?", _FACTS) is False
+
+
+def test_facts_intent_false_for_gacha_prize_drop_question():
+    # "dropar ... no gacha" is a machine-prize question for RAG, not the Pokémon
+    # item-drop tool (which would wrongly answer "nenhum Pokémon corresponde").
+    assert facts_intent("quais as chances de dropar master ball no gacha?", _FACTS) is False
+
+
+def test_facts_intent_false_for_capsule_drop_question():
+    assert facts_intent("quais cápsulas dropam master ball?", _FACTS) is False
+
+
+def test_spawn_help_intent_true_for_nameless_spawn_question():
+    assert spawn_help_intent("como descubro onde um pokemon spawna?") is True
+    assert spawn_help_intent("onde encontro um pokemon?") is True
+
+
+def test_spawn_help_intent_false_without_pokemon_word():
+    # "onde fica o market" has a location cue but is not about finding a Pokémon.
+    assert spawn_help_intent("onde fica o market?") is False
+
+
+def test_spawn_help_intent_false_without_a_spawn_or_find_verb():
+    assert spawn_help_intent("qual o melhor pokemon do jogo?") is False
