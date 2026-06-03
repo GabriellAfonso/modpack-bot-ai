@@ -1,6 +1,6 @@
 # Máquinas Gacha — Todas as 12 Máquinas
 
-O mod adiciona 12 máquinas diferentes. Cada máquina aceita um tipo de moeda específico, exige uma quantidade de inserções para girar, e entrega um tipo de recompensa. Todas as máquinas ocupam 2 blocos de altura e ficam orientadas para uma direção quando colocadas.
+O mod adiciona 12 máquinas de gacha diferentes (o **cassino**, ou casino, como muitos jogadores chamam). Cada máquina aceita um tipo de moeda específico, exige uma quantidade de inserções para girar, e entrega um tipo de recompensa. Todas as máquinas ocupam 2 blocos de altura e ficam orientadas para uma direção quando colocadas.
 
 ---
 

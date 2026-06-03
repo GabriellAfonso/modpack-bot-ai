@@ -1,6 +1,6 @@
 # Como Usar as Máquinas Gacha
 
-As máquinas gacha do mod Cobbled Gacha funcionam todas da mesma forma básica: você insere um item de moeda até atingir o custo total da máquina, e então ela dispensa a recompensa. Este guia explica o processo passo a passo.
+As máquinas gacha do mod Cobbled Gacha — que muitos jogadores chamam de **cassino** (ou casino) — funcionam todas da mesma forma básica: você insere um item de moeda até atingir o custo total da máquina, e então ela dispensa a recompensa. Este guia explica o processo passo a passo.
 
 ---
 

@@ -1,6 +1,6 @@
 # Cobbled Gacha — Visão Geral do Mod
 
-**Cobbled Gacha** é um mod para Minecraft (Fabric) que adiciona máquinas de gacha ao jogo. Você insere itens de moeda em uma máquina e recebe cápsulas com recompensas aleatórias, ou faz um Pokémon aparecer, dependendo do tipo de máquina.
+**Cobbled Gacha** é um mod para Minecraft (Fabric) que adiciona máquinas de gacha ao jogo. Você insere itens de moeda em uma máquina e recebe cápsulas com recompensas aleatórias, ou faz um Pokémon aparecer, dependendo do tipo de máquina. Muitos jogadores chamam essas máquinas de gacha de **cassino** (ou casino), por causa da mecânica de pagar moeda e receber prêmio aleatório.
 
 O mod funciona em conjunto com o **Cobblemon** (mod de Pokémon para Minecraft), mas nem todas as máquinas exigem isso.
 
@@ -42,6 +42,8 @@ São 12 máquinas diferentes, cada uma com sua própria moeda, custo e recompens
 ---
 
 ## Como as máquinas funcionam (resumo)
+
+As máquinas gacha (o "cassino" do servidor) funcionam assim:
 
 1. Segure a moeda correta na mão
 2. Clique com botão direito na máquina
