@@ -37,6 +37,27 @@ def facts_listing_message(lines: list[str], language: str) -> str:
     return lead + "\n" + "\n".join(lines)
 
 
+def spawn_help_message(language: str) -> str:
+    """Reply to a nameless 'where does a Pokémon spawn' question (no LLM).
+
+    Points the player at the two ways to get spawn data: ask here with the
+    species name (answered from the card), or use `/pwiki <species>` in game.
+
+    Example:
+        >>> spawn_help_message("en").startswith("Tell me which")
+        True
+    """
+    if language == "en":
+        return (
+            "Tell me which Pokémon and I'll show where it spawns — e.g. \"where does "
+            "Pikachu spawn?\". In game you can also open `/pwiki <species>`."
+        )
+    return (
+        "Me diz qual Pokémon que eu te falo onde ele spawna — ex.: \"onde o Pikachu "
+        "spawna?\". No jogo também dá pra abrir `/pwiki <species>`."
+    )
+
+
 def pokemon_instruction(pokemon: str, language: str) -> str:
     """Directive used when a Pokémon card replaces wikigui.md as the guide."""
     if language == "en":

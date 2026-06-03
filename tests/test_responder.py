@@ -196,6 +196,23 @@ def test_non_pokemon_question_falls_through_to_rag():
     assert "WIKI DOC" in completer.last_system_prompt
 
 
+def test_generic_spawn_question_points_to_pwiki_without_llm_or_rag():
+    # Nameless "how do I find where a pokemon spawns" must NOT reach RAG (it
+    # collides with the gacha spawn-machine docs) — answer with the /pwiki hint.
+    responder, completer = make_responder(passages=["STRANGE CRYSTALLIZED MACHINE"])
+    reply = responder.answer("como descubro onde um pokemon spawna?")
+    assert "/pwiki" in reply
+    assert len(completer.calls) == 0  # deterministic, 0 tokens
+
+
+def test_named_spawn_question_still_answers_from_the_card():
+    # A species in the message is caught by the card gate first, so spawn data
+    # comes from the card — the generic /pwiki hint must not hijack it.
+    responder, completer = make_responder(cards={"pikachu": "PIKACHU CARD"})
+    responder.answer("onde o pikachu spawna?")
+    assert "PIKACHU CARD" in completer.last_system_prompt
+
+
 def test_descriptive_axis_query_goes_to_rag_not_facts():
     # Regression (Fase 9): "fogo" is a type axis, but "que nasce no deserto" is a
     # descriptive spawn query the filter tool can't answer (no biome param). It

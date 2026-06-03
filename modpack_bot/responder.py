@@ -10,7 +10,7 @@ end with fakes (no Discord, no Groq, no embedding model).
 from modpack_bot.admins import AdminResolver, admins_message
 from modpack_bot.facts_index import facts_counts_header, matched_facts_lines
 from modpack_bot.guides import CardRepository, GuideRepository
-from modpack_bot.intent import admins_intent, detect_language, facts_intent
+from modpack_bot.intent import admins_intent, detect_language, facts_intent, spawn_help_intent
 from modpack_bot.llm import ANSWER_MODELS, ModelCompleter
 from modpack_bot.pokemon import detect_pokemon
 from modpack_bot.pokemon_filter import build_pokemon_filter, filter_tool_spec, make_dispatch
@@ -20,6 +20,7 @@ from modpack_bot.prompts import (
     facts_listing_message,
     fallback_message,
     pokemon_instruction,
+    spawn_help_message,
     usage_suffix,
 )
 from modpack_bot.retrieval import ContextRetriever
@@ -65,6 +66,10 @@ class Responder:
         pokemon = detect_pokemon(message, self._pokemon_names)
         if pokemon:
             return self._answer_pokemon(message, pokemon, language)
+        # No named Pokémon: a bare "where does a pokemon spawn" must not fall to
+        # RAG (it collides with the gacha spawn-machine docs) — point to /pwiki.
+        if spawn_help_intent(message):
+            return spawn_help_message(language)
         facts = self._guides.load_guide(_FACTS_GUIDE)
         if facts_intent(message, facts):
             return self._answer_facts(message, facts, language)
