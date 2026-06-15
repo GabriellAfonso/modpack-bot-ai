@@ -8,7 +8,7 @@ import json
 from dataclasses import dataclass
 from typing import Callable, Protocol
 
-from groq import BadRequestError, Groq, RateLimitError
+from groq import APIStatusError, BadRequestError, Groq, RateLimitError
 
 # A single chat message, e.g. {"role": "system", "content": "..."}.
 Message = dict[str, str]
@@ -30,6 +30,11 @@ ANSWER_MODELS = [
     "meta-llama/llama-4-scout-17b-16e-instruct",
     "llama-3.1-8b-instant",
 ]
+
+# Models for rewriting a follow-up into a standalone question (the condense step
+# before retrieval). This is a cheap, mechanical edit — the smallest/fastest
+# model is enough and keeps the per-follow-up token cost negligible.
+CONDENSE_MODELS = ["llama-3.1-8b-instant"]
 
 
 @dataclass(frozen=True)
@@ -195,18 +200,27 @@ class GroqCompleter:
         return response.choices[0].message
 
 
+def groq_error_code(error: APIStatusError) -> str | None:
+    """The `code` Groq puts in a status-error body, or None if absent/odd.
+
+    Body shape: {"error": {"code": "...", ...}}. Shared so both the tool-retry
+    logic and the player-facing error mapper read it the same way.
+    """
+    body = getattr(error, "body", None)
+    if not isinstance(body, dict):
+        return None
+    inner = body.get("error")
+    code = inner.get("code") if isinstance(inner, dict) else None
+    return code if isinstance(code, str) else None
+
+
 def _is_tool_use_failed(error: BadRequestError) -> bool:
     """True when Groq rejected the model's OWN tool call (it emitted a function
     name/args not in the request) rather than rejecting our request shape.
 
-    Body looks like {"error": {"code": "tool_use_failed", ...}}; only that code
-    is safe to retry on a different model or by dropping tools entirely.
+    Only that code is safe to retry on a different model or by dropping tools.
     """
-    body = error.body
-    if not isinstance(body, dict):
-        return False
-    inner = body.get("error")
-    return isinstance(inner, dict) and inner.get("code") == "tool_use_failed"
+    return groq_error_code(error) == "tool_use_failed"
 
 
 def _usage_of(response: object) -> TokenUsage:
