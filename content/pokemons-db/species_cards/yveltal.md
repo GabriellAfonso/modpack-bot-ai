@@ -5,6 +5,6 @@ Habilidades: Darkaura, Darkaura (oculta)
 Catch rate: 45 · EV yield: 3 HP · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Dark Forest, Swamp; Badlands, Eroded Badlands, Wooded Badlands, de noite — nível 65-75
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki yveltal`._

@@ -5,7 +5,7 @@ Habilidades: Fullmetalbody, Fullmetalbody (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks; Meadow, de dia — nível 65-75
 
 ## Evolui de
 - Cosmoem — subir de nível (nível 53+, de dia)

@@ -6,7 +6,7 @@ Catch rate: 3 · EV yield: 2 Atk, 1 SpA · Egg groups: Undiscovered
 Drops: Dragon Breath (qtd 3-5)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 70-80
 
 Formas: Mega
 

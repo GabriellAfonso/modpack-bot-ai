@@ -5,6 +5,6 @@ Habilidades: Levitate, Levitate (oculta)
 Catch rate: 3 · EV yield: 2 Atk, 1 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki azelf`._

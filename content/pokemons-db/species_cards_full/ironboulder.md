@@ -5,6 +5,6 @@ Habilidades: Quarkdrive, Quarkdrive (oculta)
 Catch rate: 10 · EV yield: 3 Spd · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki ironboulder`._

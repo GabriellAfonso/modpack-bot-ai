@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "deoxys-1",
+      "pokemon": "deoxys",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70-80",
+      "weight": 0.15,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_peak",
+          "#cobblemon:is_sky"
+        ],
+        "canSeeSky": true,
+        "minY": 180,
+        "timeRange": "night"
+      },
+      "presets": [
+        "natural"
+      ]
+    }
+  ]
+}

@@ -5,6 +5,6 @@ Habilidades: Waterabsorb, Waterabsorb (oculta)
 Catch rate: 3 · EV yield: 3 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] volcanic; thermal, perto de Water — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki volcanion`._

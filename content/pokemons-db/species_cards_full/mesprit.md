@@ -5,6 +5,6 @@ Habilidades: Levitate, Levitate (oculta)
 Catch rate: 3 · EV yield: 1 Atk, 1 SpA, 1 SpD · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki mesprit`._

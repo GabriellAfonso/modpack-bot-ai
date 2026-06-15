@@ -6,7 +6,7 @@ Catch rate: 3 · EV yield: 3 SpD · Egg groups: Undiscovered
 Drops: Feather (qtd 2-4), Chicken, Never Melt Ice
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 Formas: Galar
 

@@ -5,7 +5,7 @@ Habilidades: Naturalcure, Naturalcure (oculta)
 Catch rate: 45 · EV yield: 3 HP · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Meadow, Plains, Savanna, Savanna Plateau, Sunflower Plains…, de dia — nível 50-60
 
 Formas: Sky
 

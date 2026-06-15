@@ -5,6 +5,6 @@ Habilidades: Quarkdrive, Quarkdrive (oculta)
 Catch rate: 5 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest…; Meadow, Plains, Savanna, Savanna Plateau, Sunflower Plains… — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki ironleaves`._

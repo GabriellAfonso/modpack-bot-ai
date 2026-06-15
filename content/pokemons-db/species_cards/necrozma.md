@@ -5,7 +5,7 @@ Habilidades: Prismarmor, Prismarmor (oculta)
 Catch rate: 3 · EV yield: 1 Atk, 2 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Deep Dark; Deep Dark, Dripstone Caves, Lush Caves, sem ver o céu — nível 65-75
 
 Formas: Dusk-Mane, Dawn-Wings, Ultra
 

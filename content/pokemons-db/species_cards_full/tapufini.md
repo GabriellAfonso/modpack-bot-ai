@@ -5,6 +5,6 @@ Habilidades: Mistysurge, Telepathy (oculta)
 Catch rate: 3 · EV yield: 3 SpD · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] tropical island; Beach, Snowy Beach, Stony Shore, perto de Water — nível 55-65
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki tapufini`._

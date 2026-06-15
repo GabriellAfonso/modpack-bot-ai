@@ -5,6 +5,6 @@ Habilidades: Electricsurge, Telepathy (oculta)
 Catch rate: 3 · EV yield: 3 Spd · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] tropical island; Mushroom Fields — nível 55-65
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki tapukoko`._

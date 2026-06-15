@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "phione-1",
+      "pokemon": "phione",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "ultra-rare",
+      "level": "40-55",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_ocean",
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "presets": [
+        "water"
+      ]
+    }
+  ]
+}

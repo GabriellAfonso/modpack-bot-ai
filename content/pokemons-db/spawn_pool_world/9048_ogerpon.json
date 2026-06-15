@@ -1,0 +1,26 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ogerpon-1",
+      "pokemon": "ogerpon",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "55-65",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_cherry_blossom",
+          "#cobblemon:is_grassland"
+        ],
+        "canSeeSky": true
+      },
+      "presets": [
+        "natural"
+      ]
+    }
+  ]
+}

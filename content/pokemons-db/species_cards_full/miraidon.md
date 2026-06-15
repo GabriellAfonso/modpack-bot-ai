@@ -5,6 +5,6 @@ Habilidades: Hadronengine, Hadronengine (oculta)
 Catch rate: 3 · EV yield: 3 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Badlands, Eroded Badlands, Wooded Badlands; Meadow, Savanna Plateau — nível 65-75
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki miraidon`._

@@ -5,7 +5,7 @@ Habilidades: Terashift, Terashift (oculta)
 Catch rate: 255 · EV yield: 1 Def · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Dripstone Caves; Deep Dark, Dripstone Caves, Lush Caves, sem ver o céu — nível 65-75
 
 Formas: Terastal, Stellar
 

@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 1 Spd · Egg groups: Undiscovered
 Drops: Echo Shard (qtd 1-2)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] End Barrens, End Highlands, End Midlands, Small End Islands, The End — nível 45-55
 
 ## Evolui em
 - Naganadel — subir de nível (conhecendo Dragonpulse)

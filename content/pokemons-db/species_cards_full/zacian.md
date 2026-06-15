@@ -5,7 +5,7 @@ Habilidades: Intrepidsword, Intrepidsword (oculta)
 Catch rate: 10 · EV yield: 3 Spd · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 Formas: Crowned
 

@@ -6,6 +6,6 @@ Catch rate: 30 · EV yield: 1 HP · Egg groups: Water 1, Fairy
 Drops: Mystic Water
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Cold Ocean, Deep Cold Ocean, Deep Frozen Ocean, Deep Lukewarm Ocean, Deep Ocean…; Warm Ocean — nível 40-55
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki phione`._

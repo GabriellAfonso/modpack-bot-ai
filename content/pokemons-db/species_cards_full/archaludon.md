@@ -5,7 +5,7 @@ Habilidades: Stamina, Sturdy, Stalwart (oculta)
 Catch rate: 10 · EV yield: 3 Def · Egg groups: Mineral, Dragon
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 ## Evolui de
 - Duraludon — usar Metal Alloy

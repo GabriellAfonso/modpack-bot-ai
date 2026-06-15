@@ -6,7 +6,7 @@ Catch rate: 3 · EV yield: 1 Atk, 1 SpA, 1 Spd · Egg groups: Undiscovered
 Drops: Psychic Gem (50.0%)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks; sky, de noite — nível 70-80
 
 Formas: Attack, Defense, Speed
 

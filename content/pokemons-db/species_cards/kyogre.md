@@ -6,7 +6,7 @@ Catch rate: 3 · EV yield: 3 SpA · Egg groups: Undiscovered
 Drops: Heart Of The Sea
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Deep Cold Ocean, Deep Frozen Ocean, Deep Lukewarm Ocean, Deep Ocean; Cold Ocean, Deep Cold Ocean, Deep Frozen Ocean, Deep Lukewarm Ocean, Deep Ocean… — nível 70-80
 
 Formas: Primal
 

@@ -6,6 +6,6 @@ Catch rate: 30 · EV yield: 1 SpA, 1 SpD, 1 Spd · Egg groups: Undiscovered
 Drops: Phantom Membrane (qtd 0-3), Fairy Feather
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki fluttermane`._

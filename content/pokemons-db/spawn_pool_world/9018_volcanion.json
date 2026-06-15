@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "volcanion-1",
+      "pokemon": "volcanion",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "60-70",
+      "weight": 0.15,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_volcanic",
+          "#cobblemon:is_thermal"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:water"
+        ]
+      },
+      "presets": [
+        "natural"
+      ]
+    }
+  ]
+}

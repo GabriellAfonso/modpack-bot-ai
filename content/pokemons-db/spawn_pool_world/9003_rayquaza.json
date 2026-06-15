@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "rayquaza-1",
+      "pokemon": "rayquaza",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70-80",
+      "weight": 0.15,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_peak",
+          "#cobblemon:is_mountain"
+        ],
+        "canSeeSky": true,
+        "minY": 160
+      },
+      "presets": [
+        "natural"
+      ]
+    }
+  ]
+}

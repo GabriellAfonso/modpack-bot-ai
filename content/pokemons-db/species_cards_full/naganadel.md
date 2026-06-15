@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 3 SpA · Egg groups: Undiscovered
 Drops: Echo Shard (qtd 1-3)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] End Barrens, End Highlands, End Midlands, Small End Islands, The End — nível 60-70
 
 ## Evolui de
 - Poipole — subir de nível (conhecendo Dragonpulse)

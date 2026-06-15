@@ -5,7 +5,7 @@ Habilidades: Aurabreak, Aurabreak (oculta)
 Catch rate: 3 · EV yield: 3 HP · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Deep Dark, Dripstone Caves, Lush Caves; Deep Dark, sem ver o céu — nível 65-75
 
 Formas: 10%, 10%-C, 50%-C, Complete
 

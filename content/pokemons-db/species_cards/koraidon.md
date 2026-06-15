@@ -5,6 +5,6 @@ Habilidades: Orichalcumpulse, Orichalcumpulse (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Bamboo Jungle, Jungle, Sparse Jungle; Savanna, Savanna Plateau, Windswept Savanna, de dia — nível 65-75
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki koraidon`._

@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 2 SpA · Egg groups: Undiscovered
 Drops: Relic Coin (qtd 24-48)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 ## Evolui de
 - Gimmighoul — subir de nível (gimmighoul gimmighoul_coins=999)

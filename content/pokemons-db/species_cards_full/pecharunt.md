@@ -5,6 +5,6 @@ Habilidades: Poisonpuppeteer, Poisonpuppeteer (oculta)
 Catch rate: 3 · EV yield: 3 Def · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Dark Forest, Swamp; Mangrove Swamp, Swamp, de noite — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki pecharunt`._

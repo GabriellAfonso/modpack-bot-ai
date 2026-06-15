@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "walkingwake-1",
+      "pokemon": "walkingwake",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "ultra-rare",
+      "level": "60-70",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_ocean",
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "presets": [
+        "water"
+      ]
+    }
+  ]
+}

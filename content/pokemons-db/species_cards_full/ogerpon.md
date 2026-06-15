@@ -5,7 +5,7 @@ Habilidades: Defiant, Defiant (oculta)
 Catch rate: 5 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Cherry Grove; Meadow, Plains, Savanna, Savanna Plateau, Sunflower Plains, Windswept Savanna — nível 55-65
 
 Formas: Cornerstone, Cornerstone-Tera, Hearthflame, Hearthflame-Tera, Teal-Tera, Wellspring, Wellspring-Tera
 

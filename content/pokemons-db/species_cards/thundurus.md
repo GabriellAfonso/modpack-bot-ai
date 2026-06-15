@@ -5,7 +5,7 @@ Habilidades: Prankster, Defiant (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Meadow; Meadow, Savanna Plateau; Meadow, Plains, Savanna, Savanna Plateau, Sunflower Plains… — nível 60-70
 
 ## Evolui em
 - Thundurus Mirror Forme=Therian — subir de nível (segurando Wide Lens)

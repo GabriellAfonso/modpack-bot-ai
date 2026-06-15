@@ -5,6 +5,6 @@ Habilidades: Serenegrace, Serenegrace (oculta)
 Catch rate: 3 · EV yield: 3 HP · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Cherry Grove, Dark Forest, Flower Forest; Meadow, Plains, Savanna, Savanna Plateau, Sunflower Plains…, de noite — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki jirachi`._

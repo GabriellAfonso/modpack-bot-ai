@@ -6,6 +6,6 @@ Catch rate: 45 · EV yield: 2 Def · Egg groups: Undiscovered
 Drops: Bone (qtd 0-2), Cod
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki dracovish`._

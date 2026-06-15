@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "xerneas-1",
+      "pokemon": "xerneas",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "65-75",
+      "weight": 0.15,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_floral"
+        ],
+        "timeRange": "day",
+        "canSeeSky": true
+      },
+      "presets": [
+        "natural"
+      ]
+    }
+  ]
+}

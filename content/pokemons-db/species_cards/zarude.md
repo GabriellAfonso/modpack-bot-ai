@@ -5,7 +5,7 @@ Habilidades: Leafguard, Leafguard (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Bamboo Jungle, Jungle, Sparse Jungle — nível 60-70
 
 Formas: Dada
 

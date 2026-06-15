@@ -5,6 +5,6 @@ Habilidades: Protosynthesis, Protosynthesis (oculta)
 Catch rate: 5 · EV yield: 3 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Cold Ocean, Deep Cold Ocean, Deep Frozen Ocean, Deep Lukewarm Ocean, Deep Ocean, Frozen Ocean, Lukewarm Ocean, Ocean, Warm Ocean; Warm Ocean — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki walkingwake`._

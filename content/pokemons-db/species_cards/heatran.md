@@ -6,6 +6,6 @@ Catch rate: 3 · EV yield: 3 SpA · Egg groups: Undiscovered
 Drops: Magma Cream (qtd 2-4), Blaze Powder (qtd 2-4)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki heatran`._

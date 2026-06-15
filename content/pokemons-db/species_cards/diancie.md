@@ -5,7 +5,7 @@ Habilidades: Clearbody, Clearbody (oculta)
 Catch rate: 3 · EV yield: 1 Def, 2 SpD · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Dripstone Caves; Deep Dark, Dripstone Caves, Lush Caves, sem ver o céu — nível 55-65
 
 Formas: Mega
 

@@ -6,6 +6,6 @@ Catch rate: 3 · EV yield: 3 SpD · Egg groups: Undiscovered
 Drops: Fairy Feather
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Meadow, Plains, Savanna, Savanna Plateau, Sunflower Plains, Windswept Savanna — nível 55-65
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki fezandipiti`._

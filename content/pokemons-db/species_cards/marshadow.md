@@ -5,6 +5,6 @@ Habilidades: Technician, Technician (oculta)
 Catch rate: 3 · EV yield: 2 Atk, 1 Spd · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Dark Forest, Swamp; Deep Dark, de noite, sem ver o céu — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki marshadow`._

@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "tornadus-1",
+      "pokemon": "tornadus",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "60-70",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_highlands",
+          "#cobblemon:is_peak",
+          "#cobblemon:is_grassland"
+        ],
+        "canSeeSky": true,
+        "isThundering": true
+      },
+      "presets": [
+        "natural"
+      ]
+    }
+  ]
+}

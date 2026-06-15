@@ -6,7 +6,7 @@ Catch rate: 3 · EV yield: 3 SpA · Egg groups: Undiscovered
 Drops: Twisted Spoon
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Deep Dark, Dripstone Caves, Lush Caves; Deep Dark, sem ver o céu — nível 70-80
 
 Formas: Mega-X, Mega-Y
 

@@ -6,6 +6,6 @@ Catch rate: 3 · EV yield: 3 SpD · Egg groups: Undiscovered
 Drops: Feather (qtd 2-4)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki lugia`._

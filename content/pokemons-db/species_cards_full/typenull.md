@@ -5,7 +5,7 @@ Habilidades: Battlearmor, Battlearmor (oculta)
 Catch rate: 3 · EV yield: 2 HP · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 ## Evolui em
 - Silvally — subir de nível (amizade ≥160)

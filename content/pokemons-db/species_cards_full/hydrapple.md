@@ -5,7 +5,7 @@ Habilidades: Supersweetsyrup, Regenerator, Stickyhold (oculta)
 Catch rate: 10 · EV yield: 3 SpA · Egg groups: Grass, Dragon
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 ## Evolui de
 - Dipplin — subir de nível (conhecendo Dragoncheer)

@@ -6,7 +6,7 @@ Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 Drops: Nether Star
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] volcanic; Desert; Badlands, Eroded Badlands, Wooded Badlands — nível 70-80
 
 Formas: Primal
 

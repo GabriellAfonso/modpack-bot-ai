@@ -5,6 +5,6 @@ Habilidades: Toxicchain, Guarddog (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Meadow, Plains, Savanna, Savanna Plateau, Sunflower Plains…; Savanna, Savanna Plateau, Windswept Savanna — nível 55-65
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki okidogi`._

@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "thundurus-1",
+      "pokemon": "thundurus",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "60-70",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_highlands",
+          "#cobblemon:is_plateau",
+          "#cobblemon:is_grassland"
+        ],
+        "canSeeSky": true,
+        "isThundering": true
+      },
+      "presets": [
+        "natural"
+      ]
+    }
+  ]
+}

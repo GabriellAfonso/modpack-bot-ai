@@ -5,7 +5,7 @@ Habilidades: Sturdy, Sturdy (oculta)
 Catch rate: 3 · EV yield: 1 Def, 1 SpD · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 ## Evolui em
 - Solgaleo — subir de nível (nível 53+, de dia)

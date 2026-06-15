@@ -6,6 +6,6 @@ Catch rate: 45 · EV yield: 2 Atk · Egg groups: Undiscovered
 Drops: Bone (qtd 0-2), Feather (qtd 0-2)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki arctozolt`._

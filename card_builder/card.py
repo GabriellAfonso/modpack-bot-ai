@@ -14,7 +14,14 @@ from card_builder.type_chart import TYPE_PT, weaknesses
 _EV_LABEL = {"hp": "HP", "attack": "Atk", "defence": "Def",
              "special_attack": "SpA", "special_defence": "SpD", "speed": "Spd"}
 
-_NO_NATURAL_SPAWN = "- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo)."
+# Detection substring shared with the runtime (modpack_bot.responder): a card
+# carrying this line has no natural spawn, so the responder augments the answer
+# with RAG to surface a mod-based acquisition method (e.g. Legendary Monuments
+# pedestals). The old line also asserted "obtido por evolução/troca/ovo", which
+# is false for summon-only legendaries (zekrom et al.) — dropped so the model
+# can't parrot it.
+NO_NATURAL_SPAWN = "Não nasce naturalmente"
+_NO_NATURAL_SPAWN = f"- {NO_NATURAL_SPAWN} (sem spawn natural no mundo)."
 
 
 def build_card(species: Json, key: str, ctx: BuildContext) -> str:

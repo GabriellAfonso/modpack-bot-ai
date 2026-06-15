@@ -5,6 +5,6 @@ Habilidades: Chillingneigh, Chillingneigh (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove, Ice Spikes, Jagged Peaks, Snowy Beach, Snowy Plains, Snowy Slopes, Snowy Taiga; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Ice Spikes, Jagged Peaks; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove, Ice Spikes, Jagged Peaks, Snowy Beach, Snowy Plains, Snowy Slopes, Snowy Taiga — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki glastrier`._

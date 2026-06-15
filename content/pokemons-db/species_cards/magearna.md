@@ -5,7 +5,7 @@ Habilidades: Soulheart, Soulheart (oculta)
 Catch rate: 3 · EV yield: 3 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] Cherry Grove, Dark Forest, Flower Forest; qualquer bioma da superfície — nível 60-70
 
 Formas: Original
 

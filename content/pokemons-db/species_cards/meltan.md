@@ -6,7 +6,7 @@ Catch rate: 3 · EV yield: 1 Atk · Egg groups: Undiscovered
 Drops: Iron Ingot (50%)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 ## Evolui em
 - Melmetal — subir de nível (meltan meltan_iron_charge=999)

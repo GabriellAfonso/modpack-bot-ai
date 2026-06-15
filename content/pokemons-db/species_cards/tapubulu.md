@@ -5,6 +5,6 @@ Habilidades: Grassysurge, Telepathy (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- [ultra-rare] tropical island; Bamboo Jungle, Jungle, Sparse Jungle — nível 55-65
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki tapubulu`._

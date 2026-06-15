@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 2 HP · Egg groups: Grass, Dragon
 Drops: Apple, Yache Berry (10.0%)
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 ## Evolui de
 - Applin — usar Sweet Apple

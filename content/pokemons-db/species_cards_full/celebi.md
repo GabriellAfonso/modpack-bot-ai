@@ -6,6 +6,6 @@ Catch rate: 45 · EV yield: 3 HP · Egg groups: Undiscovered
 Drops: Miracle Seed
 
 ## Spawn
-- Não nasce naturalmente (sem spawn no mundo; obtido por evolução/troca/ovo).
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki celebi`._
