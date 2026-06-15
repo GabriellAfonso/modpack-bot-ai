@@ -1,5 +1,6 @@
 from modpack_bot.intent import (
     admins_intent,
+    claim_intent,
     detect_language,
     facts_intent,
     spawn_help_intent,
@@ -44,6 +45,16 @@ def test_admins_intent_true_for_staff_question():
 
 def test_admins_intent_false_for_a_pokemon_question():
     assert admins_intent("onde nasce o pikachu?") is False
+
+
+def test_claim_intent_true_for_chest_protection_questions():
+    assert claim_intent("como faço pra ngm roubar meu bau?") is True
+    assert claim_intent("como faço pra proteger meu baú?") is True
+    assert claim_intent("mas e o mod flan?") is True
+
+
+def test_claim_intent_false_for_a_pokemon_question():
+    assert claim_intent("onde nasce o pikachu?") is False
 
 
 def test_facts_intent_true_when_a_type_axis_is_named():

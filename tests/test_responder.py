@@ -1,3 +1,4 @@
+from modpack_bot.conversation import ConversationStore, Turn
 from modpack_bot.responder import Responder
 from tests.conftest import (
     FakeAdminResolver,
@@ -16,12 +17,22 @@ def make_responder(
     admins=None,
     show_usage=False,
     tool_call=None,
+    condense_reply=None,
+    conversations=None,
+    guides=None,
 ):
-    completer = FakeCompleter(answer_reply=answer_reply, tool_call=tool_call)
-    guides = FakeGuideRepository(guides={"facts.md": facts} if facts else {})
+    completer = FakeCompleter(
+        answer_reply=answer_reply, tool_call=tool_call, condense_reply=condense_reply
+    )
+    guide_files = dict(guides or {})
+    if facts:
+        guide_files["facts.md"] = facts
+    guides = FakeGuideRepository(guides=guide_files)
     cards_repo = FakeCardRepository(cards=cards or {})
     retriever = FakeRetriever(passages or [])
-    responder = Responder(retriever, completer, guides, cards_repo, admins, show_usage)
+    responder = Responder(
+        retriever, completer, guides, cards_repo, admins, show_usage, conversations
+    )
     return responder, completer
 
 
@@ -168,6 +179,15 @@ def test_usage_footer_absent_by_default():
     assert responder.answer("o market cobra taxa?") == "REPLY"
 
 
+def test_set_show_usage_toggles_the_footer_at_runtime():
+    # !token true/false flips the footer without rebuilding the Responder.
+    responder, _ = make_responder(passages=["G"], answer_reply="REPLY", show_usage=False)
+    responder.set_show_usage(True)
+    assert "tokens" in responder.answer("o market cobra taxa?")
+    responder.set_show_usage(False)
+    assert responder.answer("o market cobra taxa?") == "REPLY"
+
+
 def test_admins_gate_returns_mentions_verbatim_without_answer_llm():
     responder, completer = make_responder(admins=FakeAdminResolver(["<@1>", "<@2>"]))
     reply = responder.answer("como falo com um admin?")
@@ -181,12 +201,63 @@ def test_admins_gate_without_resolver_falls_back():
     assert "suporte" in responder.answer("quem sao os admins do servidor?")
 
 
+def test_claim_gate_injects_flan_guide_instead_of_rag():
+    # "como impedir roubo de baú" must answer from the Flan claim docs, NOT the
+    # RAG fallback (e5 buries the Flan docs for this phrasing).
+    responder, completer = make_responder(
+        passages=["UNRELATED RULES CHUNK"],
+        guides={"Flan/visao-geral.md": "FLAN CLAIM DOC"},
+    )
+    responder.answer("como faço pra ngm roubar meu bau?")
+    prompt = completer.last_system_prompt
+    assert "FLAN CLAIM DOC" in prompt
+    assert "UNRELATED RULES CHUNK" not in prompt
+
+
+def test_mod_flan_reaches_claim_gate_not_admins():
+    # Bare "mod" trips the admin gate; the claim gate runs first so "mod flan"
+    # routes to the Flan guide, not the staff mentions.
+    responder, completer = make_responder(
+        admins=FakeAdminResolver(["<@1>"]),
+        guides={"Flan/visao-geral.md": "FLAN CLAIM DOC"},
+    )
+    reply = responder.answer("mas e o mod flan?")
+    assert "<@1>" not in reply
+    assert "FLAN CLAIM DOC" in completer.last_system_prompt
+
+
 def test_pokemon_gate_swaps_in_the_card():
     responder, completer = make_responder(cards={"pikachu": "PIKACHU CARD"})
     responder.answer("info do pikachu")
     prompt = completer.last_system_prompt
     assert "PIKACHU CARD" in prompt
     assert "/pwiki pikachu" in prompt
+
+
+def test_pokemon_gate_does_not_consult_rag_for_a_spawning_pokemon():
+    # A card with a normal Spawn section answers from the card alone — no RAG.
+    responder, completer = make_responder(
+        passages=["TAO TRIO DOC"], cards={"pikachu": "PIKACHU CARD\n## Spawn\n- Forest"}
+    )
+    responder.answer("onde acho pikachu?")
+    assert responder._retriever.queries == []
+    assert "TAO TRIO DOC" not in completer.last_system_prompt
+
+
+def test_no_natural_spawn_pokemon_augments_card_with_rag():
+    # zekrom has no spawn; the summon method lives in the Legendary Monuments
+    # docs, so the card must be augmented with the retrieved passages.
+    card = "# Zekrom\n## Spawn\n- Não nasce naturalmente (sem spawn natural no mundo)."
+    responder, completer = make_responder(
+        passages=["Zekrom é invocado num par de pedestais com a Pedra Escura."],
+        cards={"zekrom": card},
+    )
+    responder.answer("como acho um zekrom?")
+    prompt = completer.last_system_prompt
+    assert responder._retriever.queries == ["como acho um zekrom?"]
+    assert "Não nasce naturalmente" in prompt  # the card is still there
+    assert "par de pedestais com a Pedra Escura" in prompt  # plus the RAG passage
+    assert "não tem spawn natural" in prompt  # the obtain instruction
 
 
 def test_non_pokemon_question_falls_through_to_rag():
@@ -229,3 +300,67 @@ def test_descriptive_axis_query_goes_to_rag_not_facts():
     responder.answer("pokemon de fogo que nasce no deserto")
     assert retriever.queries == ["pokemon de fogo que nasce no deserto"]
     assert "Camerupt" in completer.last_system_prompt
+
+
+def _store():
+    """A ConversationStore with a frozen clock so TTL never expires mid-test."""
+    return ConversationStore(clock=lambda: 0.0)
+
+
+def test_first_turn_skips_condense_and_uses_raw_query():
+    # No history yet -> a fresh question must not pay for a condense call and the
+    # raw message must reach retrieval unchanged.
+    store = _store()
+    responder, completer = make_responder(passages=["DOC"], conversations=store)
+    responder.answer("o market cobra taxa?", session_key="u1")
+    assert len(completer.calls) == 1  # answer only, no condense
+    assert responder._retriever.queries == ["o market cobra taxa?"]
+
+
+def test_followup_condenses_query_with_history_before_retrieval():
+    # A prior turn exists, so the follow-up is rewritten into a standalone query
+    # and THAT is what hits retrieval (the raw "e onde ele spawna?" never would).
+    store = _store()
+    store.record("u1", Turn("onde acho lugia?", "No oceano."))
+    responder, completer = make_responder(
+        passages=["DOC"], answer_reply="ANSWER", condense_reply="onde lugia spawna?", conversations=store
+    )
+    responder.answer("e onde ele spawna?", session_key="u1")
+    assert responder._retriever.queries == ["onde lugia spawna?"]
+    assert len(completer.calls) == 2  # condense + answer
+
+
+def test_answer_is_remembered_for_the_session():
+    store = _store()
+    responder, _ = make_responder(passages=["DOC"], answer_reply="REPLY", conversations=store)
+    responder.answer("pergunta", session_key="u1")
+    history = store.history("u1")
+    assert len(history) == 1
+    assert history[0] == Turn("pergunta", "REPLY")
+
+
+def test_remembered_answer_excludes_the_usage_footer():
+    # The footer is runtime noise; only the clean answer should feed condensing.
+    store = _store()
+    responder, _ = make_responder(
+        passages=["DOC"], answer_reply="REPLY", show_usage=True, conversations=store
+    )
+    reply = responder.answer("pergunta", session_key="u1")
+    assert "tokens" in reply  # footer present in what the player sees
+    assert store.history("u1")[0].answer == "REPLY"  # but not in memory
+
+
+def test_sessions_do_not_share_history():
+    store = _store()
+    responder, _ = make_responder(passages=["DOC"], conversations=store)
+    responder.answer("pergunta do u1", session_key="u1")
+    assert store.history("u2") == []
+
+
+def test_no_session_key_stays_stateless():
+    # Default call (no key) must not touch the store or run condense.
+    store = _store()
+    responder, completer = make_responder(passages=["DOC"], conversations=store)
+    responder.answer("o market cobra taxa?")
+    assert len(completer.calls) == 1
+    assert store.history("u1") == []

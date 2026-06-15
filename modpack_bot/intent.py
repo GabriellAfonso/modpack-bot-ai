@@ -71,6 +71,18 @@ _PRIZE_SOURCE_MARKERS = frozenset(
     }
 )
 
+# Land/chest-protection cues. These questions ("como impeço de roubarem meu baú?",
+# "mas e o mod flan?") must reach the Flan claim guide directly: multilingual-e5
+# ranks the Flan docs below generic FAQ/rules chunks for this phrasing, so RAG
+# alone returns the fallback (see responder._CLAIM_GUIDES). "flan" is listed so
+# "mas e o mod flan?" routes here instead of tripping the bare-"mod" admin gate.
+_CLAIM_MARKERS = frozenset(
+    {
+        "flan", "claim", "claims", "clamar", "bau", "baus", "roubar", "roubam",
+        "roubaram", "roubo", "roubado", "grief", "griefar", "terreno", "enxada",
+    }
+)
+
 _DEFAULT_LANGUAGE = "pt"
 
 
@@ -99,6 +111,23 @@ def admins_intent(message: str) -> bool:
         False
     """
     return bool(set(normalize_tokens(message)) & _ADMIN_MARKERS)
+
+
+def claim_intent(message: str) -> bool:
+    """True when the player asks about protecting their land/chests (the Flan gate).
+
+    Runs before the admin gate so "mas e o mod flan?" reaches the claim guide
+    instead of the bare-"mod" admin match. A single protection cue is enough —
+    these terms are specific to the land-claim system and don't collide with the
+    Pokémon/facts gates.
+
+    Example:
+        >>> claim_intent("como faço pra ngm roubar meu bau?")
+        True
+        >>> claim_intent("onde nasce o pikachu?")
+        False
+    """
+    return bool(set(normalize_tokens(message)) & _CLAIM_MARKERS)
 
 
 def facts_intent(message: str, facts: str) -> bool:

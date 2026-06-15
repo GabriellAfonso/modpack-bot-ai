@@ -6,7 +6,13 @@ from dataclasses import dataclass
 from modpack_bot.embedding import DEFAULT_EMBED_MODEL
 
 _DEFAULT_INDEX_DIR = os.path.join("content", "index")
-_DEFAULT_TOP_K = 4
+# 6 to match LlamaIndexRetriever's own default: the master_ball prize line is
+# crowded out of the top 4 by gacha chunks sharing the word "Master" (the eval's
+# "como pego o master ball no gacha?" case). Was 4 here, a drift from the
+# "widen top_k" change that only touched retrieval.py.
+_DEFAULT_TOP_K = 6
+_DEFAULT_HISTORY_TURNS = 3
+_DEFAULT_HISTORY_TTL_SECONDS = 600.0  # 10 min idle -> a player's context is dropped.
 
 
 @dataclass(frozen=True)
@@ -30,6 +36,10 @@ class Settings:
     index_dir: str = _DEFAULT_INDEX_DIR
     embed_model: str = DEFAULT_EMBED_MODEL
     top_k: int = _DEFAULT_TOP_K
+    # Conversation memory: how many recent turns per player feed the condense
+    # step, and how long a player can be idle before that context is forgotten.
+    history_turns: int = _DEFAULT_HISTORY_TURNS
+    history_ttl_seconds: float = _DEFAULT_HISTORY_TTL_SECONDS
 
 
 def _require(name: str) -> str:
@@ -51,4 +61,6 @@ def load_settings() -> Settings:
         index_dir=os.getenv("INDEX_DIR", _DEFAULT_INDEX_DIR),
         embed_model=os.getenv("EMBED_MODEL", DEFAULT_EMBED_MODEL),
         top_k=int(os.getenv("TOP_K", str(_DEFAULT_TOP_K))),
+        history_turns=int(os.getenv("HISTORY_TURNS", str(_DEFAULT_HISTORY_TURNS))),
+        history_ttl_seconds=float(os.getenv("HISTORY_TTL_SECONDS", str(_DEFAULT_HISTORY_TTL_SECONDS))),
     )

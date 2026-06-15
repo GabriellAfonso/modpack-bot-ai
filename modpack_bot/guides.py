@@ -23,6 +23,14 @@ class GuideRepository:
         with open(os.path.join(self._content_dir, name), "r", encoding="utf-8") as file:
             return file.read()
 
+    def load_guides(self, names: list[str]) -> str:
+        """Concatenate several guide files in order (e.g. the Flan claim set).
+
+        Lets a gate inject a curated multi-file guide as one context blob; the
+        caller picks which files (and keeps the list short enough for the prompt).
+        """
+        return "\n\n".join(self.load_guide(name) for name in names)
+
 
 class CardRepository:
     """Reads the pre-generated per-Pokémon cards.

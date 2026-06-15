@@ -73,6 +73,27 @@ def pokemon_instruction(pokemon: str, language: str) -> str:
     )
 
 
+def pokemon_obtain_instruction(pokemon: str, language: str) -> str:
+    """Directive when {pokemon} has no natural spawn and the card is followed by
+    RAG passages: let the model use those passages to explain how to obtain it
+    (mod summon, evolution, trade, egg), instead of dead-ending on the card."""
+    if language == "en":
+        return (
+            f"The guide below is the data sheet for {pokemon}, followed by passages from the "
+            f"server wiki. {pokemon} has no natural spawn, so use the passages to explain how to "
+            f"obtain it (mod summon ritual, evolution, trade or egg). If the passages don't say "
+            f"how to get it, tell them to use `/pwiki {pokemon}`. For moves/TMs use `/pwiki "
+            f"{pokemon}`. Do not invent data."
+        )
+    return (
+        f"O guia abaixo é a ficha do Pokémon {pokemon}, seguida de trechos da wiki do servidor. "
+        f"{pokemon} não tem spawn natural, então use os trechos pra explicar como obtê-lo "
+        f"(ritual de invocação de mod, evolução, troca ou ovo). Se os trechos não disserem como "
+        f"conseguir, diga pra usar `/pwiki {pokemon}`. Pra golpes/TMs, use `/pwiki {pokemon}`. "
+        f"Não invente dados."
+    )
+
+
 def non_pokemon_instruction(language: str) -> str:
     """Directive used on wikigui.md when the question is NOT about a Pokémon."""
     if language == "en":
@@ -86,6 +107,23 @@ def non_pokemon_instruction(language: str) -> str:
         "Esta pergunta não é sobre um Pokémon (stronghold, vila, itens e blocos são do "
         "Minecraft). Não mencione `/pwiki`. Se for sobre como usar a própria wiki, explique com "
         f'base no guia; senão responda exatamente: "{_FALLBACK["pt"]}"'
+    )
+
+
+def claim_instruction(language: str) -> str:
+    """Directive used on the Flan land-protection guide (the claim gate)."""
+    if language == "en":
+        return (
+            "The guide below is the Flan land-protection (claim) system. The player wants to keep "
+            "others from stealing from their chests or base. Explain concretely how to claim the "
+            "area with the Golden Hoe and how that stops outsiders from opening chests or breaking "
+            "blocks. Do not mention `/pwiki`."
+        )
+    return (
+        "O guia abaixo é o sistema de proteção de terreno (claim) do Flan. O jogador quer impedir "
+        "que roubem os baús ou a base dele. Explique de forma concreta como clamar a área com a "
+        "Enxada Dourada e como isso impede que outros abram baús ou quebrem blocos. Não mencione "
+        "`/pwiki`."
     )
 
 
@@ -124,6 +162,35 @@ def usage_suffix(usage: "TokenUsage") -> str:
         '\\n\\n`⚙ 150 tokens (entrada 120 / saída 30)`'
     """
     return f"\n\n`⚙ {usage.total} tokens (entrada {usage.prompt} / saída {usage.completion})`"
+
+
+def condense_system_prompt(transcript: str, language: str) -> str:
+    """System prompt that rewrites a follow-up into a standalone question.
+
+    The player's new message is sent as the user turn; the recent transcript is
+    embedded here so the model can resolve references ("ele", "isso", "esse")
+    into explicit terms — making the rewritten question safe to feed the gates
+    and retrieval, which see one message at a time.
+
+    Example:
+        >>> "HISTÓRICO" in condense_system_prompt("Jogador: x\\nBot: y", "pt")
+        True
+    """
+    if language == "en":
+        return (
+            "Rewrite the player's latest message as a standalone question that makes sense on its "
+            "own, without the history. Use the history ONLY to resolve references (it, that, this "
+            "Pokémon, and then). If the message already stands on its own, return it unchanged. Do "
+            "NOT answer it. Output ONLY the rewritten question, nothing else, in the same language "
+            f"as the player.\n\n--- HISTORY ---\n{transcript}"
+        )
+    return (
+        "Reescreva a última mensagem do jogador como uma pergunta independente, que faça sentido "
+        "sozinha, sem o histórico. Use o histórico APENAS para resolver referências (ele, isso, "
+        "esse Pokémon, e aí). Se a mensagem já fizer sentido sozinha, devolva ela igual. NÃO "
+        "responda a pergunta. Devolva APENAS a pergunta reescrita, nada mais, na mesma língua do "
+        f"jogador.\n\n--- HISTÓRICO ---\n{transcript}"
+    )
 
 
 def build_system_prompt(guide: str, instruction: str, language: str) -> str:

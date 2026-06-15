@@ -5,6 +5,7 @@ from modpack_bot.prompts import (
     fallback_message,
     non_pokemon_instruction,
     pokemon_instruction,
+    pokemon_obtain_instruction,
 )
 
 
@@ -19,6 +20,13 @@ def test_pokemon_instruction_names_the_pokemon_and_pwiki():
     assert "pikachu" in pt and "/pwiki pikachu" in pt and "Não invente" in pt
     en = pokemon_instruction("pikachu", "en")
     assert "Do not invent" in en
+
+
+def test_pokemon_obtain_instruction_directs_model_to_the_passages():
+    pt = pokemon_obtain_instruction("zekrom", "pt")
+    assert "zekrom" in pt and "não tem spawn natural" in pt and "/pwiki zekrom" in pt
+    en = pokemon_obtain_instruction("zekrom", "en")
+    assert "no natural spawn" in en and "Do not invent" in en
 
 
 def test_non_pokemon_instruction_forbids_pwiki():

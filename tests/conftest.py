@@ -1,6 +1,6 @@
 """Shared named fakes for the bot-runtime tests (no inline stubs)."""
 
-from modpack_bot.llm import Message, TokenUsage, ToolDispatch, ToolSpec
+from modpack_bot.llm import CONDENSE_MODELS, Message, TokenUsage, ToolDispatch, ToolSpec
 
 # Fixed per-call cost so usage-footer assertions are deterministic.
 _USAGE_PER_CALL = TokenUsage(10, 5)
@@ -17,9 +17,11 @@ class FakeCompleter:
         self,
         answer_reply: str = "ANSWER",
         tool_call: "tuple[str, dict[str, object]] | None" = None,
+        condense_reply: str | None = None,
     ) -> None:
         self.answer_reply = answer_reply
         self.tool_call = tool_call
+        self.condense_reply = condense_reply
         self.tool_result: str | None = None
         self.calls: list[tuple[list[Message], list[str]]] = []
         self._usage = TokenUsage()
@@ -34,6 +36,10 @@ class FakeCompleter:
     def complete(self, messages: list[Message], models: list[str], **kwargs: object) -> str:
         self.calls.append((messages, models))
         self._usage += _USAGE_PER_CALL
+        # The condense step uses CONDENSE_MODELS; let a test give it a distinct
+        # rewritten query so the answer reply stays separate from the rewrite.
+        if self.condense_reply is not None and models == CONDENSE_MODELS:
+            return self.condense_reply
         return self.answer_reply
 
     def complete_with_tools(
@@ -67,6 +73,9 @@ class FakeGuideRepository:
         # Lenient: a guide not stubbed reads as empty, so a test that only cares
         # about facts.md needn't stub every file.
         return self._guides.get(name, "")
+
+    def load_guides(self, names: list[str]) -> str:
+        return "\n\n".join(self.load_guide(name) for name in names)
 
 
 class FakeCardRepository:

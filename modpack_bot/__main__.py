@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 from index_builder.build import build_index
 from modpack_bot.config import Settings, load_settings
+from modpack_bot.conversation import ConversationStore
 from modpack_bot.discord_app import DiscordAdminResolver, build_client
 from modpack_bot.guides import CardRepository, GuideRepository
 from modpack_bot.llm import GroqCompleter
@@ -19,7 +20,10 @@ def build_responder(settings: Settings, admins: DiscordAdminResolver) -> Respond
     guides = GuideRepository(settings.content_dir)
     cards = CardRepository(settings.content_dir)
     retriever = _load_retriever(settings)
-    return Responder(retriever, completer, guides, cards, admins, settings.show_token_usage)
+    conversations = ConversationStore(settings.history_turns, settings.history_ttl_seconds)
+    return Responder(
+        retriever, completer, guides, cards, admins, settings.show_token_usage, conversations
+    )
 
 
 def _load_retriever(settings: Settings) -> LlamaIndexRetriever:
