@@ -3,6 +3,7 @@ from modpack_bot.intent import (
     claim_intent,
     detect_language,
     facts_intent,
+    looks_like_followup,
     spawn_help_intent,
 )
 
@@ -126,3 +127,24 @@ def test_spawn_help_intent_false_without_pokemon_word():
 
 def test_spawn_help_intent_false_without_a_spawn_or_find_verb():
     assert spawn_help_intent("qual o melhor pokemon do jogo?") is False
+
+
+def test_looks_like_followup_true_for_leading_connective():
+    assert looks_like_followup("e onde ele spawna?") is True
+    assert looks_like_followup("mas e o flan?") is True
+
+
+def test_looks_like_followup_true_for_referential_pronoun():
+    assert looks_like_followup("dropa isso também?") is True
+    assert looks_like_followup("where does it spawn?") is True
+
+
+def test_looks_like_followup_false_for_a_self_contained_question():
+    # Regression (Slime-drop log): a standalone question carries no referential
+    # cue, so it is never condensed against the previous answer.
+    assert looks_like_followup("quais pokemons dropam slime?") is False
+    assert looks_like_followup("onde nasce o pikachu?") is False
+
+
+def test_looks_like_followup_false_for_empty_message():
+    assert looks_like_followup("   ") is False

@@ -330,6 +330,21 @@ def test_followup_condenses_query_with_history_before_retrieval():
     assert len(completer.calls) == 2  # condense + answer
 
 
+def test_standalone_question_with_history_skips_condense():
+    # Regression (Slime-drop log): a self-contained question asked again must NOT
+    # be condensed against the prior answer — that narrowed "quais dropam slime?"
+    # down to a single Pokémon. With history present but no referential cue, the
+    # raw message reaches retrieval and no condense call is made.
+    store = _store()
+    store.record("u1", Turn("o market cobra taxa?", "Sim, 5%."))
+    responder, completer = make_responder(
+        passages=["DOC"], answer_reply="ANSWER", condense_reply="NARROWED", conversations=store
+    )
+    responder.answer("o market cobra taxa?", session_key="u1")
+    assert responder._retriever.queries == ["o market cobra taxa?"]  # raw, not "NARROWED"
+    assert len(completer.calls) == 1  # answer only, condense skipped
+
+
 def test_answer_is_remembered_for_the_session():
     store = _store()
     responder, _ = make_responder(passages=["DOC"], answer_reply="REPLY", conversations=store)

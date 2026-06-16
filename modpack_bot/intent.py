@@ -87,7 +87,46 @@ _CLAIM_MARKERS = frozenset(
     }
 )
 
+# Referential cues that only resolve against a previous turn (pronouns and
+# leading connectives). A message carrying one is a follow-up whose reference
+# must be expanded before it can reach a gate; a message WITHOUT any already
+# stands on its own. We condense ONLY the former: condensing a self-contained
+# question (e.g. the same question asked twice) just lets the model fold the
+# previous answer back in and narrow/corrupt it — the repeated-question
+# regression in the Slime-drop log.
+_FOLLOWUP_MARKERS = frozenset(
+    {
+        "ele", "ela", "eles", "elas", "dele", "dela", "deles", "delas",
+        "nele", "nela", "neles", "nelas", "isso", "isto", "esse", "essa",
+        "esses", "essas", "este", "esta", "aquele", "aquela", "aquilo", "ai",
+        "it", "they", "them", "its", "their", "that", "those", "these",
+    }
+)
+_FOLLOWUP_LEADERS = frozenset({"e", "and", "mas", "but"})
+
 _DEFAULT_LANGUAGE = "pt"
+
+
+def looks_like_followup(message: str) -> bool:
+    """True when the message depends on a prior turn (so condensing is worth it).
+
+    A leading connective ("e onde ele spawna?") or a bare referential pronoun
+    ("dropa isso?") marks a follow-up. A self-contained question matches neither
+    and is returned to the caller untouched, so it never pays for condensing nor
+    risks the model narrowing it against the previous answer.
+
+    Example:
+        >>> looks_like_followup("e onde ele spawna?")
+        True
+        >>> looks_like_followup("quais pokemons dropam slime?")
+        False
+    """
+    tokens = normalize_tokens(message)
+    if not tokens:
+        return False
+    if tokens[0] in _FOLLOWUP_LEADERS:
+        return True
+    return bool(set(tokens) & _FOLLOWUP_MARKERS)
 
 
 def detect_language(message: str) -> str:

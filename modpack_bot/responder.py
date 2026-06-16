@@ -16,7 +16,7 @@ from modpack_bot.admins import AdminResolver, admins_message
 from modpack_bot.conversation import ConversationStore, Turn
 from modpack_bot.facts_index import facts_counts_header, matched_facts_lines
 from modpack_bot.guides import CardRepository, GuideRepository
-from modpack_bot.intent import detect_language
+from modpack_bot.intent import detect_language, looks_like_followup
 from modpack_bot.llm import ANSWER_MODELS, CONDENSE_MODELS, ModelCompleter
 from modpack_bot.pokemon_filter import build_pokemon_filter, filter_tool_spec, make_dispatch
 from modpack_bot.prompts import (
@@ -102,13 +102,15 @@ class Responder:
     def _resolve_followup(self, message: str, session_key: str | None) -> str:
         """Rewrite a follow-up into a standalone question using recent turns.
 
-        Returns the message untouched on the first turn (no history) or when no
-        session is tracked, so a fresh question never pays for a condense call.
+        Returns the message untouched on the first turn (no history), when no
+        session is tracked, or when the message already stands on its own
+        (looks_like_followup is False) — so a fresh question never pays for a
+        condense call nor risks the model narrowing it against the last answer.
         """
         if self._conversations is None or session_key is None:
             return message
         history = self._conversations.history(session_key)
-        if not history:
+        if not history or not looks_like_followup(message):
             return message
         return self._condense(message, history)
 
