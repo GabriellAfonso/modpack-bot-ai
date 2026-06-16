@@ -47,6 +47,14 @@ def test_admins_intent_false_for_a_pokemon_question():
     assert admins_intent("onde nasce o pikachu?") is False
 
 
+def test_admins_intent_false_for_a_game_mod_question():
+    # "mod" means a game mod in a modpack bot, not a moderator: a mod-name
+    # question must not hit the staff redirect (regression for the cobble
+    # safari / zekrom follow-up failure).
+    assert admins_intent("me da um resumo do mod cobble safari") is False
+    assert admins_intent("o que faz o mod cobble safari?") is False
+
+
 def test_claim_intent_true_for_chest_protection_questions():
     assert claim_intent("como faço pra ngm roubar meu bau?") is True
     assert claim_intent("como faço pra proteger meu baú?") is True

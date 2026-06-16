@@ -24,11 +24,15 @@ _EN_MARKERS = frozenset(
     }
 )
 
-# Includes bare "mod"/"mods" per plan.md §6 (decision confirmed during build).
+# Bare "mod"/"mods" were dropped: in a MODPACK bot "mod" overwhelmingly means a
+# game mod ("me da um resumo do mod cobble safari"), not a moderator, so the
+# marker false-routed every mod-name question to the staff redirect — and a
+# follow-up's condense step inherited the word and re-tripped it. The moderator
+# sense is still covered by the explicit "moderador"/"moderator" forms.
 _ADMIN_MARKERS = frozenset(
     {
         "admin", "admins", "adm", "staff", "moderacao", "moderador",
-        "moderadores", "moderator", "moderators", "mod", "mods",
+        "moderadores", "moderator", "moderators",
     }
 )
 

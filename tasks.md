@@ -74,8 +74,9 @@ ok), 1 teste por função nova, fakes nomeados, `pytest` único comando.
   - [x] `detect_language(message) -> "pt"|"en"` — heurístico por stopwords
         distintivas (disjuntas), empate → pt.
   - [x] `admins_intent(message) -> bool` — tokens admin/adm/staff/moderacao/
-        moderador/moderator/**mod/mods** (mod/mods incluídos: decisão confirmada
-        durante o build — seguir §6 literal).
+        moderador/moderator. (mod/mods foram REMOVIDOS depois: num bot de modpack
+        "mod" = mod do jogo, não moderador, e disparava o redirect de staff em
+        toda pergunta sobre um mod — ver intent.py `_ADMIN_MARKERS`.)
   - [x] `facts_intent(message, facts) -> bool` — **só** casa eixo de facts
         (tipo/categoria/item) via `matched_facts_lines`. Decisão confirmada:
         `wants_full_list` isolado NÃO dispara (evita "quais comandos" virar

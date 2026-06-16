@@ -38,8 +38,14 @@ def _route(message: str) -> Route:
 
 
 def test_claim_runs_before_admin_for_the_flan_mod_question():
-    # "mas e o mod flan?" carries the bare-"mod" admin cue; claim must win.
+    # "flan" is a claim cue, so the question routes to the Flan claim guide.
     assert _route("mas e o mod flan?") is Route.CLAIM
+
+
+def test_mod_name_question_does_not_route_to_admins():
+    # Bare "mod" is a game mod here, not a moderator: a summary request must
+    # fall to RAG, not the staff redirect (regression for cobble safari).
+    assert _route("me da um resumo do mod cobble safari") is Route.RAG
 
 
 def test_named_pokemon_beats_generic_spawn_help():
