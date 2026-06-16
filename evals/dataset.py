@@ -68,4 +68,8 @@ CASES: tuple[EvalCase, ...] = (
     # Gacha prize, NOT a Pokémon item drop -> RAG over the gacha guides (and RAG
     # does surface it, so no known-bad flag — this guards that it stays found).
     EvalCase("como pego o master ball no gacha?", Route.RAG, expected_passage="Master Ball"),
+    # An item name buried in a loot/prize table: dense e5 embeds the chunk as
+    # "list of items" and ranks it below 25 others, so it needs the BM25 half of
+    # the hybrid retriever to surface on the literal token (the exp-share report).
+    EvalCase("como consigo o exp share?", Route.RAG, expected_passage="Exp Share"),
 )

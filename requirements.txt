@@ -9,4 +9,9 @@ python-dotenv==1.2.2
 torch==2.12.0+cpu
 llama-index-core==0.14.22
 llama-index-embeddings-huggingface==0.7.0
+# Lexical half of the hybrid retriever: BM25 matches exact item/entity names
+# ("Exp Share", "Master Ball") that dense e5 buries inside loot/prize lists.
+# bm25s is pure Python (numpy/scipy) — driven directly, NOT via the llama-index
+# wrapper, which pulls PyStemmer (a C extension with no Windows/3.14 wheel).
+bm25s==0.3.9
 sentence-transformers==5.5.1
