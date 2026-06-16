@@ -14,28 +14,36 @@ from card_builder.card import NO_NATURAL_SPAWN
 
 from modpack_bot.admins import AdminResolver, admins_message
 from modpack_bot.conversation import ConversationStore, Turn
-from modpack_bot.facts_index import facts_counts_header, matched_facts_lines
+from modpack_bot.facts_index import (
+    asks_modpack_total,
+    facts_counts_header,
+    matched_facts_lines,
+)
 from modpack_bot.guides import CardRepository, GuideRepository
-from modpack_bot.intent import detect_language, looks_like_followup
+from modpack_bot.intent import asks_about_drops, detect_language, looks_like_followup
 from modpack_bot.llm import ANSWER_MODELS, CONDENSE_MODELS, ModelCompleter
 from modpack_bot.pokemon_filter import build_pokemon_filter, filter_tool_spec, make_dispatch
 from modpack_bot.prompts import (
     build_system_prompt,
     claim_instruction,
     condense_system_prompt,
+    facts_count_instruction,
     facts_filter_instruction,
     facts_listing_message,
     fallback_message,
     pokemon_instruction,
     pokemon_obtain_instruction,
     spawn_help_message,
+    stats_instruction,
     usage_suffix,
 )
 from modpack_bot.retrieval import ContextRetriever
 from modpack_bot.routing import Route, classify_route
+from modpack_bot.stats_index import select_stats_ranking
 from modpack_bot.text import collapse_blank_lines, wants_full_list
 
 _FACTS_GUIDE = "facts.md"
+_STATS_GUIDE = "stats.md"
 
 # Flan land-protection docs injected verbatim by the claim gate instead of going
 # through RAG: multilingual-e5 ranks them below generic FAQ/rules chunks for
@@ -160,6 +168,8 @@ class Responder:
         if decision.route is Route.POKEMON:
             assert decision.pokemon is not None  # set whenever route is POKEMON
             return self._answer_pokemon(message, decision.pokemon, language)
+        if decision.route is Route.STATS:
+            return self._answer_stats(message, language)
         if decision.route is Route.SPAWN_HELP:
             return spawn_help_message(language)
         if decision.route is Route.FACTS:
@@ -218,6 +228,16 @@ class Responder:
         location = self._retriever.retrieve(_obtain_location_query(pokemon))
         return _merge_passages(mechanic, location)
 
+    def _answer_stats(self, message: str, language: str) -> str:
+        """Answer a superlative stat question from the matching stats.md ranking.
+
+        Falls back to RAG only if the section is missing (stats.md not built) —
+        stats_intent already guaranteed the message targets a known stat."""
+        ranking = select_stats_ranking(message, self._guides.load_guide(_STATS_GUIDE))
+        if ranking is None:
+            return self._answer_from_rag(message, language)
+        return self._answer_from_guide(message, ranking, stats_instruction(language), language)
+
     def _answer_claim(self, message: str, language: str) -> str:
         """Answer land/chest-protection questions from the curated Flan guide,
         bypassing RAG (which can't surface these docs for player phrasing, §4.4)."""
@@ -251,11 +271,26 @@ class Responder:
         return collapse_blank_lines(answer)
 
     def _answer_facts(self, message: str, facts: str, language: str) -> str:
-        """facts.md: deterministic full list if asked, else the tool-backed model."""
+        """facts.md: deterministic full list, modpack total, else the tool model."""
         listing = self._answer_facts_listing(message, facts, language)
         if listing is not None:
             return listing
+        if self._is_total_count(message, facts):
+            return self._answer_counts(message, facts, language)
         return self._answer_with_filter(message, facts, language)
+
+    def _is_total_count(self, message: str, facts: str) -> bool:
+        """A modpack-wide count (Pokémon/biomes/types) with no specific axis nor
+        drop verb — answered from the counts header, not the filter tool (an empty
+        filter call would turn '1025 Pokémon' into 'nenhum corresponde')."""
+        if matched_facts_lines(message, facts) or asks_about_drops(message):
+            return False
+        return asks_modpack_total(message)
+
+    def _answer_counts(self, message: str, facts: str, language: str) -> str:
+        """Answer a modpack-wide total from the small counts header (no tool)."""
+        header = facts_counts_header(facts)
+        return self._answer_from_guide(message, header, facts_count_instruction(language), language)
 
     def _answer_with_filter(self, message: str, facts: str, language: str) -> str:
         """Answer facts questions with the `filtrar_pokemon` tool available.

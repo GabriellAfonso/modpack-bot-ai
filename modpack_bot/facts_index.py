@@ -15,6 +15,32 @@ _TYPE_HEADING = "## Pokémon por tipo"
 _ITEM_HEADING = "## Pokémon por item dropado"
 _CATEGORY_HEADING = "## Pokémon por categoria"
 
+# Subjects of a modpack-wide total ("quantos pokémons/biomas/tipos tem?"). These
+# counts live in the facts.md header verbatim, so a count question naming one is
+# answered from the header rather than a per-axis line.
+_TOTAL_SUBJECTS = frozenset(
+    {
+        "pokemon", "pokemons", "pokemom", "mon", "mons", "bicho", "bichos",
+        "bichinho", "bichinhos", "bioma", "biomas", "tipo", "tipos",
+    }
+)
+
+
+def asks_modpack_total(message: str) -> bool:
+    """True when a question is about a modpack-wide total (how many Pokémon,
+    biomes or types in total), as opposed to a specific type/item/category axis.
+
+    Pure on the message — the totals it points at are fixed lines in the facts.md
+    counts header (facts_counts_header), so the caller answers from there.
+
+    Example:
+        >>> asks_modpack_total("quantos pokemons tem no servidor?")
+        True
+        >>> asks_modpack_total("quantos comandos tem o market?")
+        False
+    """
+    return bool(set(normalize_tokens(message)) & _TOTAL_SUBJECTS)
+
 
 def matched_facts_lines(message: str, facts: str) -> list[str]:
     """The facts.md list lines the message asks about (type lines, then item lines).

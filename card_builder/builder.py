@@ -10,6 +10,7 @@ from card_builder.card import build_card
 from card_builder.context import BuildContext, Json, RenderContext, RenderOptions
 from card_builder.evolutions import index_pre_evolutions
 from card_builder.facts import build_facts
+from card_builder.rankings import build_rankings
 from card_builder.spawns import index_spawns
 
 
@@ -23,6 +24,7 @@ class Paths:
     slim_out: str
     full_out: str
     facts_out: str
+    rankings_out: str
 
 
 def paths_for(base_dir: str) -> Paths:
@@ -33,8 +35,10 @@ def paths_for(base_dir: str) -> Paths:
         biome_map=os.path.join(base_dir, "biome_map.md"),
         slim_out=os.path.join(base_dir, "species_cards"),
         full_out=os.path.join(base_dir, "species_cards_full"),
-        # facts.md sits beside the guides in content/, not under pokemons-db.
+        # facts.md and stats.md sit beside the guides in content/, not under
+        # pokemons-db.
         facts_out=os.path.join(os.path.dirname(base_dir), "facts.md"),
+        rankings_out=os.path.join(os.path.dirname(base_dir), "stats.md"),
     )
 
 
@@ -64,6 +68,9 @@ def build_all(base_dir: str) -> None:
     with open(paths.facts_out, "w", encoding="utf-8") as out:
         out.write(build_facts(species, spawn_index, biomes))
     print(f"Generated facts.md at {paths.facts_out}")
+    with open(paths.rankings_out, "w", encoding="utf-8") as out:
+        out.write(build_rankings(species))
+    print(f"Generated stats.md at {paths.rankings_out}")
     print(f"Biome tags loaded: {len(biomes)}")
 
 

@@ -89,12 +89,13 @@ def chunk_card(text: str, pokemon: str) -> Chunk:
 
 def discover_guides(content_dir: str) -> list[str]:
     """Guide .md paths under content_dir (recursive), minus the Pokémon DB,
-    core.md (the removed router prompt) and facts.md. Picks up future mod
-    subfolders for free.
+    core.md (the removed router prompt), facts.md and stats.md. Picks up future
+    mod subfolders for free.
 
-    facts.md is excluded because the deterministic facts gate already serves it
-    (intent.py): its per-item/type sections are single multi-thousand-token chunks
-    that, when retrieved, blow past Groq's 12k TPM cap (HTTP 413).
+    facts.md and stats.md are excluded because their deterministic gates already
+    serve them (intent.py): facts.md's per-item/type sections are single
+    multi-thousand-token chunks that, when retrieved, blow past Groq's 12k TPM cap
+    (HTTP 413), and stats.md is a precomputed ranking the stats gate slices.
 
     Example:
         >>> # content/market.md and content/cobbled_gacha/capsulas.md, but not
@@ -150,8 +151,8 @@ def _split_sections(text: str) -> list[tuple[str, str]]:
 
 
 def _is_guide(path: str, content_dir: str) -> bool:
-    """A discovered .md is a guide unless it is core.md/facts.md or under pokemons-db/."""
+    """A discovered .md is a guide unless it is core.md/facts.md/stats.md or under pokemons-db/."""
     relative = os.path.relpath(path, content_dir)
-    if relative in ("core.md", "facts.md"):
+    if relative in ("core.md", "facts.md", "stats.md"):
         return False
     return not relative.startswith("pokemons-db" + os.sep)

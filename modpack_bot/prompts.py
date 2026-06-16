@@ -137,6 +137,38 @@ def claim_instruction(language: str) -> str:
     )
 
 
+def facts_count_instruction(language: str) -> str:
+    """Directive for a modpack-wide total: answer from the small counts header."""
+    if language == "en":
+        return (
+            "The guide below lists the modpack's overall totals (how many Pokémon, biomes and "
+            "types it has). Answer with the exact number asked for and nothing else. Do not "
+            "mention `/pwiki`."
+        )
+    return (
+        "O guia abaixo traz os números totais do modpack (quantos Pokémon, biomas e tipos tem). "
+        "Responda com o número exato que foi pedido e nada além. Não mencione `/pwiki`."
+    )
+
+
+def stats_instruction(language: str) -> str:
+    """Directive for the stats gate: a precomputed base-stat ranking is the guide."""
+    if language == "en":
+        return (
+            "The guide below ranks the modpack's Pokémon by a base stat (or by the total, the "
+            "BST — the sum of the six base stats, which is what 'strongest' means). Name the top "
+            "Pokémon for what was asked and its value; if they asked for several, list the first "
+            "few in order. Use only this ranking — do not invent Pokémon or numbers. Do not "
+            "mention `/pwiki`."
+        )
+    return (
+        "O guia abaixo ranqueia os Pokémon do modpack por um stat base (ou pelo total, o BST — a "
+        "soma dos seis stats base, que é o que significa 'mais forte'). Diga qual o Pokémon no "
+        "topo pro que foi perguntado e o valor dele; se pediram vários, liste os primeiros em "
+        "ordem. Use só este ranking — não invente Pokémon nem números. Não mencione `/pwiki`."
+    )
+
+
 def facts_filter_instruction(language: str) -> str:
     """Directive used on facts.md: point the model at the `filtrar_pokemon` tool."""
     if language == "en":

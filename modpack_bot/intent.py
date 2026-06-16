@@ -6,7 +6,8 @@ two (the old router + answer).
 """
 
 from card_builder.type_chart import TYPE_PT
-from modpack_bot.facts_index import matched_facts_lines
+from modpack_bot.facts_index import asks_modpack_total, matched_facts_lines
+from modpack_bot.stats_index import stat_section_for
 from modpack_bot.text import normalize_tokens, wants_full_list
 
 # Distinctive function words only; the ambiguous ones shared by PT and EN
@@ -104,6 +105,16 @@ _FOLLOWUP_MARKERS = frozenset(
 )
 _FOLLOWUP_LEADERS = frozenset({"e", "and", "mas", "but"})
 
+# Superlative cues for the stats gate ("most/highest/strongest"). Paired with a
+# stat cue (stats_index.stat_section_for) so a superlative WITHOUT a stat word
+# ("qual a melhor pokébola") never hijacks RAG.
+_SUPERLATIVE_MARKERS = frozenset(
+    {
+        "mais", "maior", "maiores", "alto", "alta", "altos", "altas", "top",
+        "highest", "most", "strongest", "fastest", "biggest", "best",
+    }
+)
+
 _DEFAULT_LANGUAGE = "pt"
 
 
@@ -197,12 +208,17 @@ def facts_intent(message: str, facts: str) -> bool:
     """
     if not _asks_count_or_list(message):
         return False
-    if _asks_about_drops(message):
+    if asks_about_drops(message):
         return True
-    return bool(matched_facts_lines(message, facts))
+    if matched_facts_lines(message, facts):
+        return True
+    # A modpack-wide total ("quantos pokémons tem?") has no axis line, but the
+    # counts header already carries the fixed number — route it here instead of
+    # letting it drop to RAG (which has no passage stating the total).
+    return asks_modpack_total(message)
 
 
-def _asks_about_drops(message: str) -> bool:
+def asks_about_drops(message: str) -> bool:
     """True for a drop verb (the item axis, language-agnostic), UNLESS a gacha/
     prize term is present — "dropar master ball no gacha" is a machine-prize
     question for RAG, not the Pokémon item-drop tool (which would wrongly answer
@@ -211,6 +227,26 @@ def _asks_about_drops(message: str) -> bool:
     if tokens & _PRIZE_SOURCE_MARKERS:
         return False
     return bool(tokens & _DROP_MARKERS)
+
+
+def stats_intent(message: str) -> bool:
+    """True for a superlative question about a base stat ("qual o mais forte").
+
+    Requires BOTH a superlative cue and a stat cue, so "qual a melhor pokébola"
+    (superlative, no stat) falls through to RAG, while "qual o pokémon mais
+    forte" / "mais rápido" / "stats mais altos" reach the stats ranking. A NAMED
+    Pokémon ("qual o maior ataque do charizard") is caught by the card gate
+    earlier, so this only fires for the cross-modpack superlative.
+
+    Example:
+        >>> stats_intent("qual o pokemon mais forte?")
+        True
+        >>> stats_intent("qual a melhor pokebola?")
+        False
+    """
+    if not set(normalize_tokens(message)) & _SUPERLATIVE_MARKERS:
+        return False
+    return stat_section_for(message) is not None
 
 
 def spawn_help_intent(message: str) -> bool:

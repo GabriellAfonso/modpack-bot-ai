@@ -103,6 +103,18 @@ def test_count_question_uses_filter_tool_with_counts_header_only():
     assert "- Fogo (1): Charizard" not in prompt
 
 
+def test_modpack_total_answers_from_counts_header_without_the_tool():
+    # "quantos pokémons tem?" names no axis: it must answer from the fixed total
+    # in the header via a plain call, never the filter tool (an empty filter call
+    # would wrongly report "nenhum Pokémon corresponde").
+    responder, completer = make_responder(
+        answer_reply="Tem 1", facts=_FACTS_DOC, tool_call=("filtrar_pokemon", {})
+    )
+    assert responder.answer("quantos pokemons tem no servidor?") == "Tem 1"
+    assert "Total de Pokémon no modpack: 1" in completer.last_system_prompt
+    assert completer.tool_result is None  # the tool dispatch never ran
+
+
 def test_legendary_question_lists_from_python_without_answer_llm():
     # "quais lendários tem?" is a full-list request ("which ones are there"). It
     # must hit the deterministic listing, not the LLM — feeding the bare roster
@@ -224,6 +236,39 @@ def test_mod_flan_reaches_claim_gate_not_admins():
     reply = responder.answer("mas e o mod flan?")
     assert "<@1>" not in reply
     assert "FLAN CLAIM DOC" in completer.last_system_prompt
+
+
+_STATS_DOC = (
+    "# Ranking de Stats\n"
+    "\n"
+    "## Total (BST)\n"
+    "\n"
+    "1. Arceus — 720 (HP 120 / Atk 120 / Def 120 / SpA 120 / SpD 120 / Spd 120)\n"
+    "\n"
+    "## Velocidade\n"
+    "\n"
+    "1. Regieleki — 200\n"
+)
+
+
+def test_stats_gate_injects_only_the_matching_ranking_section():
+    # "mais forte" answers from the BST section alone, never RAG nor the unrelated
+    # Velocidade section.
+    responder, completer = make_responder(
+        passages=["UNRELATED CHUNK"], guides={"stats.md": _STATS_DOC}
+    )
+    responder.answer("qual o pokemon mais forte?")
+    prompt = completer.last_system_prompt
+    assert "Arceus — 720" in prompt
+    assert "Regieleki" not in prompt
+    assert "UNRELATED CHUNK" not in prompt
+
+
+def test_stats_gate_falls_back_to_rag_when_section_missing():
+    # stats.md never built: the gate must not dead-end — it falls to RAG.
+    responder, completer = make_responder(passages=["MARKET GUIDE"], guides={"stats.md": ""})
+    responder.answer("qual o pokemon mais forte?")
+    assert "MARKET GUIDE" in completer.last_system_prompt
 
 
 def test_pokemon_gate_swaps_in_the_card():

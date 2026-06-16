@@ -5,6 +5,7 @@ from modpack_bot.intent import (
     facts_intent,
     looks_like_followup,
     spawn_help_intent,
+    stats_intent,
 )
 
 _FACTS = (
@@ -148,3 +149,36 @@ def test_looks_like_followup_false_for_a_self_contained_question():
 
 def test_looks_like_followup_false_for_empty_message():
     assert looks_like_followup("   ") is False
+
+
+def test_stats_intent_true_for_strongest_question():
+    assert stats_intent("qual o pokemon mais forte?") is True
+
+
+def test_stats_intent_true_for_highest_stats_question():
+    assert stats_intent("qual pokemon com stats mais altos?") is True
+
+
+def test_stats_intent_true_for_fastest_question():
+    assert stats_intent("qual o pokemon mais rápido?") is True
+
+
+def test_stats_intent_false_without_a_stat_word():
+    # Superlative but no stat cue -> falls through to RAG, not the ranking.
+    assert stats_intent("qual a melhor pokébola?") is False
+
+
+def test_stats_intent_false_without_a_superlative():
+    # A stat word alone ("o que é ataque especial?") is not a ranking question:
+    # no superlative cue, so it falls through to RAG over the guides.
+    assert stats_intent("o que é ataque especial?") is False
+
+
+def test_facts_intent_true_for_a_modpack_total_count():
+    # "quantos pokémons tem?" names no axis but is a fixed total in the header,
+    # so it must reach the facts gate, not fall to RAG.
+    assert facts_intent("quantos pokemons tem no servidor?", _FACTS) is True
+
+
+def test_facts_intent_false_for_count_without_a_total_subject():
+    assert facts_intent("quantos comandos tem o market?", _FACTS) is False

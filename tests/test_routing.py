@@ -56,6 +56,15 @@ def test_nameless_spawn_question_is_spawn_help_not_rag():
     assert _route("como descubro onde um pokemon spawna?") is Route.SPAWN_HELP
 
 
+def test_superlative_stat_question_routes_to_stats():
+    assert _route("qual o pokemon mais forte?") is Route.STATS
+
+
+def test_named_pokemon_stat_question_beats_the_stats_gate():
+    # A named species is answered from its own card, not the global ranking.
+    assert _route("qual o maior stat do charizard?") is Route.POKEMON
+
+
 def test_unmatched_question_falls_to_rag():
     assert _route("onde fica o market?") is Route.RAG
 

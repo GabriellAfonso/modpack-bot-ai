@@ -1,4 +1,9 @@
-from modpack_bot.facts_index import facts_counts_header, matched_facts_lines, select_facts
+from modpack_bot.facts_index import (
+    asks_modpack_total,
+    facts_counts_header,
+    matched_facts_lines,
+    select_facts,
+)
 
 _FACTS = (
     "# Números do Modpack\n"
@@ -98,3 +103,15 @@ def test_mythical_question_matches_english_synonym():
 def test_category_and_type_questions_do_not_cross_match():
     assert "Lendários" not in select_facts("tipo fogo", _FACTS)
     assert "Fogo" not in select_facts("quais lendarios", _FACTS)
+
+
+def test_asks_modpack_total_true_for_pokemon_count():
+    assert asks_modpack_total("quantos pokemons tem no servidor?") is True
+
+
+def test_asks_modpack_total_true_for_biome_count():
+    assert asks_modpack_total("quantos biomas tem?") is True
+
+
+def test_asks_modpack_total_false_without_a_total_subject():
+    assert asks_modpack_total("quantos comandos tem o market?") is False
