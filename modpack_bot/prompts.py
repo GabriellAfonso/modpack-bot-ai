@@ -5,6 +5,7 @@ instructions written for the LLM to read — kept in their own module so the
 wording lives in one place and the logic around it stays testable.
 """
 
+import random
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -15,6 +16,34 @@ _FALLBACK = {
     "pt": "Não tenho essa informação, pergunta num canal de suporte!",
     "en": "I don't have that information, please ask in a support channel!",
 }
+
+
+_STARTER_FUN_PT = [
+    "Essa é uma escolha muito pessoal! Mas entre nós: vai de coração, porque no servidor você acaba capturando quase todos de qualquer jeito.",
+    "Como Professor Carvalho, minha obrigação seria ser imparcial... mas o Squirtle tem um charme especial que é difícil ignorar. Boa escolha seja qual for!",
+    "Agua? Classico. Difícil errar com um Totodile ou um Mudkip. No fim, o melhor inicial é o que você mais curte jogar.",
+    "Pergunta das difíceis! Cada geração tem sua joia aquática. Mas lembre: no servidor você vai encontrar muitos deles no caminho, então vai com o que te anima mais!",
+]
+
+_STARTER_FUN_EN = [
+    "That is a very personal choice! But between us: go with your gut — on this server you end up catching almost all of them anyway.",
+    "As Professor Carvalho I should stay neutral... but Squirtle has a charm that's hard to ignore. Great choice whatever you pick!",
+    "Hard to go wrong with a water starter. In the end, the best one is the one you enjoy playing the most.",
+]
+
+
+def starter_fun_message(language: str) -> str:
+    """A short in-character reply for general 'best starter' questions.
+
+    No server guide covers this, so instead of the cold fallback we give a
+    playful Professor Carvalho response that acknowledges the question.
+
+    Example:
+        >>> isinstance(starter_fun_message("pt"), str)
+        True
+    """
+    pool = _STARTER_FUN_EN if language == "en" else _STARTER_FUN_PT
+    return random.choice(pool)
 
 
 def fallback_message(language: str) -> str:
@@ -244,7 +273,7 @@ def build_system_prompt(guide: str, instruction: str, language: str) -> str:
             "You are the assistant for a Minecraft server. Answer simply and directly, like an "
             "experienced player helping another, using only the guide below. Answer ONLY what was "
             "asked — do not tack on neighbouring facts from the guide the player did not ask for. "
-            f"If the answer isn't in the guide, say '{_FALLBACK['en']}'. {instruction} Keep biome, item and move "
+            f"If the answer isn't in the guide, respond with ONLY '{_FALLBACK['en']}' and nothing else — do not combine a real answer with this fallback. {instruction} Keep biome, item and move "
             "names EXACTLY as written in the guide (do not translate them). When listing, list "
             "each name once and never repeat. Break the answer into short paragraphs: put each "
             "distinct topic (e.g. how to evolve vs. where to find it in the wild) in its own "
@@ -256,7 +285,7 @@ def build_system_prompt(guide: str, instruction: str, language: str) -> str:
         "Você é o assistente do servidor de Minecraft. Responda de forma simples e direta, como "
         "um jogador experiente ajudando outro, usando só o guia abaixo. Responda SOMENTE o que foi "
         "perguntado — não acrescente fatos vizinhos do guia que o jogador não pediu. Se a resposta não "
-        f"estiver no guia, diga '{_FALLBACK['pt']}'. {instruction} Mantenha os nomes de bioma, "
+        f"estiver no guia, responda SOMENTE com '{_FALLBACK['pt']}' e nada mais — não combine uma resposta real com esse fallback. {instruction} Mantenha os nomes de bioma, "
         "item e golpe EXATAMENTE como estão no guia (não traduza). Ao listar, cite cada nome só "
         "uma vez e nunca repita. Quebre a resposta em parágrafos curtos: coloque cada assunto "
         "distinto (ex.: como evoluir vs. onde encontrar no mundo) num parágrafo próprio, "

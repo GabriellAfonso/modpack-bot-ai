@@ -34,6 +34,7 @@ from modpack_bot.prompts import (
     pokemon_instruction,
     pokemon_obtain_instruction,
     spawn_help_message,
+    starter_fun_message,
     stats_instruction,
     usage_suffix,
 )
@@ -172,6 +173,8 @@ class Responder:
             return self._answer_stats(message, language)
         if decision.route is Route.SPAWN_HELP:
             return spawn_help_message(language)
+        if decision.route is Route.STARTER_FUN:
+            return starter_fun_message(language)
         if decision.route is Route.FACTS:
             return self._answer_facts(message, load_facts(), language)
         return self._answer_from_rag(message, language)

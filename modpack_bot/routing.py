@@ -15,6 +15,7 @@ from modpack_bot.intent import (
     claim_intent,
     facts_intent,
     spawn_help_intent,
+    starter_intent,
     stats_intent,
 )
 from modpack_bot.pokemon import detect_pokemon
@@ -29,6 +30,7 @@ class Route(Enum):
     STATS = "stats"
     SPAWN_HELP = "spawn_help"
     FACTS = "facts"
+    STARTER_FUN = "starter_fun"
     RAG = "rag"
 
 
@@ -68,4 +70,6 @@ def classify_route(
         return RouteDecision(Route.SPAWN_HELP)
     if facts_intent(message, load_facts()):
         return RouteDecision(Route.FACTS)
+    if starter_intent(message):
+        return RouteDecision(Route.STARTER_FUN)
     return RouteDecision(Route.RAG)

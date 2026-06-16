@@ -95,6 +95,15 @@ _CLAIM_MARKERS = frozenset(
 # question (e.g. the same question asked twice) just lets the model fold the
 # previous answer back in and narrow/corrupt it — the repeated-question
 # regression in the Slime-drop log.
+# Starter-Pokemon question cues. These are general-game questions, not
+# server-specific — no guide covers them, so instead of the cold fallback
+# we route to a short in-character "Professor Carvalho" response.
+_STARTER_MARKERS = frozenset(
+    {
+        "inicial", "iniciais", "starter", "starters",
+    }
+)
+
 _FOLLOWUP_MARKERS = frozenset(
     {
         "ele", "ela", "eles", "elas", "dele", "dela", "deles", "delas",
@@ -279,6 +288,21 @@ def _names_a_type(tokens: set[str]) -> bool:
         if english in tokens or " ".join(normalize_tokens(pt_name)) in tokens:
             return True
     return False
+
+
+def starter_intent(message: str) -> bool:
+    """True for 'best starter / which starter should I pick' questions.
+
+    These are general-game questions with no server guide behind them — we
+    route them to a short in-character response instead of the cold fallback.
+
+    Example:
+        >>> starter_intent("qual pokemon inicial de agua devo escolher?")
+        True
+        >>> starter_intent("onde o pikachu spawna?")
+        False
+    """
+    return bool(set(normalize_tokens(message)) & _STARTER_MARKERS)
 
 
 def _asks_count_or_list(message: str) -> bool:
