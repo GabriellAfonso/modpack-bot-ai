@@ -105,13 +105,15 @@ _FOLLOWUP_MARKERS = frozenset(
 )
 _FOLLOWUP_LEADERS = frozenset({"e", "and", "mas", "but"})
 
-# Superlative cues for the stats gate ("most/highest/strongest"). Paired with a
-# stat cue (stats_index.stat_section_for) so a superlative WITHOUT a stat word
-# ("qual a melhor pokébola") never hijacks RAG.
+# Superlative cues for the stats gate ("most/highest/strongest" AND
+# "weakest/lowest"). Paired with a stat cue (stats_index.stat_section_for) so a
+# superlative WITHOUT a stat word ("qual a melhor pokébola") never hijacks RAG.
 _SUPERLATIVE_MARKERS = frozenset(
     {
         "mais", "maior", "maiores", "alto", "alta", "altos", "altas", "top",
         "highest", "most", "strongest", "fastest", "biggest", "best",
+        # minimum direction
+        "menor", "menores", "pior", "piores", "lowest", "weakest", "worst",
     }
 )
 

@@ -1,12 +1,14 @@
 """Pick the stat-ranking slice of stats.md a player's message asks about.
 
-stats.md (card_builder.rankings) holds one '## <stat>' top-N section per base
-stat plus the BST total. The stats gate (intent.stats_intent) routes a
-superlative stat question here — "qual o pokémon mais forte", "qual o mais
-rápido" — and this returns ONLY the matching section, so the answer model sees a
-tiny exact ranking instead of the whole file.
+stats.md (card_builder.rankings) holds one '## <stat>' top-N section AND one
+'## <stat> — Menor' bottom-N section per base stat plus the BST total. The
+stats gate (intent.stats_intent) routes a superlative stat question here —
+"qual o pokémon mais forte", "qual o mais fraco", "qual o mais rápido" — and
+this returns ONLY the matching section (top or bottom), so the answer model
+sees a tiny exact ranking instead of the whole file.
 """
 
+from card_builder.rankings import BOTTOM_SUFFIX as _BOTTOM_SUFFIX
 from modpack_bot.text import normalize_tokens
 
 # The BST-total section heading, the default for a "strongest/highest stats"
@@ -24,7 +26,16 @@ _SPEED_CUES = frozenset(
 _HP_CUES = frozenset({"hp", "vida", "vidas", "life", "health"})
 _TOTAL_CUES = frozenset(
     {"forte", "fortes", "poderoso", "poderosa", "stats", "stat",
-     "strong", "strongest", "powerful", "bst", "total"}
+     "strong", "strongest", "powerful", "bst", "total",
+     # minimum direction without a specific stat → falls back to BST total
+     "fraco", "fraca", "fracos", "fracas", "weak", "weakest",
+     "pior", "piores", "worst"}
+)
+
+# Tokens that signal the player wants the BOTTOM of the ranking (weakest/lowest).
+_WEAKEST_CUES = frozenset(
+    {"fraco", "fraca", "fracos", "fracas", "weak", "weakest",
+     "pior", "piores", "worst", "menor", "menores", "lowest", "least"}
 )
 _SPECIAL_CUES = frozenset({"especial", "special"})
 
@@ -55,16 +66,31 @@ def stat_section_for(message: str) -> str | None:
     return None
 
 
-def select_stats_ranking(message: str, stats_md: str) -> str | None:
-    """The '## <stat>' section of stats.md the message asks about, or None.
+def is_weakest_question(message: str) -> bool:
+    """True when the player asks for the lowest/weakest end of a ranking.
 
-    None when the message targets no stat (the gate should not have routed here)
-    or the section is absent from stats.md (e.g. it was never built).
+    Example:
+        >>> is_weakest_question("qual o pokemon mais fraco?")
+        True
+        >>> is_weakest_question("qual o pokemon mais forte?")
+        False
+    """
+    return bool(set(normalize_tokens(message)) & _WEAKEST_CUES)
+
+
+def select_stats_ranking(message: str, stats_md: str) -> str | None:
+    """The matching section of stats.md for the message, or None.
+
+    Returns the top-N section for "strongest/highest" questions and the
+    bottom-N section (heading suffixed with BOTTOM_SUFFIX) for
+    "weakest/lowest" questions. None when the message targets no stat or
+    the section is absent from stats.md (e.g. it was never built).
     """
     heading = stat_section_for(message)
     if heading is None:
         return None
-    return _section(stats_md, heading)
+    target = f"{heading}{_BOTTOM_SUFFIX}" if is_weakest_question(message) else heading
+    return _section(stats_md, target)
 
 
 def _section(stats_md: str, heading: str) -> str | None:

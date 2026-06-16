@@ -13,6 +13,11 @@ from card_builder.context import Json
 # How many Pokémon each ranking lists: enough to cover ties and a "top 10"
 # request while keeping every section a small, exact slice for the answer model.
 _TOP_N = 15
+_BOTTOM_N = 10
+
+# Appended to a section heading to name the bottom (weakest) counterpart.
+# Imported by stats_index so both sides stay in sync without string duplication.
+BOTTOM_SUFFIX = " — Menor"
 
 # The six base-stat JSON keys (Cobblemon spelling), in card display order.
 _STAT_KEYS = ("hp", "attack", "defence", "special_attack", "special_defence", "speed")
@@ -32,15 +37,16 @@ STAT_SECTIONS: list[tuple[str, str | None]] = [
 
 
 def build_rankings(species: list[tuple[str, Json]]) -> str:
-    """Render stats.md: one top-N section per base stat plus the BST total.
+    """Render stats.md: top-N and bottom-N sections per base stat plus BST total.
 
-    Deterministic — every section is sorted by value (descending), ties broken
-    by accent-insensitive name, so the output is stable across runs.
+    Deterministic — every section is sorted by value (descending for top,
+    ascending for bottom), ties broken by accent-insensitive name.
     """
     entries = _entries(species)
     lines = _header()
     for heading, stat_key in STAT_SECTIONS:
         lines.extend(_section_lines(heading, stat_key, entries))
+        lines.extend(_bottom_section_lines(heading, stat_key, entries))
     return "\n".join(lines) + "\n"
 
 
@@ -88,6 +94,16 @@ def _section_lines(
     body = [_entry_line(rank, name, stats, stat_key)
             for rank, (name, stats) in enumerate(ranked[:_TOP_N], 1)]
     return [f"## {heading}", "", *body, ""]
+
+
+def _bottom_section_lines(
+    heading: str, stat_key: str | None, entries: list[tuple[str, dict[str, int]]]
+) -> list[str]:
+    """The '## heading — Menor' block: the bottom-N entries (ascending), then blank."""
+    ranked = sorted(entries, key=lambda e: (_value(e[1], stat_key), _sort_key(e[0])))
+    body = [_entry_line(rank, name, stats, stat_key)
+            for rank, (name, stats) in enumerate(ranked[:_BOTTOM_N], 1)]
+    return [f"## {heading}{BOTTOM_SUFFIX}", "", *body, ""]
 
 
 def _entry_line(rank: int, name: str, stats: dict[str, int], stat_key: str | None) -> str:

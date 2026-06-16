@@ -156,16 +156,18 @@ def stats_instruction(language: str) -> str:
     if language == "en":
         return (
             "The guide below ranks the modpack's Pokémon by a base stat (or by the total, the "
-            "BST — the sum of the six base stats, which is what 'strongest' means). Name the top "
-            "Pokémon for what was asked and its value; if they asked for several, list the first "
-            "few in order. Use only this ranking — do not invent Pokémon or numbers. Do not "
-            "mention `/pwiki`."
+            "BST — the sum of the six base stats). The list may be top-N (strongest/highest) or "
+            "bottom-N (weakest/lowest) depending on what the player asked. Name the first "
+            "Pokémon on the list and its value; if they asked for several, list the first few in "
+            "order. Use only this ranking — do not invent Pokémon or numbers. Do not mention "
+            "`/pwiki`."
         )
     return (
         "O guia abaixo ranqueia os Pokémon do modpack por um stat base (ou pelo total, o BST — a "
-        "soma dos seis stats base, que é o que significa 'mais forte'). Diga qual o Pokémon no "
-        "topo pro que foi perguntado e o valor dele; se pediram vários, liste os primeiros em "
-        "ordem. Use só este ranking — não invente Pokémon nem números. Não mencione `/pwiki`."
+        "soma dos seis stats base). A lista pode ser top-N (mais forte/alto) ou bottom-N (mais "
+        "fraco/baixo) dependendo do que o jogador perguntou. Diga qual o primeiro Pokémon da "
+        "lista e o valor dele; se pediram vários, liste os primeiros em ordem. Use só este "
+        "ranking — não invente Pokémon nem números. Não mencione `/pwiki`."
     )
 
 

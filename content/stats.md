@@ -21,6 +21,19 @@ Top Pokémon por stat base, gerado a partir do banco de Pokémon. Não editar à
 14. Yveltal — 680 (HP 126 / Atk 131 / Def 95 / SpA 131 / SpD 98 / Spd 99)
 15. Zekrom — 680 (HP 100 / Atk 150 / Def 120 / SpA 120 / SpD 100 / Spd 90)
 
+## Total (BST) — Menor
+
+1. Wishiwashi — 175 (HP 45 / Atk 20 / Def 20 / SpA 25 / SpD 25 / Spd 40)
+2. Blipbug — 180 (HP 25 / Atk 20 / Def 20 / SpA 25 / SpD 45 / Spd 45)
+3. Sunkern — 180 (HP 30 / Atk 30 / Def 30 / SpA 30 / SpD 30 / Spd 30)
+4. Snom — 185 (HP 30 / Atk 25 / Def 35 / SpA 45 / SpD 30 / Spd 20)
+5. Azurill — 190 (HP 50 / Atk 20 / Def 40 / SpA 20 / SpD 40 / Spd 20)
+6. Kricketot — 194 (HP 37 / Atk 25 / Def 41 / SpA 25 / SpD 41 / Spd 25)
+7. Caterpie — 195 (HP 45 / Atk 30 / Def 35 / SpA 20 / SpD 20 / Spd 45)
+8. Weedle — 195 (HP 40 / Atk 35 / Def 30 / SpA 20 / SpD 20 / Spd 50)
+9. Wurmple — 195 (HP 45 / Atk 45 / Def 35 / SpA 20 / SpD 30 / Spd 20)
+10. Ralts — 198 (HP 28 / Atk 25 / Def 25 / SpA 45 / SpD 35 / Spd 40)
+
 ## HP
 
 1. Blissey — 255
@@ -38,6 +51,19 @@ Top Pokémon por stat base, gerado a partir do banco de Pokémon. Não editar à
 13. Drifblim — 150
 14. Giratina — 150
 15. Slaking — 150
+
+## HP — Menor
+
+1. Shedinja — 1
+2. Diglett — 10
+3. Wiglett — 10
+4. Duskull — 20
+5. Feebas — 20
+6. Magikarp — 20
+7. Mime Jr. — 20
+8. Pichu — 20
+9. Shuckle — 20
+10. Abra — 25
 
 ## Ataque
 
@@ -57,6 +83,19 @@ Top Pokémon por stat base, gerado a partir do banco de Pokémon. Não editar à
 14. Conkeldurr — 140
 15. Darmanitan — 140
 
+## Ataque — Menor
+
+1. Chansey — 5
+2. Happiny — 5
+3. Blissey — 10
+4. Magikarp — 10
+5. Shuckle — 10
+6. Feebas — 15
+7. Abra — 20
+8. Azurill — 20
+9. Blipbug — 20
+10. Ledyba — 20
+
 ## Defesa
 
 1. Shuckle — 230
@@ -74,6 +113,19 @@ Top Pokémon por stat base, gerado a partir do banco de Pokémon. Não editar à
 13. Diancie — 150
 14. Doublade — 150
 15. Registeel — 150
+
+## Defesa — Menor
+
+1. Chansey — 5
+2. Happiny — 5
+3. Blissey — 10
+4. Abra — 15
+5. Igglybuff — 15
+6. Pichu — 15
+7. Smoochum — 15
+8. Blipbug — 20
+9. Carvanha — 20
+10. Feebas — 20
 
 ## Ataque Especial
 
@@ -93,6 +145,19 @@ Top Pokémon por stat base, gerado a partir do banco de Pokémon. Não editar à
 14. Spectrier — 145
 15. Vikavolt — 145
 
+## Ataque Especial — Menor
+
+1. Bonsly — 10
+2. Feebas — 10
+3. Shuckle — 10
+4. Darumaka — 15
+5. Happiny — 15
+6. Magikarp — 15
+7. Azurill — 20
+8. Caterpie — 20
+9. Makuhita — 20
+10. Marill — 20
+
 ## Defesa Especial
 
 1. Shuckle — 230
@@ -111,6 +176,19 @@ Top Pokémon por stat base, gerado a partir do banco de Pokémon. Não editar à
 14. Mantine — 140
 15. Bastiodon — 138
 
+## Defesa Especial — Menor
+
+1. Carvanha — 20
+2. Caterpie — 20
+3. Igglybuff — 20
+4. Magikarp — 20
+5. Stonjourner — 20
+6. Weedle — 20
+7. Whismur — 23
+8. Cascoon — 25
+9. Horsea — 25
+10. Jigglypuff — 25
+
 ## Velocidade
 
 1. Regieleki — 200
@@ -128,4 +206,17 @@ Top Pokémon por stat base, gerado a partir do banco de Pokémon. Não editar à
 13. Chien-Pao — 135
 14. Flutter Mane — 135
 15. Koraidon — 135
+
+## Velocidade — Menor
+
+1. Munchlax — 5
+2. Pyukumuku — 5
+3. Shuckle — 5
+4. Bonsly — 10
+5. Ferroseed — 10
+6. Gimmighoul — 10
+7. Gossifleur — 10
+8. Trapinch — 10
+9. Stakataka — 13
+10. Cascoon — 15
 
