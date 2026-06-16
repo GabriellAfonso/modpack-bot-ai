@@ -29,6 +29,23 @@ def test_pokemon_obtain_instruction_directs_model_to_the_passages():
     assert "no natural spawn" in en and "Do not invent" in en
 
 
+def test_pokemon_obtain_instruction_asks_for_the_structure_location():
+    # "como acho" is a WHERE question: the answer must name the structure/local
+    # (e.g. the monument) where the obtain ritual happens, not just the items.
+    assert "estrutura" in pokemon_obtain_instruction("zekrom", "pt")
+    assert "structure" in pokemon_obtain_instruction("zekrom", "en")
+
+
+def test_pokemon_obtain_instruction_does_not_defer_item_sourcing_to_pwiki():
+    # /pwiki is the Cobblemon Pokédex; it has no data on Legendary Monuments mod
+    # items/structures, so the obtain path must route missing info to support,
+    # not to /pwiki (regression for the zekrom "use /pwiki for the items" reply).
+    pt = pokemon_obtain_instruction("zekrom", "pt")
+    assert "canal de suporte" in pt and "NUNCA" in pt
+    en = pokemon_obtain_instruction("zekrom", "en")
+    assert "support channel" in en and "NEVER" in en
+
+
 def test_non_pokemon_instruction_forbids_pwiki():
     assert "Não mencione `/pwiki`" in non_pokemon_instruction("pt")
     assert "Do not mention `/pwiki`" in non_pokemon_instruction("en")

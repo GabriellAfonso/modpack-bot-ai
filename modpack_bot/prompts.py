@@ -81,16 +81,26 @@ def pokemon_obtain_instruction(pokemon: str, language: str) -> str:
         return (
             f"The guide below is the data sheet for {pokemon}, followed by passages from the "
             f"server wiki. {pokemon} has no natural spawn, so use the passages to explain how to "
-            f"obtain it (mod summon ritual, evolution, trade or egg). If the passages don't say "
-            f"how to get it, tell them to use `/pwiki {pokemon}`. For moves/TMs use `/pwiki "
-            f"{pokemon}`. Do not invent data."
+            f"obtain it (mod summon ritual, evolution, trade or egg). The player asked WHERE to "
+            f"find it: name the structure/location where this happens (e.g. the monument or "
+            f"pedestal) and how to get the required items — mine the passages for this, including "
+            f"the system/mod name and any fragment-collection or progression steps; do not claim "
+            f"there is no info if the passages mention it. `/pwiki {pokemon}` is the Cobblemon "
+            f"Pokédex (moves/TMs only) — it knows nothing about these mod structures or items, so "
+            f"NEVER point to it for where to obtain items or find the structure. If the passages "
+            f"truly don't cover it, tell them to ask in a support channel. Do not invent data."
         )
     return (
         f"O guia abaixo é a ficha do Pokémon {pokemon}, seguida de trechos da wiki do servidor. "
         f"{pokemon} não tem spawn natural, então use os trechos pra explicar como obtê-lo "
-        f"(ritual de invocação de mod, evolução, troca ou ovo). Se os trechos não disserem como "
-        f"conseguir, diga pra usar `/pwiki {pokemon}`. Pra golpes/TMs, use `/pwiki {pokemon}`. "
-        f"Não invente dados."
+        f"(ritual de invocação de mod, evolução, troca ou ovo). O jogador perguntou ONDE achar: "
+        f"diga o nome da estrutura/local onde isso acontece (ex.: o monumento ou pedestal) e como "
+        f"conseguir os itens necessários — garimpe isso nos trechos, incluindo o nome do "
+        f"sistema/mod e passos de coleta de fragmentos ou progressão; não diga que não há "
+        f"informação se os trechos mencionam. O `/pwiki {pokemon}` é a Pokédex do Cobblemon "
+        f"(só golpes/TMs) — ele não sabe nada dessas estruturas ou itens de mod, então NUNCA "
+        f"mande usar ele pra saber onde conseguir itens ou achar a estrutura. Se os trechos "
+        f"realmente não cobrirem, diga pra perguntar num canal de suporte. Não invente dados."
     )
 
 

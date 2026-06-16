@@ -55,6 +55,12 @@ _CLAIM_GUIDES = [
 # the condense step — enough to resolve references, cheap on tokens.
 _CONDENSE_ANSWER_CAP = 300
 
+# How many passages each obtain-path query contributes after merging. Keeps the
+# summon ritual (mechanic query) on top while guaranteeing the structure/location
+# passage (location query) is included, without doubling the passage count.
+_OBTAIN_MECHANIC_K = 4
+_OBTAIN_LOCATION_K = 3
+
 
 class Responder:
     """Turns a message into the text the player should receive."""
@@ -192,11 +198,25 @@ class Responder:
     ) -> str:
         """No-natural-spawn card: append RAG passages so the summon/obtain method
         (which lives in the mod docs, not the card) reaches the answer model."""
-        passages = self._retriever.retrieve(message)
+        passages = self._retrieve_obtain_passages(message, pokemon)
         guide = "\n\n".join([card, *passages]) if passages else card
         return self._answer_from_guide(
             message, guide, pokemon_obtain_instruction(pokemon, language), language
         )
+
+    def _retrieve_obtain_passages(self, message: str, pokemon: str) -> list[str]:
+        """Summon-mechanic passages PLUS the structure-location passage.
+
+        The player's phrasing ("como acho um zekrom?") retrieves the summon ritual
+        but never the Arc Phone / monument passage that names WHERE the pedestals
+        are — it is worded differently, so it stays out of the top-k and the
+        answer can't name the structure (the recurring zekrom complaint). A second
+        query seeded with location terms surfaces it; the two lists are merged and
+        de-duped, capped to stay under Groq's TPM ceiling.
+        """
+        mechanic = self._retriever.retrieve(message)
+        location = self._retriever.retrieve(_obtain_location_query(pokemon))
+        return _merge_passages(mechanic, location)
 
     def _answer_claim(self, message: str, language: str) -> str:
         """Answer land/chest-protection questions from the curated Flan guide,
@@ -284,6 +304,26 @@ class Responder:
         if len(lines) != 1:
             return None
         return facts_listing_message(lines, language)
+
+
+def _obtain_location_query(pokemon: str) -> str:
+    """A location-seeded query for the obtain path: biases retrieval toward the
+    passage that names WHERE the summon happens (the structure/monument and how
+    to locate it with the Arc Phone), which the player's own phrasing misses.
+
+    Portuguese on purpose: the mod docs are written in Portuguese, so a PT query
+    embeds closest to them regardless of the player's language."""
+    return f"em qual estrutura ou monumento se invoca {pokemon} e como localizar pelo Arc Phone"
+
+
+def _merge_passages(mechanic: list[str], location: list[str]) -> list[str]:
+    """Interleave the two passage lists: the top summon-mechanic passages first,
+    then the top location passages not already present (de-duped, order kept)."""
+    merged = list(mechanic[:_OBTAIN_MECHANIC_K])
+    for passage in location[:_OBTAIN_LOCATION_K]:
+        if passage not in merged:
+            merged.append(passage)
+    return merged
 
 
 def _format_transcript(history: list[Turn]) -> str:

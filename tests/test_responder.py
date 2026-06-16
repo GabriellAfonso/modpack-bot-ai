@@ -1,5 +1,5 @@
 from modpack_bot.conversation import ConversationStore, Turn
-from modpack_bot.responder import Responder
+from modpack_bot.responder import Responder, _merge_passages, _obtain_location_query
 from tests.conftest import (
     FakeAdminResolver,
     FakeCardRepository,
@@ -254,10 +254,31 @@ def test_no_natural_spawn_pokemon_augments_card_with_rag():
     )
     responder.answer("como acho um zekrom?")
     prompt = completer.last_system_prompt
-    assert responder._retriever.queries == ["como acho um zekrom?"]
+    # Two queries: the player's phrasing for the summon ritual, plus a location-
+    # seeded query so the structure/Arc-Phone passage reaches the answer model.
+    queries = responder._retriever.queries
+    assert queries[0] == "como acho um zekrom?"
+    assert len(queries) == 2 and "estrutura" in queries[1] and "zekrom" in queries[1]
     assert "Não nasce naturalmente" in prompt  # the card is still there
     assert "par de pedestais com a Pedra Escura" in prompt  # plus the RAG passage
     assert "não tem spawn natural" in prompt  # the obtain instruction
+
+
+def test_merge_passages_keeps_mechanic_then_appends_new_location_passages():
+    mechanic = ["ritual A", "ritual B"]
+    location = ["ritual A", "torre dragonspiral", "arc phone"]
+    # "ritual A" is de-duped; the location-only passages are appended after.
+    assert _merge_passages(mechanic, location) == [
+        "ritual A",
+        "ritual B",
+        "torre dragonspiral",
+        "arc phone",
+    ]
+
+
+def test_obtain_location_query_seeds_structure_terms():
+    query = _obtain_location_query("zekrom")
+    assert "zekrom" in query and "estrutura" in query and "Arc Phone" in query
 
 
 def test_non_pokemon_question_falls_through_to_rag():
