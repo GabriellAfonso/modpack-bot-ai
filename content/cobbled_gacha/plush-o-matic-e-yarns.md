@@ -4,20 +4,9 @@ O **Plush-O-Matic** é uma máquina especial que dispensa pelúcias Pokémon (pl
 
 ---
 
-## Como craftar o Plush-O-Matic
+## Como obter o Plush-O-Matic
 
-**Bancada 3×3:**
-```
-W D W
-L P _
-I # I
-```
-- `W` = Lã (qualquer cor, ×2)
-- `D` = Dispenser
-- `L` = Alavanca (Lever)
-- `P` = Poke Ball
-- `I` = Lingote de Ferro (×2)
-- `#` = Bloco de Ouro (×2)
+Neste servidor a máquina **não é craftável**. Você a encontra **nas cidades** e no **cassino da cidade inicial do servidor**. (Os **Yarns**, que são a moeda da máquina, continuam craftáveis — veja abaixo.)
 
 ---
 

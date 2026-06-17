@@ -1,6 +1,6 @@
 # Strange Crystallized Machine — Máquina Spawner de Pokémon
 
-A **Strange Crystallized Machine** é a máquina do tipo **spawner** do mod. Em vez de dispensar cápsulas com itens, ela faz um **Pokémon aparecer** perto do jogador ao ser ativada. É a máquina mais cara de craftar, exigindo Nether Star e Master Ball.
+A **Strange Crystallized Machine** é a máquina do tipo **spawner** do mod. Em vez de dispensar cápsulas com itens, ela faz um **Pokémon aparecer** perto do jogador ao ser ativada.
 
 ---
 
@@ -10,19 +10,9 @@ Uma máquina de gacha especial que usa Diamantes como moeda. Ao completar o cust
 
 ---
 
-## Como craftar
+## Como obter
 
-**Bancada 3×3:**
-```
-D N D
-# M #
-X # X
-```
-- `D` = Diamante (×2)
-- `N` = Nether Star
-- `#` = Bloco de Ferro (×3)
-- `M` = Master Ball
-- `X` = Bloco de Diamante (×2)
+Neste servidor a máquina **não é craftável**. Você a encontra **nas cidades** e no **cassino da cidade inicial do servidor**.
 
 ---
 
@@ -82,4 +72,4 @@ Alguns Pokémon no pool só aparecem em biomas específicos. Se você ativar a m
 
 ## Custo alto: vale a pena?
 
-A Strange Crystallized Machine é cara (Nether Star + Master Ball no craft) e usa Diamantes como moeda. Em contrapartida, ela permite obter Pokémon raros que podem não aparecer facilmente no mundo. Se o servidor configurou lendários ou Pokémon raros no pool, essa pode ser a única forma de obtê-los via gacha.
+A Strange Crystallized Machine usa Diamantes como moeda e é uma das máquinas mais caras de operar. Em contrapartida, ela permite obter Pokémon raros que podem não aparecer facilmente no mundo. Se o servidor configurou lendários ou Pokémon raros no pool, essa pode ser a única forma de obtê-los via gacha.

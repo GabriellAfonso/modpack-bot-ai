@@ -13,19 +13,9 @@ O **Rocket Prize Master** é uma máquina temática do Team Rocket. Ao contrári
 
 ---
 
-## Como craftar o Rocket Prize Master
+## Como obter o Rocket Prize Master
 
-**Bancada 3×3:**
-```
-I R I
-U U U
-B D B
-```
-- `I` = Bloco de Ferro (×2)
-- `R` = Bloco de Redstone
-- `U` = Ultra Ball (×3)
-- `B` = Botas de Ferro (×2)
-- `D` = Dispenser
+Neste servidor a máquina **não é craftável**. Você a encontra **nas cidades** e no **cassino da cidade inicial do servidor**.
 
 ---
 

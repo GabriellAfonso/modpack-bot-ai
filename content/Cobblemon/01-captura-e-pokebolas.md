@@ -51,7 +51,7 @@ Além das craftadas com Apricorns, existem pokébolas com condições especiais 
 - **Pokébola** — taxa base (1x)
 - **Great Ball** — 1,5x
 - **Ultra Ball** — 2x
-- **Master Ball** — captura garantida (100%)
+- **Master Ball** — captura garantida (100%). **Não tem receita de craft neste servidor** — não é possível craftar a Master Ball. A única forma de obtê-la é pela **Cherish Capsule (capsule_a5)** na Poké Gacha Machine (ver `cobbled_gacha/premios-e-chances.md`).
 - **Heal Ball** — cura o Pokémon ao capturar
 - **Net Ball** — melhor contra Água e Inseto
 - **Dive Ball** — melhor para Pokémon submersos
