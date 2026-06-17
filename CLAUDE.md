@@ -44,3 +44,15 @@
 
 - Use the language default formatter (`cargo fmt`, `gofmt`, `prettier`,
   `black`, `rubocop -A`). Don't discuss style beyond that..
+
+## Content: ginásios
+
+- When the user sends gym data for a new region, always update
+  `content/ginasios.md` — do not create a separate file.
+- Add a new region section following the existing Kanto layout:
+  - "Quais regiões têm ginásios": add the region to the list.
+  - "Ordem recomendada": new subsection with the region's recommended order.
+  - "Onde fica cada ginásio": new coordinates table for that region.
+- Each gym row needs: ordem, ginásio (líder), tipo, coordenadas (X/Z),
+  dimensão. Flag any gym not in the Overworld (e.g. Nether) explicitly.
+- Keep the Q&A (**P:**/**R:**) and table format already used in the file.
