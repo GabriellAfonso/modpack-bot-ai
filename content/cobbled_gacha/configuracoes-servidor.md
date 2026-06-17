@@ -45,8 +45,8 @@ Define quantas moedas são necessárias para cada máquina girar. Use o ID da m�
 ```json
 "gacha_machine_1": 5,
 "gacha_machine_2": 20,
-"gacha_machine_3": 20,
-"gacha_machine_4": 5,
+"gacha_machine_3": 10,
+"gacha_machine_4": 1,
 "gacha_machine_11": 1,
 "gacha_machine_12": 3
 ```
@@ -154,8 +154,8 @@ Esses pesos são usados quando um pool de Pokémon não tem seu próprio arquivo
   "gacha_machine_12_type": "specific",
   "gacha_machine_1": 5,
   "gacha_machine_2": 20,
-  "gacha_machine_3": 20,
-  "gacha_machine_4": 5,
+  "gacha_machine_3": 10,
+  "gacha_machine_4": 1,
   "gacha_machine_11": 1,
   "gacha_machine_12": 3,
   "buckets": {

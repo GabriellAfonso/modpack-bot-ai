@@ -12,12 +12,12 @@ O mod adiciona 12 máquinas de gacha diferentes (o **cassino**, ou casino, como 
 
 ## 1. Poké Gacha Machine
 
-**O que é:** A máquina principal do mod. Recebe Relic Coin (do Cobblemon) e dispensa cápsulas com recompensas aleatórias do Cobblemon.
+**O que é:** A máquina principal do mod. Recebe Gacha Coin e dispensa cápsulas com recompensas aleatórias do Cobblemon.
 
 **Como obter:** não craftável — encontrada nas cidades e no cassino da cidade inicial.
 
-**Moeda aceita:** Relic Coin (Cobblemon)
-**Custo padrão:** 5 moedas por giro
+**Moeda aceita:** Gacha Coin
+**Custo neste servidor:** 5 moedas por giro
 
 ---
 
@@ -34,23 +34,23 @@ O mod adiciona 12 máquinas de gacha diferentes (o **cassino**, ou casino, como 
 
 ## 3. Item Printer
 
-**O que é:** Máquina de impressão de itens. Aceita Relic Coin e entrega itens do Cobblemon. Por padrão exige 20 inserções por giro.
+**O que é:** Máquina de impressão de itens. Aceita Gacha Coin e entrega itens do Cobblemon. Neste servidor exige 10 inserções por giro.
 
 **Como obter:** não craftável — encontrada nas cidades e no cassino da cidade inicial.
 
-**Moeda aceita:** Relic Coin (Cobblemon)
-**Custo padrão:** 20 moedas por giro
+**Moeda aceita:** Gacha Coin
+**Custo neste servidor:** 10 moedas por giro
 
 ---
 
 ## 4. Strange Crystallized Machine
 
-**O que é:** Máquina especial do tipo **spawner** — ao completar o custo, ela faz um Pokémon aparecer perto do jogador em vez de dispensar cápsulas. Usa Diamantes comuns como moeda.
+**O que é:** Máquina especial do tipo **spawner** — ao completar o custo, ela faz um Pokémon aparecer perto do jogador em vez de dispensar cápsulas. Neste servidor usa a Gacha Coin 10 (Premier Gacha Coin) como moeda.
 
 **Como obter:** não craftável — encontrada nas cidades e no cassino da cidade inicial.
 
-**Moeda aceita:** Diamante
-**Custo padrão:** 5 diamantes por giro
+**Moeda aceita:** Gacha Coin 10 (Premier Gacha Coin)
+**Custo neste servidor:** 1 moeda por giro
 **Comportamento especial:** Spawna um Pokémon (do pool configurado pelo servidor) em vez de dar cápsulas. A máquina não pode ser automatizada com hoppers.
 
 ---
@@ -70,31 +70,31 @@ As máquinas 5 a 10 são variantes cosméticas da máquina 1 (Poké Gacha Machin
 | Machine 9 | Slate Poké Gacha Machine | Preto |
 | Machine 10 | Premier Poké Gacha Machine | Branco |
 
-**Moeda aceita:** Relic Coin (Cobblemon)
-**Custo padrão:** 5 moedas por giro (se não configurado de outra forma)
+**Moeda aceita:** Gacha Coin
+**Custo neste servidor:** 5 moedas por giro
 
 ---
 
 ## 11. Rocket Prize Master
 
-**O que é:** Máquina temática do Team Rocket. Usa a Koban Coin como moeda — item dropado ao matar um Meowth. Por padrão exige apenas 1 moeda por giro (gira instantaneamente na primeira inserção).
+**O que é:** Máquina temática do Team Rocket. Neste servidor usa a Gacha Coin 10 (Premier Gacha Coin) como moeda. Exige apenas 1 moeda por giro (gira instantaneamente na primeira inserção).
 
 **Como obter:** não craftável — encontrada nas cidades e no cassino da cidade inicial.
 
-**Moeda aceita:** Koban Coin
-**Custo padrão:** 1 moeda por giro
-**Como obter Koban Coin:** Mate um Meowth — ele dropa a moeda ao morrer.
+**Moeda aceita:** Gacha Coin 10 (Premier Gacha Coin)
+**Custo neste servidor:** 1 moeda por giro
+**Nota:** No mod original esta máquina usa a Koban Coin (drop de Meowth). O datapack deste servidor a substituiu pela Gacha Coin 10.
 
 ---
 
 ## 12. Plush-O-Matic
 
-**O que é:** Máquina de pelúcias Pokémon. Usa Yarns (fios temáticos) como moeda. É do tipo **specific (contiguous)** — o primeiro yarn inserido trava a máquina para aquele tipo específico, e a recompensa varia conforme o yarn usado. Ao completar o giro, a trava é liberada para o próximo uso.
+**O que é:** Máquina de pelúcias Pokémon. Usa Yarns (fios temáticos) como moeda. É do tipo **specific (contiguous)** — o yarn inserido trava a máquina para aquele tipo, e a recompensa varia conforme o yarn. Neste servidor o datapack limita a máquina a aceitar **apenas a Fantasy Yarn**.
 
 **Como obter:** não craftável — encontrada nas cidades e no cassino da cidade inicial.
 
-**Moeda aceita:** Qualquer Yarn (11 tipos disponíveis)
-**Custo padrão:** 3 yarns do mesmo tipo por giro
-**Comportamento especial:** O tipo de pelúcia dispensada depende do yarn usado. Ex: Plain Yarn dá pelúcias de Eevee, Furret, Happiny, Lickitung, Munchlax, Sentret e Snorlax.
+**Moeda aceita:** Fantasy Yarn (único yarn aceito neste servidor)
+**Custo neste servidor:** 3 Fantasy Yarns por giro
+**Comportamento especial:** A Fantasy Yarn dá pelúcias de Pokémon dos tipos Fada e Psíquico. No mod original a máquina aceita os 11 tipos de yarn; aqui só a Fantasy Yarn funciona.
 
 Para craftar Yarns, veja o arquivo **plush-o-matic-e-yarns.md**.

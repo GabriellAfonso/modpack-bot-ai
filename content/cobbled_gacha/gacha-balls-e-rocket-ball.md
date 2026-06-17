@@ -45,7 +45,7 @@ Pool padrão: Caterpie (comum), Pidgey (comum), Rattata (incomum)
 
 A Rocket Ball é uma bola especial temática do Team Rocket. Ela usa o pool de spawn do **rocket_ball**, que por padrão inclui Pokémon de todas as regiões (Kanto, Johto, Hoenn, Sinnoh, Unova, Kalos, Alola, Galar, Hisui, Paldea).
 
-**Como obter:** A Rocket Ball é obtida como recompensa do **Rocket Prize Master** (máquina 11). Você insere uma Koban Coin (dropada por Meowth) na máquina e ela dispensa uma Rocket Ball.
+**Como obter:** A Rocket Ball é obtida como recompensa do **Rocket Prize Master** (máquina 11). Neste servidor você insere uma Gacha Coin 10 (Premier Gacha Coin) na máquina e ela dispensa uma Rocket Ball.
 
 **Ao usar:** Spawna um Pokémon do pool rocket_ball perto de você.
 

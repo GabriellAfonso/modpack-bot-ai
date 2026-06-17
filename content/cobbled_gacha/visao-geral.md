@@ -11,25 +11,28 @@ O mod funciona em conjunto com o **Cobblemon** (mod de Pokémon para Minecraft),
 ### Máquinas (blocos)
 São 12 máquinas diferentes, cada uma com sua própria moeda, custo e recompensas:
 
+Moedas configuradas pelo datapack deste servidor:
+
 | Máquina | Nome | Moeda aceita |
 |---|---|---|
-| Poké Gacha Machine | Máquina principal | Relic Coin (Cobblemon) |
+| Poké Gacha Machine | Máquina principal | Gacha Coin |
 | Cram O' Matic | Máquina de apricorns | Apricorns (7 tipos) |
-| Item Printer | Impressora de itens | Relic Coin |
-| Strange Crystallized Machine | Máquina especial de spawn | Diamante |
-| Citrine Poké Gacha Machine | Variante dourada | Relic Coin |
-| Verdant Poké Gacha Machine | Variante verde | Relic Coin |
-| Azure Poké Gacha Machine | Variante azul | Relic Coin |
-| Roseate Poké Gacha Machine | Variante rosa | Relic Coin |
-| Slate Poké Gacha Machine | Variante preta | Relic Coin |
-| Premier Poké Gacha Machine | Variante branca | Relic Coin |
-| Rocket Prize Master | Máquina do Team Rocket | Koban Coin |
-| Plush-O-Matic | Máquina de pelúcias | Yarns (fios temáticos) |
+| Item Printer | Impressora de itens | Gacha Coin |
+| Strange Crystallized Machine | Máquina especial de spawn | Gacha Coin 10 (Premier) |
+| Citrine Poké Gacha Machine | Variante dourada | Gacha Coin |
+| Verdant Poké Gacha Machine | Variante verde | Gacha Coin |
+| Azure Poké Gacha Machine | Variante azul | Gacha Coin |
+| Roseate Poké Gacha Machine | Variante rosa | Gacha Coin |
+| Slate Poké Gacha Machine | Variante preta | Gacha Coin |
+| Premier Poké Gacha Machine | Variante branca | Gacha Coin |
+| Rocket Prize Master | Máquina do Team Rocket | Gacha Coin 10 (Premier) |
+| Plush-O-Matic | Máquina de pelúcias | Fantasy Yarn |
 
 ### Itens de moeda
-- **Gacha Coins 1–10** — moedas craftáveis usadas como referência (cada servidor configura quais máquinas as aceitam)
-- **Koban Coin** — drop de Meowth, usada no Rocket Prize Master
-- **Yarns (11 tipos)** — fios craftáveis com gems Pokémon, usados no Plush-O-Matic
+- **Gacha Coins 1–10** — moedas craftáveis; neste servidor a **Gacha Coin** é a moeda padrão das máquinas e a **Gacha Coin 10 (Premier)** é usada pela Strange Crystallized Machine e pelo Rocket Prize Master
+- **Apricorns** — usados pelo Cram O' Matic
+- **Fantasy Yarn** — único yarn aceito pelo Plush-O-Matic neste servidor (craftável com gems Pokémon)
+- **Koban Coin** — drop de Meowth; **não** é mais necessária aqui (o Rocket Prize Master foi reconfigurado para Gacha Coin 10)
 
 ### Cápsulas
 - **100 cápsulas** (grupos A–J, 10 variantes cada) — itens que ao serem usados na mão abrem uma tabela de loot e dão recompensas
