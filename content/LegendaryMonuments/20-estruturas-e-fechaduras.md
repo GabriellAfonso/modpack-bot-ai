@@ -24,13 +24,24 @@ Estruturas e o item-chave necessário para localizá-las pelo Arc Phone (quando 
 Outras estruturas que se geram no mundo, ligadas a conteúdos específicos:
 - **Pirâmide de Hoopa** (Hoopa Pyramid) — Hoopa.
 - **Ilha do Sul** (Southern Island) — Latias e Latios.
-- **Árvore Dyna** (Dyna Tree) — conteúdo de Galar/Dynamax e a Maçã Dyna.
-- **Monumentos de Espada e Escudo** (Sword/Shield) — Zacian/Zamazenta e a Espada/Escudo do Herói.
+- **Árvore Dyna** (Dyna Tree) — conteúdo de Galar/Dynamax e a Maçã Dyna. Na 8.0 ganhou um conjunto completo de madeira Dyna; com 25 mudas (Dyna Tree Sapling) numa formação 5x5 dá para cultivar uma Árvore Dyna Gigante.
 - **Caverna Turnback** (Turnback Cave) — ligada a Giratina/Mundo da Distorção.
 - **Lagos dos Guardiões** (Lake Verity, Lake Valor, Lake Acuity) — Uxie, Mesprit e Azelf.
 - **Portal da Distorção** (Distortion Portal) — estrutura de portal pelo mundo.
 - **Outskirt Stand** — estrutura menor de apoio.
 - **Salão da Origem** (Hall of Origin) — estrutura na dimensão de Arceus.
+
+### Estruturas novas da 8.0
+
+- **Anfiteatro** (Amphitheater) — Meloetta. Traz a Jukebox de Meloetta e os Fragmentos do Disco da Primeira Canção (arquivo 23).
+- **Santuário da Coroa** (Crown Shrine) — Calyrex (NPC) e o Pedestal de Corcel para Glastrier/Spectrier (arquivo 24).
+- **Frost Carrot** — estrutura ligada às cenouras antigas (sementes Iceroot/Shaderoot) dos corcéis de Calyrex (arquivo 24).
+- **Árvore da Vida** (Tree of Life) — Xerneas; feita de madeira de Aurora, com o Aurora X Log (arquivo 25).
+- **Casulo de Yveltal** (Yveltal Cocoon) — Yveltal; alimentado com 16 Potes de Alma (arquivo 26).
+- **Região Thalic** (Thalic Camp, Thalic Pyramid, Thalic Well, Thalic Nether Fossil) — região de deserto/arenito Thalic. Tem a Thalic Farmland (onde cresce a Shaderoot Carrot), pegadas das Espadas da Justiça e conteúdo sombrio (Ichor das Sombras).
+- **Nexo da Distorção** (Distortion Nexus) — nova estrutura dentro do Mundo da Distorção (Giratina).
+- **Salão dos Heróis Cavaleiros** (Throneroom of Knightly Heroes) — Zacian/Zamazenta. **Substitui** os antigos monumentos separados de Espada e Escudo (Sword/Shield) da 7.8, e entrega a **Espada do Herói** (Hero Sword) e o **Escudo do Herói** (Hero Shield).
+- **Santuário do Renascimento** (Reawakening Sanctum) — **dimensão própria** do sistema de re-invocação, aberta pela Tábua do Renascimento (arquivo 28).
 
 ## Raridade e espaçamento das estruturas
 

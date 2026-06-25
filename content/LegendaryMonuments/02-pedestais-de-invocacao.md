@@ -39,8 +39,8 @@ Pares de itens e recompensas:
 - **Reshiram** (par de pedestais): Pedra Clara (Lightstone) + Gema de Fogo (`cobblemon:fire_gem`). Dá uma **Garrafa da Verdade** (Truth Bottle).
 - **Zekrom** (par de pedestais): Pedra Escura (Darkstone) + Gema Elétrica (`cobblemon:electric_gem`). Dá uma **Garrafa dos Ideais** (Ideals Bottle).
 - **Kyurem** (par de pedestais): Garrafa da Verdade (Truth Bottle) + Garrafa dos Ideais (Ideals Bottle). Por isso é preciso invocar Reshiram e Zekrom antes, para ganhar as duas garrafas.
-- **Zacian** (par de pedestais): Totem da Imortalidade (totem of undying) + Espada Enferrujada (`mega_showdown:rusted_sword`). Dá de volta uma **Espada Enferrujada**.
-- **Zamazenta** (par de pedestais): Totem da Imortalidade + Escudo Enferrujado (`mega_showdown:rusted_shield`). Dá de volta um **Escudo Enferrujado**.
+- **Zacian** (par de pedestais): Totem da Imortalidade (totem of undying) + **Espada do Herói** (Hero Sword, `legendarymonuments:herosword`). Mensagem: *"The Hero Sword resonates with ancient power!"*. Dá de volta uma **Espada Enferrujada** (`mega_showdown:rusted_sword`). *(Na 7.8 o pedestal pedia diretamente a Espada Enferrujada; na 8.0 a entrada passou a ser a Espada do Herói, obtida no Salão dos Heróis Cavaleiros.)*
+- **Zamazenta** (par de pedestais): Totem da Imortalidade + **Escudo do Herói** (Hero Shield, `legendarymonuments:heroshield`). Dá de volta um **Escudo Enferrujado** (`mega_showdown:rusted_shield`). *(Mesma mudança da 8.0 que o Zacian.)*
 - **Hoopa** (par de pedestais): Chave do Templo (Temple Key) + Garrafa-Prisão (`mega_showdown:prison_bottle`). Dá uma **Garrafa-Prisão**.
 
 ## Configuração dos itens dos pedestais
@@ -53,9 +53,11 @@ Os itens que cada pedestal aceita podem ser alterados por administradores de ser
 - Hoopa = `temple_key` + `mega_showdown:prison_bottle`
 - Zekrom = `darkstone` + `cobblemon:electric_gem`; Reshiram = `lightstone` + `cobblemon:fire_gem`
 - Kyurem = `truthbottle` + `idealsbottle`
-- Zacian = `totem_of_undying` + `mega_showdown:rusted_sword`; Zamazenta = `totem_of_undying` + `mega_showdown:rusted_shield`
+- Zacian = `totem_of_undying` + `legendarymonuments:herosword`; Zamazenta = `totem_of_undying` + `legendarymonuments:heroshield` *(na 8.0; na 7.8 eram `mega_showdown:rusted_sword`/`rusted_shield`)*
 
 Trocar esses valores muda quais itens são aceitos em cada pedestal, sem alterar o resto da mecânica.
+
+> **Pedestal de Corcel (8.0):** além desses, a 8.0 adicionou o **Pedestal de Corcel** (Steed Pedestal), que usa a **Iceroot Carrot** (→ Glastrier) ou a **Shaderoot Carrot** (→ Spectrier). Ele faz parte da cadeia de Calyrex — veja o arquivo 24.
 
 ## Onde conseguir os pedestais
 

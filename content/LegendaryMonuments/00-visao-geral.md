@@ -1,5 +1,7 @@
 # Visão Geral do Mod Legendary Monuments
 
+> **Versão documentada:** 8.0 (Fabric). A 8.0 adicionou Meloetta, Calyrex + Glastrier/Spectrier, Xerneas, Yveltal e Marshadow, além do sistema de re-invocação (Santuário do Renascimento + Medalhão da Renovação). Veja os arquivos 23 a 28.
+
 ## O que é o Legendary Monuments
 
 Legendary Monuments é um mod para Minecraft (Fabric) feito para funcionar junto com o mod Cobblemon. Ele adiciona uma grande quantidade de monumentos, templos, santuários e estruturas espalhados pelo mundo, cada um ligado à invocação de um Pokémon Lendário específico. Em vez de simplesmente encontrar lendários andando pelo mundo, o jogador precisa explorar essas estruturas, reunir itens-chave especiais e ativar pedestais, urnas, fechaduras e altares para fazer cada lendário aparecer.
@@ -33,5 +35,14 @@ Quase todos os lendários invocados pelo mod têm 2% de chance de aparecerem na 
 - **Guardiões do Lago (Sinnoh)**: Uxie, Mesprit, Azelf e a Corrente Vermelha.
 - **Minérios e materiais**: Partícula de Galar, Entulho Antigo, Origem, Ferro da Distorção e os metais de golem.
 - **Invocações diversas**: Caixa de Meltan, Casulo de Eternatus, Hoopa, Victini, Mew, Heatran, Celebi.
+
+### Sistemas novos da 8.0
+
+- **Meloetta e a Sala das Relíquias**: Anfiteatro com a Jukebox de Meloetta, o Disco da Primeira Canção e a orquestra de discos (arquivo 23).
+- **Calyrex, Glastrier e Spectrier**: NPC Calyrex no Santuário da Coroa, sementes/cenouras antigas (Iceroot/Shaderoot) e o Pedestal de Corcel (arquivo 24).
+- **Árvore da Vida (Xerneas)**: madeira de Aurora e os Potes de Essência de Aurora (arquivo 25).
+- **Casulo de Yveltal**: alimentado com Potes de Alma (arquivo 26).
+- **Marshadow e as Sombras**: Caldeirão das Sombras, Ichor das Sombras e Potes de Alma (arquivo 27).
+- **Santuário do Renascimento**: re-invocação de lendários pela Tábua do Renascimento e liberação de pedestais pelo Medalhão da Renovação, com os Blocos de Tera (arquivo 28).
 
 Cada um desses sistemas é descrito em detalhe em seu próprio arquivo desta wiki.
