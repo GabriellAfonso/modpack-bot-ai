@@ -5,7 +5,7 @@ Habilidades: Serenegrace, Serenegrace (oculta)
 Catch rate: 3 · EV yield: 1 SpA, 1 SpD, 1 Spd · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Cherry Grove, Dark Forest, Flower Forest, de dia — nível 60-70
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 Formas: Pirouette
 

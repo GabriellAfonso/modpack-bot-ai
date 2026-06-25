@@ -5,7 +5,7 @@ Habilidades: Unnerve
 Catch rate: 3 · EV yield: 3 HP · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest…; Cherry Grove, Flower Forest, Meadow, Sunflower Plains, de dia — nível 65-75
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 Formas: Ice, Shadow
 

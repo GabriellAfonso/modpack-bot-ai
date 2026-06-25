@@ -5,7 +5,7 @@ Habilidades: Fairyaura, Fairyaura (oculta)
 Catch rate: 45 · EV yield: 3 HP · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest, Grove, Old Growth Birch Forest, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga, Windswept Forest; Cherry Grove, Flower Forest, Meadow, Sunflower Plains, de dia — nível 65-75
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 Formas: Active
 

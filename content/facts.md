@@ -6,7 +6,7 @@ Dados gerados automaticamente a partir do banco de Pokémon. Não editar à mão
 - Tipos existentes (18), com quantos Pokémon de cada:
 - Aço (65), Água (154), Dragão (70), Elétrico (69), Fada (64), Fantasma (65), Fogo (81), Gelo (48), Grama (127), Inseto (92), Lutador (73), Normal (131), Pedra (74), Psíquico (102), Sombrio (69), Terra (75), Veneno (83), Voador (109)
 - Total de biomas mapeados: 56
-- Pokémon com spawn natural no mundo: 950
+- Pokémon com spawn natural no mundo: 943
 
 ## Pokémon por tipo
 

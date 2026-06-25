@@ -5,6 +5,6 @@ Habilidades: Grimneigh, Grimneigh (oculta)
 Catch rate: 3 · EV yield: 3 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Dark Forest, Swamp; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove, Ice Spikes, Jagged Peaks, Snowy Beach, Snowy Plains, Snowy Slopes, Snowy Taiga, de noite — nível 60-70
+- Não nasce naturalmente (sem spawn natural no mundo).
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki spectrier`._
