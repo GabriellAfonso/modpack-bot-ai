@@ -14,7 +14,7 @@ Drops: Never Melt Ice (5.0%), Aspear Berry (5.0%)
 
 ## Evolui de
 - Bergmite — subir de nível (nível 37+)
-- Bergmite — subir de nível (nível 37+, em Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…)
+- Bergmite — subir de nível (nível 37+, em Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…)
 
 Formas: Hisui
 

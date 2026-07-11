@@ -6,7 +6,7 @@ Catch rate: 120 · EV yield: 2 Def · Egg groups: Mineral
 Drops: Gravel (qtd 0-2), Everstone (5.0%), Black Augurite (5.0%), Rindo Berry (5.0%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 25-39
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 25-39
 - [common] qualquer bioma da superfície — nível 25-39
 - [common] qualquer bioma da superfície, perto de Iron Ores — nível 25-39
 

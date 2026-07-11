@@ -6,7 +6,7 @@ Catch rate: 30 · EV yield: 2 Atk · Egg groups: Field
 Drops: Razor Claw (5.0%), Life Orb (5.0%), Roseli Berry (5.0%)
 
 ## Spawn
-- [rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna; snowy forest; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga — nível 22-47
+- [rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna; snowy forest; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga — nível 22-47
 
 Formas: Mega
 

@@ -6,8 +6,8 @@ Catch rate: 45 · EV yield: 3 Def · Egg groups: Mineral
 Drops: Coal (qtd 0-3), Black Augurite (10.0%), Passho Berry (10.0%)
 
 ## Spawn
-- [rare] Deep Dark, Dripstone Caves, Lush Caves; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…, perto de Coal Ore — nível 36-47
-- [ultra-rare] Deep Dark, Dripstone Caves, Lush Caves; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 36-47
+- [rare] Deep Dark, Dripstone Caves, Lush Caves; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…, perto de Coal Ore — nível 36-47
+- [ultra-rare] Deep Dark, Dripstone Caves, Lush Caves; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 36-47
 
 ## Evolui de
 - Carkol — subir de nível (nível 34+)

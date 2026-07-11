@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 1 SpA, 1 SpD · Egg groups: Amorphous
 Drops: Colbur Berry (5.0%), Cleanse Tag (5.0%), Soothe Bell (5.0%)
 
 ## Spawn
-- [uncommon] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest, Grove, Old Growth Birch Forest, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga, Windswept Forest; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna; Dark Forest, Swamp; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga, de noite — nível 24-46
+- [uncommon] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest, Grove, Old Growth Birch Forest, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga, Windswept Forest; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna; Dark Forest, Swamp; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga, de noite — nível 24-46
 - [uncommon] Cherry Grove, Dark Forest, Flower Forest, de noite — nível 24-46
 - [uncommon] qualquer bioma da superfície, de noite, perto de Bell — nível 24-46
 

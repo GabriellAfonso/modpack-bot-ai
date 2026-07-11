@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 2 HP · Egg groups: Field
 Drops: Mutton (qtd 1-3), Oran Berry (5.0%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 32-53
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 32-53
 
 ## Evolui de
 - Skiddo — subir de nível (nível 32+)

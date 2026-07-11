@@ -7,7 +7,7 @@ Drops: Rotten Flesh (qtd 0-2), Shuca Berry (5.0%), Smoke Ball (5.0%)
 
 ## Spawn
 - [common] volcanic — nível 33-48
-- [common] Badlands, Eroded Badlands, Wooded Badlands; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna, perto de Lava — nível 33-48
+- [common] Badlands, Eroded Badlands, Wooded Badlands; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna, perto de Lava — nível 33-48
 - [common] Basalt Deltas — nível 33-48
 - [common] Soul Sand Valley — nível 33-48
 

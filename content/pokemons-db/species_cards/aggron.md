@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 3 Def · Egg groups: Monster
 Drops: Raw Iron (qtd 0-3), Hard Stone (10.0%), Chople Berry (10.0%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…, perto de Iron Ores — nível 42-53
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…, perto de Iron Ores — nível 42-53
 - [common] qualquer bioma da superfície, perto de Iron Ores — nível 42-53
 
 ## Evolui de

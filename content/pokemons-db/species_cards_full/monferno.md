@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 1 SpA, 1 Spd · Egg groups: Field, Human Like
 Drops: Charcoal Stick (10.0%)
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 14-41
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 14-41
 - [ultra-rare] nether/forest — nível 14-41
 
 ## Evolui em

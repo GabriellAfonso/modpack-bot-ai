@@ -6,7 +6,7 @@ Catch rate: 60 · EV yield: 2 Atk · Egg groups: Monster, Dragon
 Drops: Dragon Fang (5.0%), Haban Berry (5.0%)
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 38-41
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 38-41
 
 ## Evolui em
 - Haxorus — subir de nível (nível 48+)

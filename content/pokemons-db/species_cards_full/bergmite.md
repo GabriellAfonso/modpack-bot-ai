@@ -12,6 +12,6 @@ Drops: Never Melt Ice (2.5%), Aspear Berry (2.5%)
 
 ## Evolui em
 - Avalugg Hisuian — subir de nível (nível 37+)
-- Avalugg Hisuian — subir de nível (nível 37+, em Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna)
+- Avalugg Hisuian — subir de nível (nível 37+, em Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna)
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki bergmite`._

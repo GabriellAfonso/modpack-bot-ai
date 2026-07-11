@@ -5,6 +5,6 @@ Habilidades: Quarkdrive, Quarkdrive (oculta)
 Catch rate: 10 · EV yield: 3 Spd · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 60-70
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki ironboulder`._

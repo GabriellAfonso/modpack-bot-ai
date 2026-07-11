@@ -6,7 +6,7 @@ Catch rate: 120 · EV yield: 1 Def · Egg groups: Monster, Field
 Drops: Protector (2.5%), Passho Berry (2.5%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Savanna, Savanna Plateau, Windswept Savanna — nível 10-35
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Savanna, Savanna Plateau, Windswept Savanna — nível 10-35
 
 ## Evolui em
 - Rhydon — subir de nível (nível 42+)

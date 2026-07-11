@@ -6,8 +6,8 @@ Catch rate: 45 · EV yield: 1 Atk · Egg groups: Monster
 Drops: Hard Stone (2.5%), Chople Berry (2.5%)
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 5-30
-- [rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 5-30
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 5-30
+- [rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 5-30
 
 ## Evolui em
 - Pupitar — subir de nível (nível 30+)

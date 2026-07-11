@@ -6,7 +6,7 @@ Catch rate: 200 · EV yield: 1 HP · Egg groups: Field
 Drops: Mutton (qtd 1-2), Oran Berry (2.5%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 10-35
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 10-35
 
 ## Evolui em
 - Gogoat — subir de nível (nível 32+)

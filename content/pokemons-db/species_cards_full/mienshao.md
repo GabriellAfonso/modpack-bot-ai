@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 2 Atk · Egg groups: Field, Human Like
 Drops: Payapa Berry (5.0%), Expert Belt (5.0%)
 
 ## Spawn
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 50-51
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 50-51
 
 ## Evolui de
 - Mienfoo — subir de nível (nível 50+)

@@ -17,7 +17,7 @@ Drops: Bright Powder (5.0%), Shed Shell (5.0%), Cheri Berry (5.0%)
 - [common] Deep Frozen Ocean, Frozen Ocean, de dia, perto de Flowers — nível 12-41
 - [common] Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Ice Spikes, Jagged Peaks; snowy forest; Ice Spikes, Snowy Plains, de dia, perto de Flowers — nível 12-41
 - [common] Bamboo Jungle, Jungle, Sparse Jungle, de dia, perto de Flowers — nível 12-41
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna, de dia, perto de Flowers — nível 12-41
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna, de dia, perto de Flowers — nível 12-41
 - [common] Dark Forest, Mushroom Fields, de dia, perto de Flowers — nível 12-41
 - [common] Cold Ocean, Deep Cold Ocean, Deep Frozen Ocean, Deep Lukewarm Ocean, Deep Ocean, Frozen Ocean, Lukewarm Ocean, Ocean, Warm Ocean, de dia, perto de Flowers — nível 12-41
 - [common] qualquer bioma da superfície, de dia, perto de Village — nível 12-41

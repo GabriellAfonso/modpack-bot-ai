@@ -6,7 +6,7 @@ Catch rate: 75 · EV yield: 1 Atk · Egg groups: Undiscovered
 Drops: Chople Berry (2.5%), Expert Belt (2.5%)
 
 ## Spawn
-- [rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 4-29
+- [rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 4-29
 - [rare] aether — nível 4-29
 
 ## Evolui em

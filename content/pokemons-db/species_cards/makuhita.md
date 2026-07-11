@@ -6,7 +6,7 @@ Catch rate: 180 · EV yield: 1 HP · Egg groups: Human Like
 Drops: Black Belt (2.5%), Kings Rock (2.5%), Payapa Berry (2.5%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 1-24
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 1-24
 
 ## Evolui em
 - Hariyama — subir de nível (nível 24+)

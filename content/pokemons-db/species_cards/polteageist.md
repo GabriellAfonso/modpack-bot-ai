@@ -6,8 +6,8 @@ Catch rate: 60 · EV yield: 2 SpA · Egg groups: Mineral, Amorphous
 Drops: Spell Tag (5.0%)
 
 ## Spawn
-- [uncommon] Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Cherry Grove, Dark Forest, Flower Forest; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Meadow, Plains, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Dark Forest, Swamp; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Ice Spikes, Snowy Plains, de dia, sem ver o céu, perto de Village — nível 26-51
-- [uncommon] Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Cherry Grove, Dark Forest, Flower Forest; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Meadow, Plains, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Dark Forest, Swamp; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Ice Spikes, Snowy Plains, de noite, perto de Village — nível 26-51
+- [uncommon] Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Cherry Grove, Dark Forest, Flower Forest; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Meadow, Plains, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Dark Forest, Swamp; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Ice Spikes, Snowy Plains, de dia, sem ver o céu, perto de Village — nível 26-51
+- [uncommon] Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Cherry Grove, Dark Forest, Flower Forest; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Meadow, Plains, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Dark Forest, Swamp; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Ice Spikes, Snowy Plains, de noite, perto de Village — nível 26-51
 - [common] qualquer bioma da superfície, sem ver o céu — nível 26-51
 
 ## Evolui de

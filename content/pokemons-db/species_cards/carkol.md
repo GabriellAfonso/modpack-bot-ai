@@ -6,8 +6,8 @@ Catch rate: 120 · EV yield: 2 Def · Egg groups: Mineral
 Drops: Coal (qtd 0-2), Black Augurite (5.0%), Passho Berry (5.0%)
 
 ## Spawn
-- [common] Deep Dark, Dripstone Caves, Lush Caves; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…, perto de Coal Ore — nível 27-31
-- [uncommon] Deep Dark, Dripstone Caves, Lush Caves; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 27-31
+- [common] Deep Dark, Dripstone Caves, Lush Caves; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…, perto de Coal Ore — nível 27-31
+- [uncommon] Deep Dark, Dripstone Caves, Lush Caves; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 27-31
 
 ## Evolui em
 - Coalossal — subir de nível (nível 34+)

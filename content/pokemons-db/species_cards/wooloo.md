@@ -6,7 +6,7 @@ Catch rate: 255 · EV yield: 1 Def · Egg groups: Field
 Drops: Mutton (qtd 1-2), White Wool
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Meadow, Plains, Sunflower Plains — nível 2-27
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Meadow, Plains, Sunflower Plains — nível 2-27
 - [common] skyroot grove; skyroot meadow — nível 2-27
 
 ## Evolui em

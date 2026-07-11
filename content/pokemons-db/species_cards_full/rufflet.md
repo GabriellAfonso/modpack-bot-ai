@@ -8,7 +8,7 @@ Drops: Feather (qtd 0-1), Chicken, Razz Berry (2.5%)
 ## Spawn
 - [uncommon] Badlands, Eroded Badlands, Wooded Badlands; Meadow, Snowy Slopes, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna, de dia — nível 10-35
 - [common] sky, de dia — nível 10-35
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 10-35
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 10-35
 - [common] sky — nível 10-35
 
 ## Evolui em

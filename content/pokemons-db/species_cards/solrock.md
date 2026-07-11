@@ -8,7 +8,7 @@ Drops: Sun Stone (5.0%), Colbur Berry (5.0%)
 ## Spawn
 - [uncommon] Dripstone Caves, de dia — nível 21-46
 - [common] Dripstone Caves — nível 21-46
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…, de dia — nível 21-46
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…, de dia — nível 21-46
 - [common] qualquer bioma da superfície, perto de Ruins/Sol Henge Ruins — nível 21-46
 - [uncommon] skyroot grove; skyroot meadow — nível 21-46
 

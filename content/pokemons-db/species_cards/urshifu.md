@@ -5,7 +5,7 @@ Habilidades: Unseenfist, Unseenfist (oculta)
 Catch rate: 3 · EV yield: 3 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks — nível 60-70
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks — nível 60-70
 
 ## Evolui de
 - Kubfu — usar Scroll Of Darkness

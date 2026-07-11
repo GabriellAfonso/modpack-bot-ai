@@ -6,7 +6,7 @@ Catch rate: 120 · EV yield: 1 Atk · Egg groups: Field
 Drops: Sweet Berries (qtd 1-3), Honey Bottle (2.5%), Peat Block (2.5%), Oran Berry (2.5%)
 
 ## Spawn
-- [common] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest…; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; skyroot forest; skyroot woodland; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga — nível 8-33
+- [common] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest…; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; skyroot forest; skyroot woodland; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga — nível 8-33
 - [common] aether; qualquer bioma da superfície, perto de Saccharine Trees — nível 8-33
 - [common] crystal canyon; floral meadow — nível 8-33
 

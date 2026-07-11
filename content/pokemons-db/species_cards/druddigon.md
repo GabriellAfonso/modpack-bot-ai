@@ -7,7 +7,7 @@ Drops: Dragon Fang (5.0%), Haban Berry (5.0%)
 
 ## Spawn
 - [rare] qualquer bioma da superfície — nível 24-49
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 24-49
-- [rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…, de dia — nível 24-49
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 24-49
+- [rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…, de dia — nível 24-49
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki druddigon`._

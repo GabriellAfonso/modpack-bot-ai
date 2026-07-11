@@ -6,6 +6,6 @@ Catch rate: 45 · EV yield: 2 HP · Egg groups: Human Like
 Drops: Black Belt (5.0%), Razz Berry (5.0%), Expert Belt (5.0%)
 
 ## Spawn
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 12-47
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 12-47
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki throh`._

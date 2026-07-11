@@ -7,9 +7,9 @@ Drops: Salmon, Bone Meal (5.0%), Mystic Water (2.5%), Wacan Berry (2.5%)
 
 ## Spawn
 - [common] Frozen River, River — nível 7-32
-- [common] aether; Bamboo Jungle; Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Frozen River, Mangrove Swamp, River, Swamp; Bamboo Jungle, Jungle, Sparse Jungle; Cherry Grove, Dark Forest, Flower Forest; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest… — nível 7-32
+- [common] aether; Bamboo Jungle; Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Frozen River, Mangrove Swamp, River, Swamp; Bamboo Jungle, Jungle, Sparse Jungle; Cherry Grove, Dark Forest, Flower Forest; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest… — nível 7-32
 - [common] Frozen River, River, sem ver o céu — nível 7-32
-- [common] aether; Bamboo Jungle; Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Frozen River, Mangrove Swamp, River, Swamp; Bamboo Jungle, Jungle, Sparse Jungle; Cherry Grove, Dark Forest, Flower Forest; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest…, sem ver o céu — nível 7-32
+- [common] aether; Bamboo Jungle; Cherry Grove, Flower Forest, Meadow, Sunflower Plains; Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove…; Frozen River, Mangrove Swamp, River, Swamp; Bamboo Jungle, Jungle, Sparse Jungle; Cherry Grove, Dark Forest, Flower Forest; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Grove, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Taiga, Taiga; Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest…, sem ver o céu — nível 7-32
 
 ## Evolui em
 - Seaking — subir de nível (nível 33+)

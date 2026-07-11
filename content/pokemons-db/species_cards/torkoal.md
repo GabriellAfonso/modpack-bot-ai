@@ -6,7 +6,7 @@ Catch rate: 90 · EV yield: 2 Def · Egg groups: Field
 Drops: Coal (qtd 0-2), Charcoal Stick (5.0%), Smoke Ball (5.0%), Charti Berry (5.0%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; thermal, perto de Coal Ores — nível 22-47
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; thermal, perto de Coal Ores — nível 22-47
 - [uncommon] qualquer bioma da superfície, perto de Coal Ores — nível 22-47
 - [common] Basalt Deltas — nível 22-47
 

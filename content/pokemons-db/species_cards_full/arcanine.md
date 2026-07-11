@@ -8,7 +8,7 @@ Drops: Bone (qtd 0-2), Rawst Berry (5.0%)
 ## Spawn
 - [uncommon] qualquer bioma da superfície — nível 30-56
 - [uncommon] qualquer bioma da superfície, perto de Village — nível 30-56
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 25-55
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 25-55
 - [uncommon] volcanic — nível 25-55
 - [uncommon] nether — nível 25-55
 

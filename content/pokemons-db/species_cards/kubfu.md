@@ -5,7 +5,7 @@ Habilidades: Innerfocus, Innerfocus (oculta)
 Catch rate: 3 · EV yield: 1 Atk · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Meadow — nível 50-60
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Meadow — nível 50-60
 
 ## Evolui em
 - Urshifu Wushu Style=Single Strike — usar Scroll Of Darkness

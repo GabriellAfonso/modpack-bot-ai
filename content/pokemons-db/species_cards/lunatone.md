@@ -8,7 +8,7 @@ Drops: Moon Stone (5.0%), Colbur Berry (5.0%)
 ## Spawn
 - [uncommon] Dripstone Caves, de noite — nível 21-46
 - [common] Dripstone Caves — nível 21-46
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…, de noite — nível 21-46
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…, de noite — nível 21-46
 - [common] qualquer bioma da superfície, perto de Ruins/Luna Henge Ruins — nível 21-46
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki lunatone`._

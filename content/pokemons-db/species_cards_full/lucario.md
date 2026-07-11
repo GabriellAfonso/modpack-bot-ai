@@ -6,7 +6,7 @@ Catch rate: 45 · EV yield: 1 Atk, 1 SpA · Egg groups: Field, Human Like
 Drops: Chople Berry (5.0%), Expert Belt (5.0%)
 
 ## Spawn
-- [rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 24-53
+- [rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna — nível 24-53
 - [rare] aether — nível 24-53
 
 ## Evolui de

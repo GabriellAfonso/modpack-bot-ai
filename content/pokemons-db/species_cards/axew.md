@@ -6,7 +6,7 @@ Catch rate: 75 · EV yield: 1 Atk · Egg groups: Monster, Dragon
 Drops: Dragon Fang (2.5%), Haban Berry (2.5%)
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 7-32
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 7-32
 
 ## Evolui em
 - Fraxure — subir de nível (nível 38+)

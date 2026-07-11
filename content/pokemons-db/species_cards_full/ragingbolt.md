@@ -5,6 +5,6 @@ Habilidades: Protosynthesis, Protosynthesis (oculta)
 Catch rate: 10 · EV yield: 3 SpA · Egg groups: Undiscovered
 
 ## Spawn
-- [ultra-rare] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna; Meadow — nível 60-70
+- [ultra-rare] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna; Meadow — nível 60-70
 
 _Mais detalhes (golpes, TMs, EVs completos): `/pwiki ragingbolt`._

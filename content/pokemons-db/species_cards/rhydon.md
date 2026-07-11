@@ -6,7 +6,7 @@ Catch rate: 60 · EV yield: 2 Atk · Egg groups: Monster, Field
 Drops: Protector (5.0%), Passho Berry (5.0%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Savanna, Savanna Plateau, Windswept Savanna — nível 42-49
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Savanna, Savanna Plateau, Windswept Savanna — nível 42-49
 
 ## Evolui em
 - Rhyperior — trocar (segurando Protector)

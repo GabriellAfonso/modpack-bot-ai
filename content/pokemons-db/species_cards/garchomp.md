@@ -6,8 +6,8 @@ Catch rate: 45 · EV yield: 3 Atk · Egg groups: Monster, Dragon
 Drops: Dragon Fang (10.0%), Haban Berry (10.0%)
 
 ## Spawn
-- [rare] Badlands, Eroded Badlands, Wooded Badlands; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 48-60
-- [ultra-rare] Badlands, Eroded Badlands, Wooded Badlands; Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 48-60
+- [rare] Badlands, Eroded Badlands, Wooded Badlands; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 48-60
+- [ultra-rare] Badlands, Eroded Badlands, Wooded Badlands; Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 48-60
 - [ultra-rare] qualquer bioma da superfície — nível 48-60
 - [rare] qualquer bioma da superfície, perto de Magma Block — nível 48-60
 - [rare] thermal — nível 48-60

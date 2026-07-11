@@ -13,7 +13,7 @@ Drops: Float Stone (5.0%)
 - [uncommon] Bamboo Jungle, Jungle, Sparse Jungle, de noite — nível 20-30
 - [uncommon] Frozen River, Mangrove Swamp, River, Swamp, de noite — nível 20-30
 - [uncommon] Cold Ocean, Deep Cold Ocean, Deep Frozen Ocean, Frozen Ocean, Frozen Peaks, Frozen River, Grove, Ice Spikes, Jagged Peaks, Old Growth Pine Taiga, Old Growth Spruce Taiga, Snowy Beach, Snowy Plains, Snowy Slopes, Snowy Taiga, Stony Peaks, Taiga, de noite — nível 20-30
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna, de noite — nível 20-30
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna, de noite — nível 20-30
 
 Formas: Meteor
 

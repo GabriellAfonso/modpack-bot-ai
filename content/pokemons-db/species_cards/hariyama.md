@@ -6,7 +6,7 @@ Catch rate: 200 · EV yield: 2 HP · Egg groups: Human Like
 Drops: Black Belt (5.0%), Kings Rock (5.0%), Payapa Berry (5.0%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes… — nível 24-47
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest… — nível 24-47
 
 ## Evolui de
 - Makuhita — subir de nível (nível 24+)

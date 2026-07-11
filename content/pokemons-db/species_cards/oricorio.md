@@ -7,7 +7,7 @@ Drops: Feather (qtd 0-2), Chicken, Honey Bottle (5.0%), Pinap Berry (5.0%)
 
 ## Spawn
 - [uncommon] Meadow, Plains, Sunflower Plains; Meadow, Snowy Slopes, Windswept Forest, Windswept Gravelly Hills, Windswept Hills… — nível 18-33
-- [uncommon] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; Bamboo Jungle, Jungle, Sparse Jungle — nível 18-33
+- [uncommon] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; Bamboo Jungle, Jungle, Sparse Jungle — nível 18-33
 - [uncommon] Cherry Grove, Flower Forest, Meadow, Sunflower Plains — nível 18-33
 - [uncommon] Birch Forest, Cherry Grove, Dark Forest, Flower Forest, Forest… — nível 18-33
 

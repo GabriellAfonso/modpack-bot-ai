@@ -6,7 +6,7 @@ Catch rate: 255 · EV yield: 1 Atk · Egg groups: Flying
 Drops: Feather (qtd 0-1), Chicken, Razz Berry (2.5%)
 
 ## Spawn
-- [common] Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes…; sky, de dia — nível 1-26
+- [common] Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest…; sky, de dia — nível 1-26
 - [common] qualquer bioma da superfície, de dia — nível 1-26
 - [common] qualquer bioma da superfície, de dia, perto de Village — nível 1-26
 

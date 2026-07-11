@@ -130,7 +130,7 @@ Total de tags de bioma resolvidas: **75**
 - **Terralith:** Mirage Isles
 
 ## #cobblemon:is_mountain
-- **Vanilla:** Cherry Grove, Frozen Peaks, Jagged Peaks, Meadow, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna
+- **Vanilla:** Frozen Peaks, Jagged Peaks, Snowy Slopes, Stony Peaks, Windswept Forest, Windswept Gravelly Hills, Windswept Hills, Windswept Savanna
 - **Terralith:** Alpine Highlands, Arid Highlands, Blooming Plateau, Blooming Valley, Forested Highlands, Highlands, Lavender Valley, Lush Valley, Moonlight Valley, Sakura Valley, Savanna Slopes, Stony Spires, Temperate Highlands, Volcanic Peaks, Windswept Spires, Yosemite Cliffs, Yosemite Lowlands
 
 ## #cobblemon:is_mushroom
