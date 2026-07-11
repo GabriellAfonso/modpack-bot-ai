@@ -16,8 +16,7 @@
           "#cobblemon:is_peak",
           "#cobblemon:is_mountain"
         ],
-        "canSeeSky": true,
-        "minY": 160
+        "canSeeSky": true
       },
       "presets": [
         "natural"
